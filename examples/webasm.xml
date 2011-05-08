@@ -1,0 +1,32 @@
+<assembler>
+  
+  <!-- Project base directory -->
+  <project-base>source</project-base>
+  <!-- Output base directory -->
+  <output-base>web</output-base>
+  <!-- File pattern to process -->
+  <process-file-pattern><![CDATA[(?<!\.frag)\.(html|js)$]]></process-file-pattern>
+  
+  <!-- Custom Tags -->
+  <custom-tags>
+  </custom-tags>
+  
+  <!--
+    Properties
+    
+    You can use properties to define any sort of content.  For example,
+    you may want to separate some interface strings out as properties so
+    your project can be easily localized.  Or you may want to define
+    values that can be tested in conditional directives to control how
+    output is generated.
+    
+    Properties defined in this file can be overridden on the command
+    line with the -define flag.  In this way you can set up default
+    values here and selectively override them.
+    
+  -->
+  <properties>
+    <define name="greeting">Hello, there!</define>
+  </properties>
+  
+</assembler>

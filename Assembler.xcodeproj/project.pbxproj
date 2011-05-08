@@ -1,0 +1,1160 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		8DD76F650486A84900D96B5E /* ALAssembler.cc in Sources */ = {isa = PBXBuildFile; fileRef = 08FB7796FE84155DC02AAC07 /* ALAssembler.cc */; settings = {ATTRIBUTES = (); }; };
+		D3003F0C10ABFBA700F4E770 /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D3003F0B10ABFBA700F4E770 /* QuartzCore.framework */; };
+		D3003F0F10ABFBB500F4E770 /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D3003F0B10ABFBA700F4E770 /* QuartzCore.framework */; };
+		D3003F4C10ABFC9A00F4E770 /* ALTypeDirective.cc in Sources */ = {isa = PBXBuildFile; fileRef = D3003F4A10ABFC9A00F4E770 /* ALTypeDirective.cc */; };
+		D3003F4D10ABFC9A00F4E770 /* ALTypeDirective.hh in Headers */ = {isa = PBXBuildFile; fileRef = D3003F4B10ABFC9A00F4E770 /* ALTypeDirective.hh */; settings = {ATTRIBUTES = (Public, ); }; };
+		D308DA7411130BAC00AB0C0E /* ALJSDocument.cc in Sources */ = {isa = PBXBuildFile; fileRef = D308DA7111130BAC00AB0C0E /* ALJSDocument.cc */; };
+		D308DA7511130BAC00AB0C0E /* ALJSDocument.hh in Headers */ = {isa = PBXBuildFile; fileRef = D308DA7211130BAC00AB0C0E /* ALJSDocument.hh */; settings = {ATTRIBUTES = (Public, ); }; };
+		D308DA7611130BAC00AB0C0E /* ALJSUtility.hh in Headers */ = {isa = PBXBuildFile; fileRef = D308DA7311130BAC00AB0C0E /* ALJSUtility.hh */; settings = {ATTRIBUTES = (Public, ); }; };
+		D32E4D100ED7E87F00CC8029 /* webasm in CopyFiles */ = {isa = PBXBuildFile; fileRef = 8DD76F6C0486A84900D96B5E /* webasm */; };
+		D336FE2F10210E8000202E70 /* ALPropertyDirective.cc in Sources */ = {isa = PBXBuildFile; fileRef = D336FE2D10210E8000202E70 /* ALPropertyDirective.cc */; };
+		D336FE3010210E8000202E70 /* ALPropertyDirective.hh in Headers */ = {isa = PBXBuildFile; fileRef = D336FE2E10210E8000202E70 /* ALPropertyDirective.hh */; settings = {ATTRIBUTES = (Public, ); }; };
+		D33B27E80EDCBA6100464DA4 /* ALAssemblerCodaPlugin.mm in Sources */ = {isa = PBXBuildFile; fileRef = D33B27E70EDCBA6100464DA4 /* ALAssemblerCodaPlugin.mm */; };
+		D33B27F20EDCBB1D00464DA4 /* AssemblerCoda.codaplugin in CopyFiles */ = {isa = PBXBuildFile; fileRef = D33B27DC0EDCB7DE00464DA4 /* AssemblerCoda.codaplugin */; };
+		D33B28290EDCC15900464DA4 /* AssemblerCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D33B281D0EDCC0E000464DA4 /* AssemblerCore.framework */; };
+		D33B282D0EDCC1A400464DA4 /* ALDirective.cc in Sources */ = {isa = PBXBuildFile; fileRef = D3FEC20C0EDAAFC500CFD448 /* ALDirective.cc */; };
+		D33B282E0EDCC1A400464DA4 /* ALDirectiveList.cc in Sources */ = {isa = PBXBuildFile; fileRef = D3FEC20E0EDAAFC500CFD448 /* ALDirectiveList.cc */; };
+		D33B282F0EDCC1A400464DA4 /* ALInsertDirective.cc in Sources */ = {isa = PBXBuildFile; fileRef = D3FEC2100EDAAFC500CFD448 /* ALInsertDirective.cc */; };
+		D33B28300EDCC1A400464DA4 /* ALOptionsModel.cc in Sources */ = {isa = PBXBuildFile; fileRef = D3FEC0A60ED7FBAD00CFD448 /* ALOptionsModel.cc */; };
+		D33B28320EDCC1B400464DA4 /* ALDirective.hh in Headers */ = {isa = PBXBuildFile; fileRef = D3FEC20D0EDAAFC500CFD448 /* ALDirective.hh */; settings = {ATTRIBUTES = (Public, ); }; };
+		D33B28330EDCC1B400464DA4 /* ALDirectiveList.hh in Headers */ = {isa = PBXBuildFile; fileRef = D3FEC20F0EDAAFC500CFD448 /* ALDirectiveList.hh */; settings = {ATTRIBUTES = (Public, ); }; };
+		D33B28340EDCC1B400464DA4 /* ALInsertDirective.hh in Headers */ = {isa = PBXBuildFile; fileRef = D3FEC2110EDAAFC500CFD448 /* ALInsertDirective.hh */; settings = {ATTRIBUTES = (Public, ); }; };
+		D33B28360EDCC1B400464DA4 /* ALOptionsModel.hh in Headers */ = {isa = PBXBuildFile; fileRef = D3FEC0A70ED7FBAD00CFD448 /* ALOptionsModel.hh */; settings = {ATTRIBUTES = (Public, ); }; };
+		D33B28390EDCC1F200464DA4 /* AssemblerCore.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = D33B281D0EDCC0E000464DA4 /* AssemblerCore.framework */; };
+		D33B28450EDCC28700464DA4 /* CoreFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D3FEC28F0EDB0D4C00CFD448 /* CoreFoundation.framework */; };
+		D33B28710EDCC29300464DA4 /* Keystone.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D3FEC2B20EDB0E9D00CFD448 /* Keystone.framework */; };
+		D33B287E0EDCC2D000464DA4 /* Keystone.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D3FEC2B20EDB0E9D00CFD448 /* Keystone.framework */; };
+		D33B28940EDCC40800464DA4 /* ALCommand.cc in Sources */ = {isa = PBXBuildFile; fileRef = D33B28930EDCC40800464DA4 /* ALCommand.cc */; };
+		D33B289D0EDCC9D700464DA4 /* ALHTMLSourceFilter.cc in Sources */ = {isa = PBXBuildFile; fileRef = D33B28990EDCC9D700464DA4 /* ALHTMLSourceFilter.cc */; };
+		D33B289E0EDCC9D700464DA4 /* ALHTMLSourceFilter.hh in Headers */ = {isa = PBXBuildFile; fileRef = D33B289A0EDCC9D700464DA4 /* ALHTMLSourceFilter.hh */; settings = {ATTRIBUTES = (Public, ); }; };
+		D33B289F0EDCC9D700464DA4 /* ALSourceFilter.cc in Sources */ = {isa = PBXBuildFile; fileRef = D33B289B0EDCC9D700464DA4 /* ALSourceFilter.cc */; };
+		D33B28A00EDCC9D700464DA4 /* ALSourceFilter.hh in Headers */ = {isa = PBXBuildFile; fileRef = D33B289C0EDCC9D700464DA4 /* ALSourceFilter.hh */; settings = {ATTRIBUTES = (Public, ); }; };
+		D33B290D0EDD19C100464DA4 /* AssemblerCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D33B290C0EDD19C100464DA4 /* AssemblerCore.framework */; };
+		D33B296E0EDD46E000464DA4 /* ALDirectorySourceCollection.cc in Sources */ = {isa = PBXBuildFile; fileRef = D33B29680EDD46E000464DA4 /* ALDirectorySourceCollection.cc */; };
+		D33B296F0EDD46E000464DA4 /* ALDirectorySourceCollection.hh in Headers */ = {isa = PBXBuildFile; fileRef = D33B29690EDD46E000464DA4 /* ALDirectorySourceCollection.hh */; settings = {ATTRIBUTES = (Public, ); }; };
+		D33B29700EDD46E000464DA4 /* ALSourceCollection.cc in Sources */ = {isa = PBXBuildFile; fileRef = D33B296A0EDD46E000464DA4 /* ALSourceCollection.cc */; };
+		D33B29710EDD46E000464DA4 /* ALSourceCollection.hh in Headers */ = {isa = PBXBuildFile; fileRef = D33B296B0EDD46E000464DA4 /* ALSourceCollection.hh */; settings = {ATTRIBUTES = (Public, ); }; };
+		D33B29720EDD46E000464DA4 /* ALSourceFileFilter.cc in Sources */ = {isa = PBXBuildFile; fileRef = D33B296C0EDD46E000464DA4 /* ALSourceFileFilter.cc */; };
+		D33B29730EDD46E000464DA4 /* ALSourceFileFilter.hh in Headers */ = {isa = PBXBuildFile; fileRef = D33B296D0EDD46E000464DA4 /* ALSourceFileFilter.hh */; settings = {ATTRIBUTES = (Public, ); }; };
+		D33B29EC0EDD856900464DA4 /* ALPlanCommand.cc in Sources */ = {isa = PBXBuildFile; fileRef = D33B29EA0EDD856900464DA4 /* ALPlanCommand.cc */; };
+		D33CBBAC1106B3B000DC3592 /* tags in Resources */ = {isa = PBXBuildFile; fileRef = D33CBBA91106B3B000DC3592 /* tags */; };
+		D341156310261C4E005CDC65 /* ALVerbatimDirective.cc in Sources */ = {isa = PBXBuildFile; fileRef = D341156110261C4E005CDC65 /* ALVerbatimDirective.cc */; };
+		D341156410261C4E005CDC65 /* ALVerbatimDirective.hh in Headers */ = {isa = PBXBuildFile; fileRef = D341156210261C4E005CDC65 /* ALVerbatimDirective.hh */; settings = {ATTRIBUTES = (Public, ); }; };
+		D34C09800EECFAD80047D745 /* ALConditionalDirective.cc in Sources */ = {isa = PBXBuildFile; fileRef = D34C097E0EECFAD80047D745 /* ALConditionalDirective.cc */; };
+		D34C09810EECFAD80047D745 /* ALConditionalDirective.hh in Headers */ = {isa = PBXBuildFile; fileRef = D34C097F0EECFAD80047D745 /* ALConditionalDirective.hh */; settings = {ATTRIBUTES = (Public, ); }; };
+		D373F2F8101C269500DC15E1 /* JavaScriptCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D373F2F7101C269500DC15E1 /* JavaScriptCore.framework */; };
+		D373F308101C279F00DC15E1 /* JavaScriptCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D373F2F7101C269500DC15E1 /* JavaScriptCore.framework */; };
+		D373F379101C71F600DC15E1 /* ALImportDirective.cc in Sources */ = {isa = PBXBuildFile; fileRef = D373F377101C71F600DC15E1 /* ALImportDirective.cc */; };
+		D373F37A101C71F600DC15E1 /* ALImportDirective.hh in Headers */ = {isa = PBXBuildFile; fileRef = D373F378101C71F600DC15E1 /* ALImportDirective.hh */; settings = {ATTRIBUTES = (Public, ); }; };
+		D377954F101E6CD4004FD14B /* ALScriptDirective.cc in Sources */ = {isa = PBXBuildFile; fileRef = D377954D101E6CD4004FD14B /* ALScriptDirective.cc */; };
+		D3779550101E6CD4004FD14B /* ALScriptDirective.hh in Headers */ = {isa = PBXBuildFile; fileRef = D377954E101E6CD4004FD14B /* ALScriptDirective.hh */; settings = {ATTRIBUTES = (Public, ); }; };
+		D3779559101E7389004FD14B /* ALPrintDirective.cc in Sources */ = {isa = PBXBuildFile; fileRef = D3779557101E7389004FD14B /* ALPrintDirective.cc */; };
+		D377955A101E7389004FD14B /* ALPrintDirective.hh in Headers */ = {isa = PBXBuildFile; fileRef = D3779558101E7389004FD14B /* ALPrintDirective.hh */; settings = {ATTRIBUTES = (Public, ); }; };
+		D38329010EE9BB2E00764262 /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D38329000EE9BB2E00764262 /* Cocoa.framework */; };
+		D39428491117612600B25851 /* ALUtility.cc in Sources */ = {isa = PBXBuildFile; fileRef = D39428471117612600B25851 /* ALUtility.cc */; };
+		D394284A1117612600B25851 /* ALUtility.hh in Headers */ = {isa = PBXBuildFile; fileRef = D39428481117612600B25851 /* ALUtility.hh */; settings = {ATTRIBUTES = (Public, ); }; };
+		D39429381117CA3100B25851 /* ALJSDirective.cc in Sources */ = {isa = PBXBuildFile; fileRef = D39429361117CA3100B25851 /* ALJSDirective.cc */; };
+		D39429391117CA3100B25851 /* ALJSDirective.hh in Headers */ = {isa = PBXBuildFile; fileRef = D39429371117CA3100B25851 /* ALJSDirective.hh */; settings = {ATTRIBUTES = (Public, ); }; };
+		D3A2F04B1097BFD5002A1620 /* ALParser.cc in Sources */ = {isa = PBXBuildFile; fileRef = D3A2F0471097BFD5002A1620 /* ALParser.cc */; };
+		D3A2F04C1097BFD5002A1620 /* ALParser.hh in Headers */ = {isa = PBXBuildFile; fileRef = D3A2F0481097BFD5002A1620 /* ALParser.hh */; settings = {ATTRIBUTES = (Public, ); }; };
+		D3A2F04D1097BFD5002A1620 /* ALWAMLParser.cc in Sources */ = {isa = PBXBuildFile; fileRef = D3A2F0491097BFD5002A1620 /* ALWAMLParser.cc */; };
+		D3A2F04E1097BFD5002A1620 /* ALWAMLParser.hh in Headers */ = {isa = PBXBuildFile; fileRef = D3A2F04A1097BFD5002A1620 /* ALWAMLParser.hh */; settings = {ATTRIBUTES = (Public, ); }; };
+		D3A2F0511097C3D5002A1620 /* ALParseCommand.cc in Sources */ = {isa = PBXBuildFile; fileRef = D3A2F04F1097C3D5002A1620 /* ALParseCommand.cc */; };
+		D3A2F18B1098DDE6002A1620 /* ALElement.cc in Sources */ = {isa = PBXBuildFile; fileRef = D3A2F1871098DDE6002A1620 /* ALElement.cc */; };
+		D3A2F18C1098DDE6002A1620 /* ALElement.hh in Headers */ = {isa = PBXBuildFile; fileRef = D3A2F1881098DDE6002A1620 /* ALElement.hh */; settings = {ATTRIBUTES = (Public, ); }; };
+		D3A2F18D1098DDE6002A1620 /* ALTreeParser.cc in Sources */ = {isa = PBXBuildFile; fileRef = D3A2F1891098DDE6002A1620 /* ALTreeParser.cc */; };
+		D3A2F18E1098DDE6002A1620 /* ALTreeParser.hh in Headers */ = {isa = PBXBuildFile; fileRef = D3A2F18A1098DDE6002A1620 /* ALTreeParser.hh */; settings = {ATTRIBUTES = (Public, ); }; };
+		D3A2F1911098E2DF002A1620 /* ALMutableElement.cc in Sources */ = {isa = PBXBuildFile; fileRef = D3A2F18F1098E2DF002A1620 /* ALMutableElement.cc */; };
+		D3A2F1921098E2DF002A1620 /* ALMutableElement.hh in Headers */ = {isa = PBXBuildFile; fileRef = D3A2F1901098E2DF002A1620 /* ALMutableElement.hh */; settings = {ATTRIBUTES = (Public, ); }; };
+		D3A2F29810995697002A1620 /* ALHelpCommand.cc in Sources */ = {isa = PBXBuildFile; fileRef = D3A2F29610995697002A1620 /* ALHelpCommand.cc */; };
+		D3A2F2B7109CDD6D002A1620 /* ALExecuteDirective.cc in Sources */ = {isa = PBXBuildFile; fileRef = D3A2F2B5109CDD6D002A1620 /* ALExecuteDirective.cc */; };
+		D3A2F2B8109CDD6D002A1620 /* ALExecuteDirective.hh in Headers */ = {isa = PBXBuildFile; fileRef = D3A2F2B6109CDD6D002A1620 /* ALExecuteDirective.hh */; settings = {ATTRIBUTES = (Public, ); }; };
+		D3A4298112AC0C96006DC332 /* ALServer.cc in Sources */ = {isa = PBXBuildFile; fileRef = D3A4297F12AC0C96006DC332 /* ALServer.cc */; };
+		D3A4298212AC0C96006DC332 /* ALServer.hh in Headers */ = {isa = PBXBuildFile; fileRef = D3A4298012AC0C96006DC332 /* ALServer.hh */; };
+		D3A4298312AC0C96006DC332 /* ALServer.cc in Sources */ = {isa = PBXBuildFile; fileRef = D3A4297F12AC0C96006DC332 /* ALServer.cc */; };
+		D3A4298412AC0C96006DC332 /* ALServer.cc in Sources */ = {isa = PBXBuildFile; fileRef = D3A4297F12AC0C96006DC332 /* ALServer.cc */; };
+		D3A429A812AC11AB006DC332 /* ALPushCommand.cc in Sources */ = {isa = PBXBuildFile; fileRef = D3A429A612AC11AB006DC332 /* ALPushCommand.cc */; };
+		D3A429A912AC11AB006DC332 /* ALPushCommand.hh in Headers */ = {isa = PBXBuildFile; fileRef = D3A429A712AC11AB006DC332 /* ALPushCommand.hh */; };
+		D3A429AA12AC11AB006DC332 /* ALPushCommand.cc in Sources */ = {isa = PBXBuildFile; fileRef = D3A429A612AC11AB006DC332 /* ALPushCommand.cc */; };
+		D3A429AB12AC11AB006DC332 /* ALPushCommand.cc in Sources */ = {isa = PBXBuildFile; fileRef = D3A429A612AC11AB006DC332 /* ALPushCommand.cc */; };
+		D3A429E712AC3CE2006DC332 /* ALDependencyGraph.cc in Sources */ = {isa = PBXBuildFile; fileRef = D3A429E512AC3CE2006DC332 /* ALDependencyGraph.cc */; };
+		D3A429E812AC3CE2006DC332 /* ALDependencyGraph.hh in Headers */ = {isa = PBXBuildFile; fileRef = D3A429E612AC3CE2006DC332 /* ALDependencyGraph.hh */; };
+		D3A429E912AC3CE2006DC332 /* ALDependencyGraph.cc in Sources */ = {isa = PBXBuildFile; fileRef = D3A429E512AC3CE2006DC332 /* ALDependencyGraph.cc */; };
+		D3A429EA12AC3CE2006DC332 /* ALDependencyGraph.cc in Sources */ = {isa = PBXBuildFile; fileRef = D3A429E512AC3CE2006DC332 /* ALDependencyGraph.cc */; };
+		D3A42A0B12AD2AF2006DC332 /* ALSourceFilterContext.cc in Sources */ = {isa = PBXBuildFile; fileRef = D3A42A0912AD2AF2006DC332 /* ALSourceFilterContext.cc */; };
+		D3A42A0C12AD2AF2006DC332 /* ALSourceFilterContext.hh in Headers */ = {isa = PBXBuildFile; fileRef = D3A42A0A12AD2AF2006DC332 /* ALSourceFilterContext.hh */; };
+		D3A42A0D12AD2AF2006DC332 /* ALSourceFilterContext.cc in Sources */ = {isa = PBXBuildFile; fileRef = D3A42A0912AD2AF2006DC332 /* ALSourceFilterContext.cc */; };
+		D3A42A0E12AD2AF2006DC332 /* ALSourceFilterContext.cc in Sources */ = {isa = PBXBuildFile; fileRef = D3A42A0912AD2AF2006DC332 /* ALSourceFilterContext.cc */; };
+		D3AA87C811F9563C00279EBE /* PCRE.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D3AA87C511F9563100279EBE /* PCRE.framework */; };
+		D3AA87CD11F9565100279EBE /* PCRE.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D3AA87C511F9563100279EBE /* PCRE.framework */; };
+		D3AA87D911F9566300279EBE /* PCRE.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D3AA87C511F9563100279EBE /* PCRE.framework */; };
+		D3ADEB8111162DF20026E7E2 /* ALExpressionFileFilter.cc in Sources */ = {isa = PBXBuildFile; fileRef = D3ADEB7F11162DF20026E7E2 /* ALExpressionFileFilter.cc */; };
+		D3ADEB8211162DF20026E7E2 /* ALExpressionFileFilter.hh in Headers */ = {isa = PBXBuildFile; fileRef = D3ADEB8011162DF20026E7E2 /* ALExpressionFileFilter.hh */; settings = {ATTRIBUTES = (Public, ); }; };
+		D3CF7E7011FBAAFE00CA2236 /* PCRE.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = D3AA87C511F9563100279EBE /* PCRE.framework */; };
+		D3F288E110BA2EDF00652E8A /* ALEscapeDirective.cc in Sources */ = {isa = PBXBuildFile; fileRef = D3F288DF10BA2EDF00652E8A /* ALEscapeDirective.cc */; };
+		D3F288E210BA2EDF00652E8A /* ALEscapeDirective.hh in Headers */ = {isa = PBXBuildFile; fileRef = D3F288E010BA2EDF00652E8A /* ALEscapeDirective.hh */; settings = {ATTRIBUTES = (Public, ); }; };
+		D3F28AEE10BA35DB00652E8A /* libxml2.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = D3F28AED10BA35DB00652E8A /* libxml2.dylib */; };
+		D3F28AEF10BA35E600652E8A /* libxml2.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = D3F28AED10BA35DB00652E8A /* libxml2.dylib */; };
+		D3F28C6910BA3BAC00652E8A /* ApplicationServices.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D3F28C6810BA3BAC00652E8A /* ApplicationServices.framework */; };
+		D3F28D6110BA3BDE00652E8A /* ApplicationServices.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D3F28C6810BA3BAC00652E8A /* ApplicationServices.framework */; };
+		D3F78CC5110D5AAF00A080D5 /* webasm-default.xml in Resources */ = {isa = PBXBuildFile; fileRef = D3F78CC4110D5AAF00A080D5 /* webasm-default.xml */; };
+		D3FEC0DA0ED8146A00CFD448 /* ALBuildCommand.cc in Sources */ = {isa = PBXBuildFile; fileRef = D3FEC0D80ED8146A00CFD448 /* ALBuildCommand.cc */; };
+		D3FEC2900EDB0D4C00CFD448 /* CoreFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D3FEC28F0EDB0D4C00CFD448 /* CoreFoundation.framework */; };
+		D3FEC2B30EDB0E9D00CFD448 /* Keystone.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D3FEC2B20EDB0E9D00CFD448 /* Keystone.framework */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		D33B28220EDCC0E800464DA4 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = D3FEC0920ED7F1AA00CFD448 /* Keystone.xcodeproj */;
+			proxyType = 1;
+			remoteGlobalIDString = 8D07F2BC0486CC7A007CD1D0;
+			remoteInfo = Keystone;
+		};
+		D33B283D0EDCC24600464DA4 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 08FB7793FE84155DC02AAC07 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = D33B281C0EDCC0E000464DA4;
+			remoteInfo = AssemblerCore;
+		};
+		D33B28F60EDD192900464DA4 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 08FB7793FE84155DC02AAC07 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = D33B281C0EDCC0E000464DA4;
+			remoteInfo = AssemblerCore;
+		};
+		D3AA87C411F9563100279EBE /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = D3AA87BC11F9563100279EBE /* PCRE.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 8DC2EF5B0486A6940098B216;
+			remoteInfo = PCRE;
+		};
+		D3AA87C611F9563100279EBE /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = D3AA87BC11F9563100279EBE /* PCRE.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = D306840711D040A6006460AA;
+			remoteInfo = PCREMobile;
+		};
+		D3CF7E4811FBA7DC00CA2236 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = D3AA87BC11F9563100279EBE /* PCRE.xcodeproj */;
+			proxyType = 1;
+			remoteGlobalIDString = 8DC2EF4F0486A6940098B216;
+			remoteInfo = PCRE;
+		};
+		D3FEC0960ED7F1AA00CFD448 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = D3FEC0920ED7F1AA00CFD448 /* Keystone.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 8D07F2C80486CC7A007CD1D0;
+			remoteInfo = Keystone;
+		};
+		D3FEC0980ED7F1B000CFD448 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = D3FEC0920ED7F1AA00CFD448 /* Keystone.xcodeproj */;
+			proxyType = 1;
+			remoteGlobalIDString = 8D07F2BC0486CC7A007CD1D0;
+			remoteInfo = Keystone;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		D32E4D140ED7E88C00CC8029 /* CopyFiles */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = $HOME/Applications/bin;
+			dstSubfolderSpec = 0;
+			files = (
+				D32E4D100ED7E87F00CC8029 /* webasm in CopyFiles */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		D33B27EF0EDCBAF900464DA4 /* CopyFiles */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "$HOME/Library/Application Support/Coda/Plug-ins";
+			dstSubfolderSpec = 0;
+			files = (
+				D33B27F20EDCBB1D00464DA4 /* AssemblerCoda.codaplugin in CopyFiles */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		D33B283B0EDCC20300464DA4 /* CopyFiles */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = /Library/Frameworks;
+			dstSubfolderSpec = 0;
+			files = (
+				D3CF7E7011FBAAFE00CA2236 /* PCRE.framework in CopyFiles */,
+				D33B28390EDCC1F200464DA4 /* AssemblerCore.framework in CopyFiles */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
+/* Begin PBXFileReference section */
+		08FB7796FE84155DC02AAC07 /* ALAssembler.cc */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = ALAssembler.cc; path = source/tool/ALAssembler.cc; sourceTree = "<group>"; };
+		8DD76F6C0486A84900D96B5E /* webasm */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = webasm; sourceTree = BUILT_PRODUCTS_DIR; };
+		D3003F0B10ABFBA700F4E770 /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = /System/Library/Frameworks/QuartzCore.framework; sourceTree = "<absolute>"; };
+		D3003F4A10ABFC9A00F4E770 /* ALTypeDirective.cc */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = ALTypeDirective.cc; sourceTree = "<group>"; };
+		D3003F4B10ABFC9A00F4E770 /* ALTypeDirective.hh */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = ALTypeDirective.hh; sourceTree = "<group>"; };
+		D308DA7111130BAC00AB0C0E /* ALJSDocument.cc */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = ALJSDocument.cc; sourceTree = "<group>"; };
+		D308DA7211130BAC00AB0C0E /* ALJSDocument.hh */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = ALJSDocument.hh; sourceTree = "<group>"; };
+		D308DA7311130BAC00AB0C0E /* ALJSUtility.hh */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = ALJSUtility.hh; sourceTree = "<group>"; };
+		D336FE2D10210E8000202E70 /* ALPropertyDirective.cc */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = ALPropertyDirective.cc; sourceTree = "<group>"; };
+		D336FE2E10210E8000202E70 /* ALPropertyDirective.hh */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = ALPropertyDirective.hh; sourceTree = "<group>"; };
+		D33B27DC0EDCB7DE00464DA4 /* AssemblerCoda.codaplugin */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = AssemblerCoda.codaplugin; sourceTree = BUILT_PRODUCTS_DIR; };
+		D33B27DD0EDCB7DE00464DA4 /* AssemblerCoda-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "AssemblerCoda-Info.plist"; sourceTree = "<group>"; };
+		D33B27E60EDCBA6100464DA4 /* ALAssemblerCodaPlugin.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ALAssemblerCodaPlugin.h; path = subproj/Coda/source/ALAssemblerCodaPlugin.h; sourceTree = "<group>"; };
+		D33B27E70EDCBA6100464DA4 /* ALAssemblerCodaPlugin.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; name = ALAssemblerCodaPlugin.mm; path = subproj/Coda/source/ALAssemblerCodaPlugin.mm; sourceTree = "<group>"; };
+		D33B280B0EDCBDC900464DA4 /* CodaPlugInsController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = CodaPlugInsController.h; path = subproj/Coda/source/CodaPlugInsController.h; sourceTree = "<group>"; };
+		D33B281D0EDCC0E000464DA4 /* AssemblerCore.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = AssemblerCore.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		D33B281E0EDCC0E000464DA4 /* AssemblerCore-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "AssemblerCore-Info.plist"; sourceTree = "<group>"; };
+		D33B28930EDCC40800464DA4 /* ALCommand.cc */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = ALCommand.cc; path = source/tool/ALCommand.cc; sourceTree = "<group>"; };
+		D33B28990EDCC9D700464DA4 /* ALHTMLSourceFilter.cc */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = ALHTMLSourceFilter.cc; sourceTree = "<group>"; };
+		D33B289A0EDCC9D700464DA4 /* ALHTMLSourceFilter.hh */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = ALHTMLSourceFilter.hh; sourceTree = "<group>"; };
+		D33B289B0EDCC9D700464DA4 /* ALSourceFilter.cc */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = ALSourceFilter.cc; sourceTree = "<group>"; };
+		D33B289C0EDCC9D700464DA4 /* ALSourceFilter.hh */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = ALSourceFilter.hh; sourceTree = "<group>"; };
+		D33B290C0EDD19C100464DA4 /* AssemblerCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AssemblerCore.framework; path = /Library/Frameworks/AssemblerCore.framework; sourceTree = "<absolute>"; };
+		D33B29680EDD46E000464DA4 /* ALDirectorySourceCollection.cc */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = ALDirectorySourceCollection.cc; sourceTree = "<group>"; };
+		D33B29690EDD46E000464DA4 /* ALDirectorySourceCollection.hh */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = ALDirectorySourceCollection.hh; sourceTree = "<group>"; };
+		D33B296A0EDD46E000464DA4 /* ALSourceCollection.cc */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = ALSourceCollection.cc; sourceTree = "<group>"; };
+		D33B296B0EDD46E000464DA4 /* ALSourceCollection.hh */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = ALSourceCollection.hh; sourceTree = "<group>"; };
+		D33B296C0EDD46E000464DA4 /* ALSourceFileFilter.cc */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = ALSourceFileFilter.cc; sourceTree = "<group>"; };
+		D33B296D0EDD46E000464DA4 /* ALSourceFileFilter.hh */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = ALSourceFileFilter.hh; sourceTree = "<group>"; };
+		D33B29EA0EDD856900464DA4 /* ALPlanCommand.cc */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = ALPlanCommand.cc; sourceTree = "<group>"; };
+		D33B29EB0EDD856900464DA4 /* ALPlanCommand.hh */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = ALPlanCommand.hh; sourceTree = "<group>"; };
+		D33CBBA91106B3B000DC3592 /* tags */ = {isa = PBXFileReference; lastKnownFileType = folder; name = tags; path = resources/tags; sourceTree = "<group>"; };
+		D341156110261C4E005CDC65 /* ALVerbatimDirective.cc */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = ALVerbatimDirective.cc; sourceTree = "<group>"; };
+		D341156210261C4E005CDC65 /* ALVerbatimDirective.hh */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = ALVerbatimDirective.hh; sourceTree = "<group>"; };
+		D34C097E0EECFAD80047D745 /* ALConditionalDirective.cc */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = ALConditionalDirective.cc; sourceTree = "<group>"; };
+		D34C097F0EECFAD80047D745 /* ALConditionalDirective.hh */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = ALConditionalDirective.hh; sourceTree = "<group>"; };
+		D373F2F7101C269500DC15E1 /* JavaScriptCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = JavaScriptCore.framework; path = System/Library/Frameworks/JavaScriptCore.framework; sourceTree = SDKROOT; };
+		D373F377101C71F600DC15E1 /* ALImportDirective.cc */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = ALImportDirective.cc; sourceTree = "<group>"; };
+		D373F378101C71F600DC15E1 /* ALImportDirective.hh */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = ALImportDirective.hh; sourceTree = "<group>"; };
+		D377954D101E6CD4004FD14B /* ALScriptDirective.cc */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = ALScriptDirective.cc; sourceTree = "<group>"; };
+		D377954E101E6CD4004FD14B /* ALScriptDirective.hh */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = ALScriptDirective.hh; sourceTree = "<group>"; };
+		D3779557101E7389004FD14B /* ALPrintDirective.cc */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = ALPrintDirective.cc; sourceTree = "<group>"; };
+		D3779558101E7389004FD14B /* ALPrintDirective.hh */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = ALPrintDirective.hh; sourceTree = "<group>"; };
+		D38329000EE9BB2E00764262 /* Cocoa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Cocoa.framework; path = System/Library/Frameworks/Cocoa.framework; sourceTree = SDKROOT; };
+		D39428471117612600B25851 /* ALUtility.cc */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = ALUtility.cc; path = source/core/ALUtility.cc; sourceTree = "<group>"; };
+		D39428481117612600B25851 /* ALUtility.hh */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; name = ALUtility.hh; path = source/core/ALUtility.hh; sourceTree = "<group>"; };
+		D39429361117CA3100B25851 /* ALJSDirective.cc */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = ALJSDirective.cc; sourceTree = "<group>"; };
+		D39429371117CA3100B25851 /* ALJSDirective.hh */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = ALJSDirective.hh; sourceTree = "<group>"; };
+		D39B339D1117402700DEBA0E /* webasm.1 */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.man; path = webasm.1; sourceTree = "<group>"; };
+		D3A2F0471097BFD5002A1620 /* ALParser.cc */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = ALParser.cc; sourceTree = "<group>"; };
+		D3A2F0481097BFD5002A1620 /* ALParser.hh */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = ALParser.hh; sourceTree = "<group>"; };
+		D3A2F0491097BFD5002A1620 /* ALWAMLParser.cc */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = ALWAMLParser.cc; sourceTree = "<group>"; };
+		D3A2F04A1097BFD5002A1620 /* ALWAMLParser.hh */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = ALWAMLParser.hh; sourceTree = "<group>"; };
+		D3A2F04F1097C3D5002A1620 /* ALParseCommand.cc */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = ALParseCommand.cc; sourceTree = "<group>"; };
+		D3A2F0501097C3D5002A1620 /* ALParseCommand.hh */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = ALParseCommand.hh; sourceTree = "<group>"; };
+		D3A2F1871098DDE6002A1620 /* ALElement.cc */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = ALElement.cc; sourceTree = "<group>"; };
+		D3A2F1881098DDE6002A1620 /* ALElement.hh */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = ALElement.hh; sourceTree = "<group>"; };
+		D3A2F1891098DDE6002A1620 /* ALTreeParser.cc */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = ALTreeParser.cc; sourceTree = "<group>"; };
+		D3A2F18A1098DDE6002A1620 /* ALTreeParser.hh */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = ALTreeParser.hh; sourceTree = "<group>"; };
+		D3A2F18F1098E2DF002A1620 /* ALMutableElement.cc */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = ALMutableElement.cc; sourceTree = "<group>"; };
+		D3A2F1901098E2DF002A1620 /* ALMutableElement.hh */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = ALMutableElement.hh; sourceTree = "<group>"; };
+		D3A2F29610995697002A1620 /* ALHelpCommand.cc */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = ALHelpCommand.cc; sourceTree = "<group>"; };
+		D3A2F29710995697002A1620 /* ALHelpCommand.hh */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = ALHelpCommand.hh; sourceTree = "<group>"; };
+		D3A2F2B5109CDD6D002A1620 /* ALExecuteDirective.cc */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = ALExecuteDirective.cc; sourceTree = "<group>"; };
+		D3A2F2B6109CDD6D002A1620 /* ALExecuteDirective.hh */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = ALExecuteDirective.hh; sourceTree = "<group>"; };
+		D3A4297F12AC0C96006DC332 /* ALServer.cc */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = ALServer.cc; sourceTree = "<group>"; };
+		D3A4298012AC0C96006DC332 /* ALServer.hh */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = ALServer.hh; sourceTree = "<group>"; };
+		D3A429A612AC11AB006DC332 /* ALPushCommand.cc */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = ALPushCommand.cc; sourceTree = "<group>"; };
+		D3A429A712AC11AB006DC332 /* ALPushCommand.hh */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = ALPushCommand.hh; sourceTree = "<group>"; };
+		D3A429E512AC3CE2006DC332 /* ALDependencyGraph.cc */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = ALDependencyGraph.cc; sourceTree = "<group>"; };
+		D3A429E612AC3CE2006DC332 /* ALDependencyGraph.hh */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = ALDependencyGraph.hh; sourceTree = "<group>"; };
+		D3A42A0912AD2AF2006DC332 /* ALSourceFilterContext.cc */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = ALSourceFilterContext.cc; sourceTree = "<group>"; };
+		D3A42A0A12AD2AF2006DC332 /* ALSourceFilterContext.hh */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = ALSourceFilterContext.hh; sourceTree = "<group>"; };
+		D3AA87BC11F9563100279EBE /* PCRE.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = PCRE.xcodeproj; path = library/PCRE/PCRE.xcodeproj; sourceTree = "<group>"; };
+		D3ADEB7F11162DF20026E7E2 /* ALExpressionFileFilter.cc */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = ALExpressionFileFilter.cc; sourceTree = "<group>"; };
+		D3ADEB8011162DF20026E7E2 /* ALExpressionFileFilter.hh */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = ALExpressionFileFilter.hh; sourceTree = "<group>"; };
+		D3F288DF10BA2EDF00652E8A /* ALEscapeDirective.cc */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = ALEscapeDirective.cc; sourceTree = "<group>"; };
+		D3F288E010BA2EDF00652E8A /* ALEscapeDirective.hh */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = ALEscapeDirective.hh; sourceTree = "<group>"; };
+		D3F28AED10BA35DB00652E8A /* libxml2.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libxml2.dylib; path = /usr/lib/libxml2.dylib; sourceTree = "<absolute>"; };
+		D3F28C6810BA3BAC00652E8A /* ApplicationServices.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = ApplicationServices.framework; path = /System/Library/Frameworks/ApplicationServices.framework; sourceTree = "<absolute>"; };
+		D3F78CC4110D5AAF00A080D5 /* webasm-default.xml */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; name = "webasm-default.xml"; path = "resources/webasm-default.xml"; sourceTree = "<group>"; };
+		D3FEC0920ED7F1AA00CFD448 /* Keystone.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = Keystone.xcodeproj; path = library/Keystone/Keystone.xcodeproj; sourceTree = "<group>"; };
+		D3FEC0A40ED7FBAD00CFD448 /* ALCommand.hh */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; name = ALCommand.hh; path = source/tool/ALCommand.hh; sourceTree = "<group>"; };
+		D3FEC0A60ED7FBAD00CFD448 /* ALOptionsModel.cc */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = ALOptionsModel.cc; path = source/core/ALOptionsModel.cc; sourceTree = "<group>"; };
+		D3FEC0A70ED7FBAD00CFD448 /* ALOptionsModel.hh */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; name = ALOptionsModel.hh; path = source/core/ALOptionsModel.hh; sourceTree = "<group>"; };
+		D3FEC0D80ED8146A00CFD448 /* ALBuildCommand.cc */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = ALBuildCommand.cc; sourceTree = "<group>"; };
+		D3FEC0D90ED8146A00CFD448 /* ALBuildCommand.hh */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = ALBuildCommand.hh; sourceTree = "<group>"; };
+		D3FEC20C0EDAAFC500CFD448 /* ALDirective.cc */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = ALDirective.cc; sourceTree = "<group>"; };
+		D3FEC20D0EDAAFC500CFD448 /* ALDirective.hh */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = ALDirective.hh; sourceTree = "<group>"; };
+		D3FEC20E0EDAAFC500CFD448 /* ALDirectiveList.cc */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = ALDirectiveList.cc; sourceTree = "<group>"; };
+		D3FEC20F0EDAAFC500CFD448 /* ALDirectiveList.hh */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = ALDirectiveList.hh; sourceTree = "<group>"; };
+		D3FEC2100EDAAFC500CFD448 /* ALInsertDirective.cc */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = ALInsertDirective.cc; sourceTree = "<group>"; };
+		D3FEC2110EDAAFC500CFD448 /* ALInsertDirective.hh */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = ALInsertDirective.hh; sourceTree = "<group>"; };
+		D3FEC28F0EDB0D4C00CFD448 /* CoreFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreFoundation.framework; path = System/Library/Frameworks/CoreFoundation.framework; sourceTree = SDKROOT; };
+		D3FEC2B20EDB0E9D00CFD448 /* Keystone.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Keystone.framework; path = /Library/Frameworks/Keystone.framework; sourceTree = "<absolute>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		8DD76F660486A84900D96B5E /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				D3AA87D911F9566300279EBE /* PCRE.framework in Frameworks */,
+				D33B28290EDCC15900464DA4 /* AssemblerCore.framework in Frameworks */,
+				D3FEC2900EDB0D4C00CFD448 /* CoreFoundation.framework in Frameworks */,
+				D3FEC2B30EDB0E9D00CFD448 /* Keystone.framework in Frameworks */,
+				D373F2F8101C269500DC15E1 /* JavaScriptCore.framework in Frameworks */,
+				D3003F0C10ABFBA700F4E770 /* QuartzCore.framework in Frameworks */,
+				D3F28C6910BA3BAC00652E8A /* ApplicationServices.framework in Frameworks */,
+				D3F28AEE10BA35DB00652E8A /* libxml2.dylib in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		D33B27DA0EDCB7DE00464DA4 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				D3AA87CD11F9565100279EBE /* PCRE.framework in Frameworks */,
+				D33B287E0EDCC2D000464DA4 /* Keystone.framework in Frameworks */,
+				D33B290D0EDD19C100464DA4 /* AssemblerCore.framework in Frameworks */,
+				D38329010EE9BB2E00764262 /* Cocoa.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		D33B281B0EDCC0E000464DA4 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				D3AA87C811F9563C00279EBE /* PCRE.framework in Frameworks */,
+				D3F28D6110BA3BDE00652E8A /* ApplicationServices.framework in Frameworks */,
+				D3003F0F10ABFBB500F4E770 /* QuartzCore.framework in Frameworks */,
+				D373F308101C279F00DC15E1 /* JavaScriptCore.framework in Frameworks */,
+				D33B28710EDCC29300464DA4 /* Keystone.framework in Frameworks */,
+				D33B28450EDCC28700464DA4 /* CoreFoundation.framework in Frameworks */,
+				D3F28AEF10BA35E600652E8A /* libxml2.dylib in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		08FB7794FE84155DC02AAC07 /* Assembler */ = {
+			isa = PBXGroup;
+			children = (
+				D3FEC0320ED7EDF400CFD448 /* Projects */,
+				D33B27E40EDCB81900464DA4 /* Assembler */,
+				D33B27E20EDCB80000464DA4 /* Coda */,
+				C6859E8C029090F304C91782 /* Documentation */,
+				D32E4D180ED7E9BE00CC8029 /* Frameworks */,
+				1AB674ADFE9D54B511CA2CBB /* Products */,
+				D33B29530EDD29AF00464DA4 /* Resources */,
+				D33B27DD0EDCB7DE00464DA4 /* AssemblerCoda-Info.plist */,
+				D33B281E0EDCC0E000464DA4 /* AssemblerCore-Info.plist */,
+			);
+			name = Assembler;
+			sourceTree = "<group>";
+		};
+		08FB7795FE84155DC02AAC07 /* Source */ = {
+			isa = PBXGroup;
+			children = (
+				D33B28970EDCC9C000464DA4 /* core */,
+				D33B28960EDCC9AF00464DA4 /* tool */,
+			);
+			name = Source;
+			sourceTree = "<group>";
+		};
+		1AB674ADFE9D54B511CA2CBB /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				8DD76F6C0486A84900D96B5E /* webasm */,
+				D33B27DC0EDCB7DE00464DA4 /* AssemblerCoda.codaplugin */,
+				D33B281D0EDCC0E000464DA4 /* AssemblerCore.framework */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		C6859E8C029090F304C91782 /* Documentation */ = {
+			isa = PBXGroup;
+			children = (
+				D39B339D1117402700DEBA0E /* webasm.1 */,
+			);
+			name = Documentation;
+			sourceTree = "<group>";
+		};
+		D308DA7011130BAC00AB0C0E /* jsapi */ = {
+			isa = PBXGroup;
+			children = (
+				D39429361117CA3100B25851 /* ALJSDirective.cc */,
+				D39429371117CA3100B25851 /* ALJSDirective.hh */,
+				D308DA7111130BAC00AB0C0E /* ALJSDocument.cc */,
+				D308DA7211130BAC00AB0C0E /* ALJSDocument.hh */,
+				D308DA7311130BAC00AB0C0E /* ALJSUtility.hh */,
+			);
+			name = jsapi;
+			path = source/core/jsapi;
+			sourceTree = "<group>";
+		};
+		D32E4D180ED7E9BE00CC8029 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				D373F2F7101C269500DC15E1 /* JavaScriptCore.framework */,
+				D3F28C6810BA3BAC00652E8A /* ApplicationServices.framework */,
+				D38329000EE9BB2E00764262 /* Cocoa.framework */,
+				D3FEC28F0EDB0D4C00CFD448 /* CoreFoundation.framework */,
+				D3FEC2B20EDB0E9D00CFD448 /* Keystone.framework */,
+				D33B290C0EDD19C100464DA4 /* AssemblerCore.framework */,
+				D3003F0B10ABFBA700F4E770 /* QuartzCore.framework */,
+				D3F28AED10BA35DB00652E8A /* libxml2.dylib */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		D33B27E20EDCB80000464DA4 /* Coda */ = {
+			isa = PBXGroup;
+			children = (
+				D33B27E30EDCB80D00464DA4 /* Source */,
+			);
+			name = Coda;
+			sourceTree = "<group>";
+		};
+		D33B27E30EDCB80D00464DA4 /* Source */ = {
+			isa = PBXGroup;
+			children = (
+				D33B280B0EDCBDC900464DA4 /* CodaPlugInsController.h */,
+				D33B27E60EDCBA6100464DA4 /* ALAssemblerCodaPlugin.h */,
+				D33B27E70EDCBA6100464DA4 /* ALAssemblerCodaPlugin.mm */,
+			);
+			name = Source;
+			sourceTree = "<group>";
+		};
+		D33B27E40EDCB81900464DA4 /* Assembler */ = {
+			isa = PBXGroup;
+			children = (
+				08FB7795FE84155DC02AAC07 /* Source */,
+			);
+			name = Assembler;
+			sourceTree = "<group>";
+		};
+		D33B28960EDCC9AF00464DA4 /* tool */ = {
+			isa = PBXGroup;
+			children = (
+				D33B28930EDCC40800464DA4 /* ALCommand.cc */,
+				D3FEC0A40ED7FBAD00CFD448 /* ALCommand.hh */,
+				08FB7796FE84155DC02AAC07 /* ALAssembler.cc */,
+				D3FEC0D70ED8146A00CFD448 /* command */,
+			);
+			name = tool;
+			sourceTree = "<group>";
+		};
+		D33B28970EDCC9C000464DA4 /* core */ = {
+			isa = PBXGroup;
+			children = (
+				D3A429E412AC3CE2006DC332 /* util */,
+				D3A4297E12AC0C96006DC332 /* server */,
+				D308DA7011130BAC00AB0C0E /* jsapi */,
+				D3A2F0461097BFD5002A1620 /* waml */,
+				D33B28980EDCC9D700464DA4 /* filter */,
+				D3FEC20B0EDAAFC500CFD448 /* directive */,
+				D3FEC0A60ED7FBAD00CFD448 /* ALOptionsModel.cc */,
+				D3FEC0A70ED7FBAD00CFD448 /* ALOptionsModel.hh */,
+				D39428471117612600B25851 /* ALUtility.cc */,
+				D39428481117612600B25851 /* ALUtility.hh */,
+			);
+			name = core;
+			sourceTree = "<group>";
+		};
+		D33B28980EDCC9D700464DA4 /* filter */ = {
+			isa = PBXGroup;
+			children = (
+				D3A42A0912AD2AF2006DC332 /* ALSourceFilterContext.cc */,
+				D3A42A0A12AD2AF2006DC332 /* ALSourceFilterContext.hh */,
+				D33B29680EDD46E000464DA4 /* ALDirectorySourceCollection.cc */,
+				D33B29690EDD46E000464DA4 /* ALDirectorySourceCollection.hh */,
+				D33B296A0EDD46E000464DA4 /* ALSourceCollection.cc */,
+				D33B296B0EDD46E000464DA4 /* ALSourceCollection.hh */,
+				D33B296C0EDD46E000464DA4 /* ALSourceFileFilter.cc */,
+				D33B296D0EDD46E000464DA4 /* ALSourceFileFilter.hh */,
+				D33B28990EDCC9D700464DA4 /* ALHTMLSourceFilter.cc */,
+				D33B289A0EDCC9D700464DA4 /* ALHTMLSourceFilter.hh */,
+				D33B289B0EDCC9D700464DA4 /* ALSourceFilter.cc */,
+				D33B289C0EDCC9D700464DA4 /* ALSourceFilter.hh */,
+				D3ADEB7F11162DF20026E7E2 /* ALExpressionFileFilter.cc */,
+				D3ADEB8011162DF20026E7E2 /* ALExpressionFileFilter.hh */,
+			);
+			name = filter;
+			path = source/core/filter;
+			sourceTree = "<group>";
+		};
+		D33B29530EDD29AF00464DA4 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				D33CBBA91106B3B000DC3592 /* tags */,
+				D3F78CC4110D5AAF00A080D5 /* webasm-default.xml */,
+			);
+			name = Resources;
+			sourceTree = "<group>";
+		};
+		D3A2F0461097BFD5002A1620 /* waml */ = {
+			isa = PBXGroup;
+			children = (
+				D3A2F18F1098E2DF002A1620 /* ALMutableElement.cc */,
+				D3A2F1901098E2DF002A1620 /* ALMutableElement.hh */,
+				D3A2F1871098DDE6002A1620 /* ALElement.cc */,
+				D3A2F1881098DDE6002A1620 /* ALElement.hh */,
+				D3A2F1891098DDE6002A1620 /* ALTreeParser.cc */,
+				D3A2F18A1098DDE6002A1620 /* ALTreeParser.hh */,
+				D3A2F0471097BFD5002A1620 /* ALParser.cc */,
+				D3A2F0481097BFD5002A1620 /* ALParser.hh */,
+				D3A2F0491097BFD5002A1620 /* ALWAMLParser.cc */,
+				D3A2F04A1097BFD5002A1620 /* ALWAMLParser.hh */,
+			);
+			name = waml;
+			path = source/core/waml;
+			sourceTree = "<group>";
+		};
+		D3A4297E12AC0C96006DC332 /* server */ = {
+			isa = PBXGroup;
+			children = (
+				D3A4297F12AC0C96006DC332 /* ALServer.cc */,
+				D3A4298012AC0C96006DC332 /* ALServer.hh */,
+			);
+			name = server;
+			path = source/core/server;
+			sourceTree = "<group>";
+		};
+		D3A429E412AC3CE2006DC332 /* util */ = {
+			isa = PBXGroup;
+			children = (
+				D3A429E512AC3CE2006DC332 /* ALDependencyGraph.cc */,
+				D3A429E612AC3CE2006DC332 /* ALDependencyGraph.hh */,
+			);
+			name = util;
+			path = source/core/util;
+			sourceTree = "<group>";
+		};
+		D3AA87BD11F9563100279EBE /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				D3AA87C511F9563100279EBE /* PCRE.framework */,
+				D3AA87C711F9563100279EBE /* libPCREMobile.a */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		D3FEC0320ED7EDF400CFD448 /* Projects */ = {
+			isa = PBXGroup;
+			children = (
+				D3AA87BC11F9563100279EBE /* PCRE.xcodeproj */,
+				D3FEC0920ED7F1AA00CFD448 /* Keystone.xcodeproj */,
+			);
+			name = Projects;
+			sourceTree = "<group>";
+		};
+		D3FEC0930ED7F1AA00CFD448 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				D3FEC0970ED7F1AA00CFD448 /* Keystone.framework */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		D3FEC0D70ED8146A00CFD448 /* command */ = {
+			isa = PBXGroup;
+			children = (
+				D3A429A612AC11AB006DC332 /* ALPushCommand.cc */,
+				D3A429A712AC11AB006DC332 /* ALPushCommand.hh */,
+				D3A2F29610995697002A1620 /* ALHelpCommand.cc */,
+				D3A2F29710995697002A1620 /* ALHelpCommand.hh */,
+				D3A2F04F1097C3D5002A1620 /* ALParseCommand.cc */,
+				D3A2F0501097C3D5002A1620 /* ALParseCommand.hh */,
+				D33B29EA0EDD856900464DA4 /* ALPlanCommand.cc */,
+				D33B29EB0EDD856900464DA4 /* ALPlanCommand.hh */,
+				D3FEC0D80ED8146A00CFD448 /* ALBuildCommand.cc */,
+				D3FEC0D90ED8146A00CFD448 /* ALBuildCommand.hh */,
+			);
+			name = command;
+			path = source/tool/command;
+			sourceTree = "<group>";
+		};
+		D3FEC20B0EDAAFC500CFD448 /* directive */ = {
+			isa = PBXGroup;
+			children = (
+				D3F288DF10BA2EDF00652E8A /* ALEscapeDirective.cc */,
+				D3F288E010BA2EDF00652E8A /* ALEscapeDirective.hh */,
+				D3003F4A10ABFC9A00F4E770 /* ALTypeDirective.cc */,
+				D3003F4B10ABFC9A00F4E770 /* ALTypeDirective.hh */,
+				D3A2F2B5109CDD6D002A1620 /* ALExecuteDirective.cc */,
+				D3A2F2B6109CDD6D002A1620 /* ALExecuteDirective.hh */,
+				D341156110261C4E005CDC65 /* ALVerbatimDirective.cc */,
+				D341156210261C4E005CDC65 /* ALVerbatimDirective.hh */,
+				D336FE2D10210E8000202E70 /* ALPropertyDirective.cc */,
+				D336FE2E10210E8000202E70 /* ALPropertyDirective.hh */,
+				D3779557101E7389004FD14B /* ALPrintDirective.cc */,
+				D3779558101E7389004FD14B /* ALPrintDirective.hh */,
+				D377954D101E6CD4004FD14B /* ALScriptDirective.cc */,
+				D377954E101E6CD4004FD14B /* ALScriptDirective.hh */,
+				D373F377101C71F600DC15E1 /* ALImportDirective.cc */,
+				D373F378101C71F600DC15E1 /* ALImportDirective.hh */,
+				D34C097E0EECFAD80047D745 /* ALConditionalDirective.cc */,
+				D34C097F0EECFAD80047D745 /* ALConditionalDirective.hh */,
+				D3FEC20C0EDAAFC500CFD448 /* ALDirective.cc */,
+				D3FEC20D0EDAAFC500CFD448 /* ALDirective.hh */,
+				D3FEC20E0EDAAFC500CFD448 /* ALDirectiveList.cc */,
+				D3FEC20F0EDAAFC500CFD448 /* ALDirectiveList.hh */,
+				D3FEC2100EDAAFC500CFD448 /* ALInsertDirective.cc */,
+				D3FEC2110EDAAFC500CFD448 /* ALInsertDirective.hh */,
+			);
+			name = directive;
+			path = source/core/directive;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXHeadersBuildPhase section */
+		D33B28180EDCC0E000464DA4 /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				D33B28320EDCC1B400464DA4 /* ALDirective.hh in Headers */,
+				D33B28330EDCC1B400464DA4 /* ALDirectiveList.hh in Headers */,
+				D33B28340EDCC1B400464DA4 /* ALInsertDirective.hh in Headers */,
+				D33B28360EDCC1B400464DA4 /* ALOptionsModel.hh in Headers */,
+				D33B289E0EDCC9D700464DA4 /* ALHTMLSourceFilter.hh in Headers */,
+				D33B28A00EDCC9D700464DA4 /* ALSourceFilter.hh in Headers */,
+				D33B296F0EDD46E000464DA4 /* ALDirectorySourceCollection.hh in Headers */,
+				D33B29710EDD46E000464DA4 /* ALSourceCollection.hh in Headers */,
+				D33B29730EDD46E000464DA4 /* ALSourceFileFilter.hh in Headers */,
+				D34C09810EECFAD80047D745 /* ALConditionalDirective.hh in Headers */,
+				D373F37A101C71F600DC15E1 /* ALImportDirective.hh in Headers */,
+				D3779550101E6CD4004FD14B /* ALScriptDirective.hh in Headers */,
+				D377955A101E7389004FD14B /* ALPrintDirective.hh in Headers */,
+				D336FE3010210E8000202E70 /* ALPropertyDirective.hh in Headers */,
+				D341156410261C4E005CDC65 /* ALVerbatimDirective.hh in Headers */,
+				D3A2F04C1097BFD5002A1620 /* ALParser.hh in Headers */,
+				D3A2F04E1097BFD5002A1620 /* ALWAMLParser.hh in Headers */,
+				D3A2F18C1098DDE6002A1620 /* ALElement.hh in Headers */,
+				D3A2F18E1098DDE6002A1620 /* ALTreeParser.hh in Headers */,
+				D3A2F1921098E2DF002A1620 /* ALMutableElement.hh in Headers */,
+				D3A2F2B8109CDD6D002A1620 /* ALExecuteDirective.hh in Headers */,
+				D3003F4D10ABFC9A00F4E770 /* ALTypeDirective.hh in Headers */,
+				D3F288E210BA2EDF00652E8A /* ALEscapeDirective.hh in Headers */,
+				D308DA7511130BAC00AB0C0E /* ALJSDocument.hh in Headers */,
+				D308DA7611130BAC00AB0C0E /* ALJSUtility.hh in Headers */,
+				D3ADEB8211162DF20026E7E2 /* ALExpressionFileFilter.hh in Headers */,
+				D394284A1117612600B25851 /* ALUtility.hh in Headers */,
+				D39429391117CA3100B25851 /* ALJSDirective.hh in Headers */,
+				D3A4298212AC0C96006DC332 /* ALServer.hh in Headers */,
+				D3A429A912AC11AB006DC332 /* ALPushCommand.hh in Headers */,
+				D3A429E812AC3CE2006DC332 /* ALDependencyGraph.hh in Headers */,
+				D3A42A0C12AD2AF2006DC332 /* ALSourceFilterContext.hh in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXHeadersBuildPhase section */
+
+/* Begin PBXNativeTarget section */
+		8DD76F620486A84900D96B5E /* Assembler */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 1DEB923108733DC60010E9CD /* Build configuration list for PBXNativeTarget "Assembler" */;
+			buildPhases = (
+				8DD76F640486A84900D96B5E /* Sources */,
+				8DD76F660486A84900D96B5E /* Frameworks */,
+				D32E4D140ED7E88C00CC8029 /* CopyFiles */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				D3FEC0990ED7F1B000CFD448 /* PBXTargetDependency */,
+				D33B283E0EDCC24600464DA4 /* PBXTargetDependency */,
+			);
+			name = Assembler;
+			productInstallPath = "$(HOME)/bin";
+			productName = Assembler;
+			productReference = 8DD76F6C0486A84900D96B5E /* webasm */;
+			productType = "com.apple.product-type.tool";
+		};
+		D33B27DB0EDCB7DE00464DA4 /* AssemblerCoda */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = D33B27E00EDCB7DF00464DA4 /* Build configuration list for PBXNativeTarget "AssemblerCoda" */;
+			buildPhases = (
+				D33B27D80EDCB7DE00464DA4 /* Resources */,
+				D33B27D90EDCB7DE00464DA4 /* Sources */,
+				D33B27DA0EDCB7DE00464DA4 /* Frameworks */,
+				D33B27EF0EDCBAF900464DA4 /* CopyFiles */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				D33B28F70EDD192900464DA4 /* PBXTargetDependency */,
+			);
+			name = AssemblerCoda;
+			productName = AssemblerCoda;
+			productReference = D33B27DC0EDCB7DE00464DA4 /* AssemblerCoda.codaplugin */;
+			productType = "com.apple.product-type.bundle";
+		};
+		D33B281C0EDCC0E000464DA4 /* AssemblerCore */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = D33B28210EDCC0E100464DA4 /* Build configuration list for PBXNativeTarget "AssemblerCore" */;
+			buildPhases = (
+				D33B28180EDCC0E000464DA4 /* Headers */,
+				D33B28190EDCC0E000464DA4 /* Resources */,
+				D33B281A0EDCC0E000464DA4 /* Sources */,
+				D33B281B0EDCC0E000464DA4 /* Frameworks */,
+				D33B283B0EDCC20300464DA4 /* CopyFiles */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				D33B28230EDCC0E800464DA4 /* PBXTargetDependency */,
+				D3CF7E4911FBA7DC00CA2236 /* PBXTargetDependency */,
+			);
+			name = AssemblerCore;
+			productName = AssemblerCore;
+			productReference = D33B281D0EDCC0E000464DA4 /* AssemblerCore.framework */;
+			productType = "com.apple.product-type.framework";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		08FB7793FE84155DC02AAC07 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				ORGANIZATIONNAME = "Wolter Group New York";
+			};
+			buildConfigurationList = 1DEB923508733DC60010E9CD /* Build configuration list for PBXProject "Assembler" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 1;
+			knownRegions = (
+				English,
+				Japanese,
+				French,
+				German,
+			);
+			mainGroup = 08FB7794FE84155DC02AAC07 /* Assembler */;
+			projectDirPath = "";
+			projectReferences = (
+				{
+					ProductGroup = D3FEC0930ED7F1AA00CFD448 /* Products */;
+					ProjectRef = D3FEC0920ED7F1AA00CFD448 /* Keystone.xcodeproj */;
+				},
+				{
+					ProductGroup = D3AA87BD11F9563100279EBE /* Products */;
+					ProjectRef = D3AA87BC11F9563100279EBE /* PCRE.xcodeproj */;
+				},
+			);
+			projectRoot = "";
+			targets = (
+				8DD76F620486A84900D96B5E /* Assembler */,
+				D33B281C0EDCC0E000464DA4 /* AssemblerCore */,
+				D33B27DB0EDCB7DE00464DA4 /* AssemblerCoda */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXReferenceProxy section */
+		D3AA87C511F9563100279EBE /* PCRE.framework */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.framework;
+			path = PCRE.framework;
+			remoteRef = D3AA87C411F9563100279EBE /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		D3AA87C711F9563100279EBE /* libPCREMobile.a */ = {
+			isa = PBXReferenceProxy;
+			fileType = archive.ar;
+			path = libPCREMobile.a;
+			remoteRef = D3AA87C611F9563100279EBE /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		D3FEC0970ED7F1AA00CFD448 /* Keystone.framework */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.framework;
+			path = Keystone.framework;
+			remoteRef = D3FEC0960ED7F1AA00CFD448 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+/* End PBXReferenceProxy section */
+
+/* Begin PBXResourcesBuildPhase section */
+		D33B27D80EDCB7DE00464DA4 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		D33B28190EDCC0E000464DA4 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				D33CBBAC1106B3B000DC3592 /* tags in Resources */,
+				D3F78CC5110D5AAF00A080D5 /* webasm-default.xml in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		8DD76F640486A84900D96B5E /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				8DD76F650486A84900D96B5E /* ALAssembler.cc in Sources */,
+				D3FEC0DA0ED8146A00CFD448 /* ALBuildCommand.cc in Sources */,
+				D33B28940EDCC40800464DA4 /* ALCommand.cc in Sources */,
+				D33B29EC0EDD856900464DA4 /* ALPlanCommand.cc in Sources */,
+				D3A2F0511097C3D5002A1620 /* ALParseCommand.cc in Sources */,
+				D3A2F29810995697002A1620 /* ALHelpCommand.cc in Sources */,
+				D3A4298312AC0C96006DC332 /* ALServer.cc in Sources */,
+				D3A429AA12AC11AB006DC332 /* ALPushCommand.cc in Sources */,
+				D3A429E912AC3CE2006DC332 /* ALDependencyGraph.cc in Sources */,
+				D3A42A0D12AD2AF2006DC332 /* ALSourceFilterContext.cc in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		D33B27D90EDCB7DE00464DA4 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				D33B27E80EDCBA6100464DA4 /* ALAssemblerCodaPlugin.mm in Sources */,
+				D3A4298412AC0C96006DC332 /* ALServer.cc in Sources */,
+				D3A429AB12AC11AB006DC332 /* ALPushCommand.cc in Sources */,
+				D3A429EA12AC3CE2006DC332 /* ALDependencyGraph.cc in Sources */,
+				D3A42A0E12AD2AF2006DC332 /* ALSourceFilterContext.cc in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		D33B281A0EDCC0E000464DA4 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				D33B282D0EDCC1A400464DA4 /* ALDirective.cc in Sources */,
+				D33B282E0EDCC1A400464DA4 /* ALDirectiveList.cc in Sources */,
+				D33B282F0EDCC1A400464DA4 /* ALInsertDirective.cc in Sources */,
+				D33B28300EDCC1A400464DA4 /* ALOptionsModel.cc in Sources */,
+				D33B289D0EDCC9D700464DA4 /* ALHTMLSourceFilter.cc in Sources */,
+				D33B289F0EDCC9D700464DA4 /* ALSourceFilter.cc in Sources */,
+				D33B296E0EDD46E000464DA4 /* ALDirectorySourceCollection.cc in Sources */,
+				D33B29700EDD46E000464DA4 /* ALSourceCollection.cc in Sources */,
+				D33B29720EDD46E000464DA4 /* ALSourceFileFilter.cc in Sources */,
+				D34C09800EECFAD80047D745 /* ALConditionalDirective.cc in Sources */,
+				D373F379101C71F600DC15E1 /* ALImportDirective.cc in Sources */,
+				D377954F101E6CD4004FD14B /* ALScriptDirective.cc in Sources */,
+				D3779559101E7389004FD14B /* ALPrintDirective.cc in Sources */,
+				D336FE2F10210E8000202E70 /* ALPropertyDirective.cc in Sources */,
+				D341156310261C4E005CDC65 /* ALVerbatimDirective.cc in Sources */,
+				D3A2F04B1097BFD5002A1620 /* ALParser.cc in Sources */,
+				D3A2F04D1097BFD5002A1620 /* ALWAMLParser.cc in Sources */,
+				D3A2F18B1098DDE6002A1620 /* ALElement.cc in Sources */,
+				D3A2F18D1098DDE6002A1620 /* ALTreeParser.cc in Sources */,
+				D3A2F1911098E2DF002A1620 /* ALMutableElement.cc in Sources */,
+				D3A2F2B7109CDD6D002A1620 /* ALExecuteDirective.cc in Sources */,
+				D3003F4C10ABFC9A00F4E770 /* ALTypeDirective.cc in Sources */,
+				D3F288E110BA2EDF00652E8A /* ALEscapeDirective.cc in Sources */,
+				D308DA7411130BAC00AB0C0E /* ALJSDocument.cc in Sources */,
+				D3ADEB8111162DF20026E7E2 /* ALExpressionFileFilter.cc in Sources */,
+				D39428491117612600B25851 /* ALUtility.cc in Sources */,
+				D39429381117CA3100B25851 /* ALJSDirective.cc in Sources */,
+				D3A4298112AC0C96006DC332 /* ALServer.cc in Sources */,
+				D3A429A812AC11AB006DC332 /* ALPushCommand.cc in Sources */,
+				D3A429E712AC3CE2006DC332 /* ALDependencyGraph.cc in Sources */,
+				D3A42A0B12AD2AF2006DC332 /* ALSourceFilterContext.cc in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		D33B28230EDCC0E800464DA4 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = Keystone;
+			targetProxy = D33B28220EDCC0E800464DA4 /* PBXContainerItemProxy */;
+		};
+		D33B283E0EDCC24600464DA4 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = D33B281C0EDCC0E000464DA4 /* AssemblerCore */;
+			targetProxy = D33B283D0EDCC24600464DA4 /* PBXContainerItemProxy */;
+		};
+		D33B28F70EDD192900464DA4 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = D33B281C0EDCC0E000464DA4 /* AssemblerCore */;
+			targetProxy = D33B28F60EDD192900464DA4 /* PBXContainerItemProxy */;
+		};
+		D3CF7E4911FBA7DC00CA2236 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = PCRE;
+			targetProxy = D3CF7E4811FBA7DC00CA2236 /* PBXContainerItemProxy */;
+		};
+		D3FEC0990ED7F1B000CFD448 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = Keystone;
+			targetProxy = D3FEC0980ED7F1B000CFD448 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin XCBuildConfiguration section */
+		1DEB923208733DC60010E9CD /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ARCHS = "$(ARCHS_STANDARD_32_64_BIT)";
+				COPY_PHASE_STRIP = NO;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"\"$(SDKROOT)$(SYSTEM_LIBRARY_DIR)/Frameworks/ApplicationServices.framework/Versions/A/Frameworks\"",
+				);
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_ENABLE_FIX_AND_CONTINUE = NO;
+				GCC_ENABLE_PASCAL_STRINGS = NO;
+				GCC_MODEL_TUNING = "";
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = "";
+				HEADER_SEARCH_PATHS = /Developer/SDKs/MacOSX10.5.sdk/usr/include/libxml2/;
+				INSTALL_PATH = /usr/local/bin;
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"\"$(SRCROOT)/library/Frameworks/pcre-8.01\"",
+				);
+				ONLY_ACTIVE_ARCH = YES;
+				OTHER_CFLAGS = (
+					"-DWEB_ASSEMBLER_REVISION=\"\\\"r.135\\\"\"",
+					"-DWEB_ASSEMBLER_VERSION=\"\\\"1.0 Preview\\\"\"",
+				);
+				PRODUCT_NAME = webasm;
+			};
+			name = Debug;
+		};
+		1DEB923308733DC60010E9CD /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ARCHS = "$(ARCHS_STANDARD_32_64_BIT)";
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"\"$(SDKROOT)$(SYSTEM_LIBRARY_DIR)/Frameworks/ApplicationServices.framework/Versions/A/Frameworks\"",
+				);
+				GCC_ENABLE_FIX_AND_CONTINUE = NO;
+				GCC_ENABLE_PASCAL_STRINGS = NO;
+				GCC_MODEL_TUNING = "";
+				HEADER_SEARCH_PATHS = /Developer/SDKs/MacOSX10.5.sdk/usr/include/libxml2/;
+				INSTALL_PATH = /usr/local/bin;
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"\"$(SRCROOT)/library/Frameworks/pcre-8.01\"",
+				);
+				ONLY_ACTIVE_ARCH = NO;
+				OTHER_CFLAGS = (
+					"-DWEB_ASSEMBLER_REVISION=\"\\\"r.135\\\"\"",
+					"-DWEB_ASSEMBLER_VERSION=\"\\\"1.0 Preview\\\"\"",
+				);
+				PRODUCT_NAME = webasm;
+			};
+			name = Release;
+		};
+		1DEB923608733DC60010E9CD /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ARCHS = "$(ARCHS_STANDARD_32_64_BIT)";
+				GCC_C_LANGUAGE_STANDARD = c99;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				PREBINDING = NO;
+				SDKROOT = macosx10.5;
+			};
+			name = Debug;
+		};
+		1DEB923708733DC60010E9CD /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ARCHS = "$(ARCHS_STANDARD_32_64_BIT)";
+				GCC_C_LANGUAGE_STANDARD = c99;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				PREBINDING = NO;
+				SDKROOT = macosx10.5;
+			};
+			name = Release;
+		};
+		D33B27DE0EDCB7DF00464DA4 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ARCHS = "$(NATIVE_ARCH_ACTUAL)";
+				COPY_PHASE_STRIP = NO;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_ENABLE_FIX_AND_CONTINUE = YES;
+				GCC_MODEL_TUNING = G5;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "$(SYSTEM_LIBRARY_DIR)/Frameworks/AppKit.framework/Headers/AppKit.h";
+				HEADER_SEARCH_PATHS = /Developer/SDKs/MacOSX10.5.sdk/usr/include/libxml2/;
+				INFOPLIST_FILE = "AssemblerCoda-Info.plist";
+				INSTALL_PATH = "$(HOME)/Library/Bundles";
+				ONLY_ACTIVE_ARCH = NO;
+				OTHER_LDFLAGS = (
+					"-framework",
+					Foundation,
+					"-framework",
+					AppKit,
+				);
+				PREBINDING = NO;
+				PRODUCT_NAME = AssemblerCoda;
+				WRAPPER_EXTENSION = codaplugin;
+			};
+			name = Debug;
+		};
+		D33B27DF0EDCB7DF00464DA4 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ARCHS = "$(ARCHS_STANDARD_32_64_BIT)";
+				COPY_PHASE_STRIP = YES;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				GCC_ENABLE_FIX_AND_CONTINUE = NO;
+				GCC_MODEL_TUNING = G5;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "$(SYSTEM_LIBRARY_DIR)/Frameworks/AppKit.framework/Headers/AppKit.h";
+				HEADER_SEARCH_PATHS = /Developer/SDKs/MacOSX10.5.sdk/usr/include/libxml2/;
+				INFOPLIST_FILE = "AssemblerCoda-Info.plist";
+				INSTALL_PATH = "$(HOME)/Library/Bundles";
+				ONLY_ACTIVE_ARCH = NO;
+				OTHER_LDFLAGS = (
+					"-framework",
+					Foundation,
+					"-framework",
+					AppKit,
+				);
+				PREBINDING = NO;
+				PRODUCT_NAME = AssemblerCoda;
+				WRAPPER_EXTENSION = codaplugin;
+				ZERO_LINK = NO;
+			};
+			name = Release;
+		};
+		D33B281F0EDCC0E100464DA4 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ARCHS = "$(ARCHS_STANDARD_32_64_BIT)";
+				COPY_PHASE_STRIP = NO;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"\"$(SDKROOT)$(SYSTEM_LIBRARY_DIR)/Frameworks/ApplicationServices.framework/Versions/A/Frameworks\"",
+				);
+				FRAMEWORK_VERSION = A;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_ENABLE_FIX_AND_CONTINUE = YES;
+				GCC_MODEL_TUNING = G5;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "";
+				HEADER_SEARCH_PATHS = /Developer/SDKs/MacOSX10.5.sdk/usr/include/libxml2/;
+				INFOPLIST_FILE = "AssemblerCore-Info.plist";
+				INSTALL_PATH = /Library/Frameworks;
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"\"$(SRCROOT)/library/Frameworks/pcre-8.01\"",
+				);
+				ONLY_ACTIVE_ARCH = YES;
+				OTHER_CFLAGS = "";
+				OTHER_LDFLAGS = "";
+				PREBINDING = NO;
+				PRODUCT_NAME = AssemblerCore;
+			};
+			name = Debug;
+		};
+		D33B28200EDCC0E100464DA4 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ARCHS = "$(ARCHS_STANDARD_32_64_BIT)";
+				COPY_PHASE_STRIP = YES;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"\"$(SDKROOT)$(SYSTEM_LIBRARY_DIR)/Frameworks/ApplicationServices.framework/Versions/A/Frameworks\"",
+				);
+				FRAMEWORK_VERSION = A;
+				GCC_ENABLE_FIX_AND_CONTINUE = NO;
+				GCC_MODEL_TUNING = G5;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "$(SYSTEM_LIBRARY_DIR)/Frameworks/Carbon.framework/Headers/Carbon.h";
+				HEADER_SEARCH_PATHS = /Developer/SDKs/MacOSX10.5.sdk/usr/include/libxml2/;
+				INFOPLIST_FILE = "AssemblerCore-Info.plist";
+				INSTALL_PATH = /Library/Frameworks;
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"\"$(SRCROOT)/library/Frameworks/pcre-8.01\"",
+				);
+				ONLY_ACTIVE_ARCH = NO;
+				OTHER_CFLAGS = "";
+				OTHER_LDFLAGS = (
+					"-framework",
+					Carbon,
+				);
+				PREBINDING = NO;
+				PRODUCT_NAME = AssemblerCore;
+				ZERO_LINK = NO;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		1DEB923108733DC60010E9CD /* Build configuration list for PBXNativeTarget "Assembler" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				1DEB923208733DC60010E9CD /* Debug */,
+				1DEB923308733DC60010E9CD /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		1DEB923508733DC60010E9CD /* Build configuration list for PBXProject "Assembler" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				1DEB923608733DC60010E9CD /* Debug */,
+				1DEB923708733DC60010E9CD /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		D33B27E00EDCB7DF00464DA4 /* Build configuration list for PBXNativeTarget "AssemblerCoda" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				D33B27DE0EDCB7DF00464DA4 /* Debug */,
+				D33B27DF0EDCB7DF00464DA4 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		D33B28210EDCC0E100464DA4 /* Build configuration list for PBXNativeTarget "AssemblerCore" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				D33B281F0EDCC0E100464DA4 /* Debug */,
+				D33B28200EDCC0E100464DA4 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 08FB7793FE84155DC02AAC07 /* Project object */;
+}

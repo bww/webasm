@@ -1,0 +1,409 @@
+.\"Modified from man(1) of FreeBSD, the NetBSD mdoc.template, and mdoc.samples.
+.\"See Also:
+.\"man mdoc.samples for a complete listing of options
+.\"man mdoc for the short list of editing options
+.\"/usr/share/misc/mdoc.template
+.Dd 11/22/08                \" DATE
+.Dt webasm 1                \" Program name and manual section number 
+.Os Darwin
+.Sh NAME                    \" Section Header - required - don't modify 
+.Nm webasm
+.\" The following lines are read in generating the apropos(man -k) database. Use only key
+.\" words here as the database is built based on the words here and in the .ND line. 
+.\" Use .Nm macro to designate other names for the documented program.
+.Nd 
+Web Assembler creates complete HTML or XML documents from reusable pieces.
+.Sh SYNOPSIS
+.Nm
+.Op options
+command
+.Op Ar file ...
+.Nm
+.Fl source
+path/to/source
+.Fl output
+path/to/output \fBbuild\fR
+.Nm
+.Fl config
+webasm.xml \fBbuild\fR
+.Sh DESCRIPTION          \" Section Header - required - don't modify
+Web Assembler creates complete HTML documents from reusable document fragments, the output of scripts, evaluated JavaScript, rendered text, and other information.  It may be loosely thought of as a compiler for HTML and other text-based document formats.  Web Assembler can be used to eliminated redundant markup and to assist with common but time consuming tasks.  Unlike server-side web application platforms, however, Web Assembler does this work only once - when a project is built - rather than for every request.
+.Pp
+For more on Web Assembler's grand scheme and design, see
+.Pa http://woltergroup.net/webasm .
+.Sh GLOBAL OPTIONS
+Global options apply to all commands.  Most options that can be set on the command line can also be specified in a configuration file (often, more easily).  See the configuration section for more.
+.Pp
+.Bl -tag -width -indent  \" Differs from above in tag removed 
+.It Fl quiet
+Be less verbose.  Only error output is displayed.  Mutually exclusive with verbose
+.Pq Fl verbose
+and debugging
+.Pq Fl debug
+modes.
+.It Fl verbose
+Be more verbose.  Additional nonessential output is displayed.  Overrides quiet mode
+.Pq Fl quiet .
+.It Fl debug
+Be extremely verbose.  A huge amount of information is displayed.  Generally, debugging mode is not useful unless you are trying to diagnose a problem with Web Assembler.  Implies verbose mode
+.Pq Fl verbose
+and overrides quiet mode
+.Pq Fl quiet .
+.It Fl config Ar config path
+Specify the path to a configuration file to be used.  When absent, only command line arguments are considered.
+.It Fl source Ar source root
+Specify the root source path.  This is the path under which source files to assemble are located.  Only files with the extensions selected by types
+.Pq Fl types
+or paths matching a pattern
+.Pq Fl match
+are evaluated.
+.It Fl output Ar output root
+Specify the root output path. This is the path under which processed files are placed.  Processed files are saved a the same relative location under the
+.Ar output root
+as the source root
+.Pq Fl source .
+.It Fl types Ar a,b,c
+Specify a list of file type extensions to match under the source root
+.Pq Fl source
+when looking for files to assemble.  More than one file type can be specified by defining a list of extensions (e.g. "html,htm,xml").  Hidden files will be ignored (even if they match these extensions) unless
+.Fl include-hidden
+is set.  If this is omitted, the types "html,htm" are used.  For more control over which files are processed, match files by pattern
+.Pq Fl match .
+.It Fl match Ar pattern
+Process only files that match the  Perl compatible regular expression
+.Ar pattern
+under the source root
+.Pq Fl source .
+For example, the pattern '(?<!\.frag)\.html$' could be used to process only files ending in ".html" but not ".frag.html" in order to exclude fragment HTML files that are included into other documents, but shouldn't be processed on their own.  Selecting files to process by matching is mutually exclusive with selecting by file extensions
+.Pq Fl types .
+.It Fl define Ar name=value
+Define a property which will be made globally accessible to directives. The property is expressed as a key/value pair in the form: "name=value" (e.g.,
+.Fl define
+greeting="Hello, there!"). A property defined on the command line overrides a property with the same name that was defined in a configuration file.
+.It Fl include-hidden
+Don't ignore hidden files under the
+.Ar source root
+.Pq Fl source .
+By default hidden files are not processed even if their extensions match the types set.
+.It Fl collapse-white
+Collapse whitespace in verbatim content.
+.Em This feature is experimental and may be removed in a later release.
+When enabled, whitespace in processed files is reduced.  This can be useful in generating more compact HTML at the expense of legibility.
+.It Fl help
+Display help information and quit.
+.El                      \" Ends the list
+.\" 
+.Sh COMMANDS
+.Bl -tag -width -indent  \" Begins a tagged list 
+.It Nm build
+Assemble project files.  By default, the entire project hierarchy under the source root
+.Pq Fl source
+is traversed and any files matching filtered file type extensions are processed and output to the corresponding path under the output root
+.Pq Fl output .
+.It Nm plan
+Display a listing describing which files would be processed if
+.Nm build
+were to be run, but don't actually process any files.  This can be used to confirm that
+.Nm webasm
+will process the files you expect.
+.It Nm parse
+Parse project files and display a listing of their structure.  This is mainly only useful for debugging.
+.El                      \" Ends the list
+.\" 
+.Sh DIRECTIVES
+The following is a comprehensive list of built-in directives.  You may also create your own custom directives, which are
+.Nm execute
+directives mapped to a special tag name.
+.Bl -tag -width -indent  \" Begins a tagged list 
+.It Nm insert
+Insert the entire contents of another file into the document.  Any directives in the inserted file are processed first and the inserted file has the same runtime state (i.e., properties, JavaScript objects) as the calling
+.Nm insert
+directive itself.
+.Bl -tag -width -indent  \" Begins a tagged list 
+.It Em resource
+Path to the resource (file) to insert.  The path is expressed as relative to the file in which the directive is found.
+.El
+.Pp
+Supports nested directives:
+.Nm define.
+.It Nm import
+Evaluate JavaScript in another file.  The file is evaluated immediately and any objects created are subsequently available to other directives.  This directive is similar to
+.Nm script
+with JavaScript source in an external file.
+.Bl -tag -width -indent  \" Begins a tagged list 
+.It Em resource
+Path to the JavaScript resource (file) to import.  The path is expressed as relative to the file in which the directive is found.
+.El
+.It Nm script
+Evaluate inline JavaScript.  JavaScript source nested in this directive is evaluated immediately and any objects created are subsequently available to other directives.  This directive is similar to
+.Nm import
+with JavaScript source in the same file.
+.Bl -tag -width -indent  \" Begins a tagged list 
+.It Em value
+The JavaScript expression to evalute.
+.El
+.It Nm property
+Print a property.  If no such property is defined, this directive is replaced with nothing.
+.Bl -tag -width -indent  \" Begins a tagged list 
+.It Em name
+The name of the property to print.
+.El
+.It Nm print
+Print the result of a JavaScript expression.  If the expression evaluates to undefined, "undefined" is printed.
+.Bl -tag -width -indent  \" Begins a tagged list 
+.It Em value
+The JavaScript expression to evalute.  If this attribute is missing, the content of the tag is evaluated in its place.
+.El
+.Pp
+.It Nm if,elseif,else
+Conditional output.  The directives
+.Nm if ,
+.Nm elseif ,
+and
+.Nm else
+are
+.Em cooperating
+directives; that is, they work with each other and must be declared relative to each other.  These directives work in the same way conditional statements work anywhere else.  Only the content of the directive that evalutes to true (or failing that, the
+.Nm else
+directive, when present) is output.
+.Pp
+The directives
+.Nm if 
+and
+.Nm elseif
+require a test expression.
+.Bl -tag -width -indent  \" Begins a tagged list 
+.It Em test
+The JavaScript expression to evalute.  If this expression evaluates to true, the contents of the tag is output.
+.El
+.Pp
+Any directive may be nested in
+.Nm if ,
+.Nm elseif ,
+and
+.Nm else .
+.It Nm escape
+Escape content.  Any non-alphanumeric characters nested in
+.Nm escape
+are replaced with HTML entity-escaped equivalents.  For example, the copyright character is replaced with "&#169;"
+.Pp
+Any directive may be nested in
+.Nm escape .
+.It Nm execute
+Execute another script or program.  The content of the directive (if any) is written to the standard input of the command and the standard output of the command is output in place of the directive.
+.Bl -tag -width -indent  \" Begins a tagged list 
+.It Em command
+Path to the command to execute.  The path is expressed as relative to the file in which the directive is found.
+.It Em arg
+Any number of
+.Em arg
+attributes may be used to provide command-line arguments which are used to invoke the command.  Arguments are passed to the command in the order their attributes appear in the
+.Nm execute
+tag.
+.El
+.Pp
+In addition to command-line arguments, the following variables are put in the environment of the command:
+.Bl -tag -width -indent  \" Begins a tagged list 
+.It Em WEBASM_SOURCE_ROOT
+The source root directory defined with
+.Fl source
+or in a configuration file.
+.It Em WEBASM_OUTPUT_ROOT
+The output root directory define with
+.Fl output
+or in a configuration file.
+.It Em WEBASM_QUIET
+Whether or not
+.Nm webasm
+is running in quiet
+.Pq Fl quiet
+mode.  The value will be "true" or "false".
+.It Em WEBASM_VERBOSE
+Whether or not
+.Nm webasm
+is running in verbose
+.Pq Fl verbose
+mode.  The value will be "true" or "false".
+.It Em WEBASM_DEBUGGING
+Whether or not
+.Nm webasm
+is running in debugging
+.Pq Fl verbose
+mode.  The value will be "true" or "false".
+.It Em WEBASM_FORCE
+Whether or not
+.Nm webasm
+should force evaluation of directives
+.Pq Fl force
+and not rely on any cached content.  The value will be "true" or "false".
+.It Em WEBASM_INCLUDE_HIDDEN_FILES
+Whether or not hidden files should be ignored when traversing the source root.  The value will be "true" or "false".
+.It Em WEBASM_TAG_ATTR_\fBname\fR
+Where
+.Nm name
+is the name of an attribute defined in the
+.Nm execute
+directive.  For example, if the attribute
+.Em length
+were defined with the value "100", the environment variable
+.Em WEBASM_TAG_ATTR_length
+will be declared with the value "100".
+.Pp
+Attribute names that contain non-alphanumeric characters are mangled: non-alphanumeric characters are replaced with a single underscore.  For example, the attribute
+.Em no-line-breaks
+will result in the environment variable
+.Em WEBASM_TAG_ATTR_no_line_breaks .
+.Pp
+The
+.Em command
+attribute is declared in this manner as well, but
+.Em arg
+attributes are not.
+.It Em WEBASM_PROPERTY_\fBname\fR
+Where
+.Nm name
+is the name of a property.  For example, if the property
+.Em greeting
+were defined with the value "Hello", either via the
+.Pq Fl define
+flag, in a configuration file, or in the environment when invoking
+.Nm webasm ,
+the environment variable
+.Em WEBASM_PROPERTY_greeting
+will be declared with the value "Hello".
+.Pp
+Property names that contain non-alphanumeric characters are mangled: non-alphanumeric characters are replaced with a single underscore.  For example, the property
+.Em the-greeting
+will result in the environment variable
+.Em WEBASM_PROPERTY_the_greeting .
+.El
+.It Nm text
+Set text in an image.  This directive can be used to render an image of text; for example, to display header text set in an unusual font that cannot be relied upon to be present on every user's machine.  Text is rendered via Apple's excellent CoreText.
+.Bl -tag -width -indent  \" Begins a tagged list 
+.It Em path
+The path to the file the image should be written to.  The path is expressed as relative to the output counterpart of the file in which the directive is found.
+.It Em font-name
+The name of the font in which to set type.
+.It Em font-size
+The size of the text to set, in pixels.
+.It Em foreground
+The foreground color to set text in, expressed as a hex triplet with an optional leading '#' (e.g. "#ff0000" for red.)
+.It Em background
+The background color to set text in, expressed as a hex triplet with an optional leading '#' (e.g. "#ff0000" for red.)  When not specified, a transparent background is used.
+.It Em width
+The width of the image to generate.  When omitted, the generated image will have the smallest width which can fit the text without breaking lines.  When specified, text will be broken as necessary to fit the width.
+.It Em height
+The height of the image to generate.  When omitted, the generated image will have the smallest height which can fit the text.
+.It Em padding
+The amount of padding to surround the text content with, in pixels.  Padding is expressed in CSS style where 4, 2, or 1 values separated by spaces may be used to denote the the directions each value corresponds to.  Four values refer to: 
+.Em top ,
+.Em right ,
+.Em bottom ,
+.Em left ;
+in that order.  Two values refer to:
+.Em "top/bottom" ,
+.Em "right/left" .
+One value refers to all four directions.
+.Pp
+For example, the padding "10 4 12 12" means:
+.Em top
+= 10,
+.Em right
+= 4,
+.Em bottom
+= 12, and
+.Em left
+= 12.  The padding "10 4" is the equivalent of "10 4 10 4"; and "10" is the equivalent of "10 10 10 10".
+.El
+.El                      \" Ends the list
+.\"
+.Sh BUILT-IN CUSTOM DIRECTIVES
+Web Assembler includes some built-in custom directives.  These are just
+.Nm execute
+directives which are mapped to a tag name and included in the
+.Nm AssemblerCore
+framework bundle.
+.Bl -tag -width -indent  \" Begins a tagged list 
+.It Nm markdown
+Format text with Markdown, John Gruber's text-to-HTML processor.  You can define
+.Em arg
+attributes to pass arguments to the underlying script and modify it's handling.
+.Pp
+For more on Markdown, refer to:
+.br
+.Pa http://daringfireball.net/projects/markdown/
+.It Nm highlight
+Format syntax-highlighted source code with Pygments.
+.Bl -tag -width -indent  \" Begins a tagged list 
+.It Em language
+The programming language source code should be interpreted as.  Any language supported by Pygments can be used.  For example, to format as C source, the language "c" is used.
+.El
+.Pp
+To insert a file of syntax-highlighted source, you might do something like:
+.br
+<w:highlight language="c"><w:insert resource="hello.c" /></w:highlight>
+.Pp
+For more on Pygments, refer to:
+.br
+.Pa http://pygments.org/
+.It Nm lipsum
+Insert placeholder text (a.k.a. "Lorem Ipsum").  The text will be broken into sentences and paragraphs randomly in an attempt to minic actual content.
+.Bl -tag -width -indent  \" Begins a tagged list 
+.It Em words
+The number of words to generate.  If omitted, 50 words are output.
+.El
+.El
+.\" 
+.Sh USING WEB ASSEMBLER DIRECTIVES IN YOUR HTML
+Web Assembler processes a set of input source files and generates a set of output processed files by interpreting zero or more
+.Em directives
+interspersed in the source (a source file with zero directives is output unchanged).
+.Pp
+The underlying concept behind directives is very much similar to that of
+.Em JSP
+or
+.Em PHP
+markup. Directives are simply snippets of XML which are placed in source HTML to denote some action be taken at that point in the file. The rest of the content in source files (anything other than Web Assembler directives) is copied into the processed files verbatim.
+.Pp
+Web Assembler uses a specialized XML parser to interpret files so that normal HTML or XML is not parsed. Directives use the XML namespace
+.Nm w
+to distinguish themselves from other markup.
+.Pp
+For example, a simple directive which will replace itself by copying the contents of another file into its location would be declared as follows:
+.Pp
+<w:insert resource="html/file.html" />
+.Pp
+Tags can be nested, in which case an enclosing tag will operate on the processed content of any enclosed tags.  For example, the entire contents of an inserted file can be escaped as follows:
+.Pp
+<w:escape>
+.br
+  <w:insert resource="html/file.html" />
+.br
+</w:escape>
+.Pp
+In this case, the file "file.html" is processed via the
+.Nm insert
+directive first, and then the contents of the
+.Nm escape
+directive is processed.
+.\" 
+.\".Sh FILES                \" File used or created by the topic of the man page
+.\".Bl -tag -width -compact
+.\".It Pa /usr/share/file_name
+.\"FILE_1 description
+.\".It Pa /Users/joeuser/Library/really_long_file_name
+.\"FILE_2 description
+.\".El                      \" Ends the list
+.\".Sh SEE ALSO 
+.\" List links in ascending order by section, alphabetically within a section.
+.\" Please do not reference files that do not exist without filing a bug report
+.\".Xr a 1 , 
+.\" .Sh BUGS              \" Document known, unremedied bugs
+.\" 
+.\" 
+.Sh ABOUT
+Web Assembler is designed and engineered by Wolter Group in New York City and made available free of charge under the terms of the Wolter Group End User License Agreement.
+.Pp
+Web Assembler is provided by Wolter Group on an “AS IS" basis. Wolter Group MAKES NO WARRANTIES, EXPRESS OR IMPLIED, INCLUDING WITHOUT LIMITATION THE IMPLIED WARRANTIES OF NON-INFRINGEMENT, MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE, REGARDING THE WGNY SOFTWARE OR ITS USE AND OPERATION ALONE OR IN COMBINATION WITH YOUR PRODUCTS.
+.Pp
+Copyright 2010 Wolter Group New York, Inc., All rights reserved.

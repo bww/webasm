@@ -1,0 +1,238 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+        "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+  <head>
+    <title>Web Assembler Example Site</title>
+		<meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/> 
+		<link rel="stylesheet" type="text/css" href="css/global.css" />
+  </head>
+  <body>
+    
+    <!-- I'm used later... -->
+    <w:script>
+      function getTheDate() {
+        return new Date().toUTCString();
+      }
+    </w:script>
+    
+    <h1>Web Assembler!</h1>
+    <p>
+      This document demonstrates a few of the things you can do with
+      Web Assembler.  Try making some changes to the source of this document
+      to get familiar with how things work.
+    </p>
+    
+    <h2>Inserting Other Files</h2>
+    <p>
+      One of the most commonly used features of Web Assembler is the
+      <code>&lt;w:insert&gt;</code> directive which copies the contents of a file
+      into the document that the directive is found in.  This is an easy
+      way to deal with a shared component (such as a navigation) so that
+      it that doesn't have to be manually kept up to date in many files.
+    </p>
+    <p>
+      The processing of files is recursive.  If the file you're inserting
+      has Web Assembler directives in it, those will be processed as well.
+      The file you're inserting also inherits the runtime state of the file
+      into which it's inserted&mdash;so if you were to define a property
+      before inserting a file, that file would have access to the property
+      as well.
+    </p>
+    <p>
+      Here's a sentence from the file "sentence.frag.html":
+      <em>
+        <w:insert resource="sentence.frag.html">
+          <w:define name="what" value="Jet Suit" />
+        </w:insert>
+      </em>
+    </p>
+    <p>
+      The configuration file for this site, <code>webasm.xml</code>, specifies a
+      pattern in the <code>process-file-pattern</code> element.  This pattern
+      matches against (canonical) paths in the source directory to determine
+      which files get processed by Web Assembler.  By naming included files
+      with the extension <code>.frag.html</code> (for "HTML fragment") they are
+      excluded from top-level processing and are only evaluated when they are
+      inserted into another file. Files with just the extension <code>.html</code>
+      or <code>.js</code> <em>are</em> processed. You can, of course, use any
+      pattern you like; it's just a Perl Compatible Regular Expression.
+    </p>
+    
+    <h2>Syntax Highlighting</h2>
+    <p>
+      Web Assembler is designed to integrate easily with other tools
+      in order to expand its usefulness.  It comes bundled with the
+      <a href="http://pygments.org/" target="_blank">Pygments</a>
+      syntax highlighting tool which can be used to easiliy display
+      more legible code and markup&mdash;just use the <code>&lt;w:highlight&gt;</code>
+      directive.  Any language or format supported by Pygments is supported
+      by this directive.
+    </p>
+    <p>
+      Here's an example.  You'll notice that the C code is actually located in
+      another file.  It's inserted into this document via the <code>&lt;w:insert&gt;</code>
+      directive.
+    </p>
+    <w:highlight language="c"><w:insert resource="misc/hello.c" /></w:highlight>
+    
+    <h2>Properties</h2>
+    <p>
+      Properties are just externalized key/value pairs that will let you define
+      bits of information.  You can define a property in a configuration file
+      (see <code>webasm.xml</code>), on the command line with the <code>-define</code>
+      flag, or by defining environment variables in the form:
+      <code>WEBASM_PROPERTY_<em>PropertyName</em>=Value</code>, where <em>PropertyName</em>
+      is the name of the property you want to define and <em>Value</em> is its value.
+      Below the property named "greeting" from <code>webasm.xml</code> is
+      displayed.
+    </p>
+    <p>
+      You can build this project with the following command to override the configuration
+      file's value:
+    </p>
+    <p>
+      <code>webasm -config webasm.xml -define greeting="Some other greeting" build</code>
+    </p>
+    <p>
+      Or you can declare an environment variable when building:
+    </p>
+    <p>
+      <code>WEBASM_PROPERTY_greeting="Some other greeting" webasm -config webasm.xml build</code>
+    </p>
+    <p>
+      Here's the value of "greeting": <w:property name="greeting" />
+    </p>
+    
+    <h2>Rendering Text</h2>
+    <p>
+      There are a lot of options out there that aim to solve the common problem of
+      displaying header text set in an unusual typeface on the Web.  Not wanting to
+      be left out, Web Assembler presents one more: Web Assembler can render images
+      automatically from plain text so you can easily display uncommon fonts&mdash;without
+      having to bother with manually creating new images in Photoshop every time you
+      want to change some content.
+    </p>
+    <p>
+      Text is rendered via Mac OS X's CoreText, the same text rendering platform that
+      is used everywhere in OS X, so it looks great, and any font on your system is
+      available to it.  The example below is set in Helvetica; try changing the
+      <code>font-name</code> attribute to something more exotic to see how it works.
+    </p>
+    <p>
+      <w:text path="images/text.png" foreground="#ff0055" font-name="Helvetica" font-size="24">CHANGE ME TO RENDER IN SOMETHING MORE FUN THAN HELVETICA!</w:text>
+    </p>
+    <p>
+      If I really wanted to, I could even render that entire source file
+      from the syntax highlighting example:
+    </p>
+    <p>
+      <w:text path="images/source.png" width="500" height="100" background="#ffffcc" foreground="#000000" font-name="TradeGothic-BoldOblique" font-size="12"><w:insert resource="misc/hello.c" /></w:text>
+    </p>
+    
+    <h2>Integrating Scripts &amp; Other Applications</h2>
+    <p>
+      Web Assembler is designed to work with scripts and other applications.  You
+      can integrate pretty much any kind of content processing or generation by
+      using the <code>&lt;w:execute&gt;</code> directive.
+    </p>
+    <p>
+      The <code>&lt;w:execute&gt;</code> directive works like this:
+      <ol>
+        <li>The content in the <code>&lt;w:execute&gt;</code> tag is first processed by Web Assembler</li>
+        <li>The command specified in the <code>command</code> attribute is executed and the (already processed) content of the <code>&lt;w:execute&gt;</code> tag is written to its standard input</li>
+        <li>If the command writes anything to its standard output, that content replaces the <code>&lt;w:execute&gt;</code> tag in the output document</li>
+      </ol>
+    </p>
+    <p>
+      In this way you can easily write filter scripts that perform some
+      processing on content in a file.  Or, you could write a script that
+      generates other files and saves them (say, some images) and then
+      writes the &lt;img&gt; tags back into the output document.
+    </p>
+    <p>
+      Here's a (pointless) example that duplicates every word found in
+      the content of the <code>&lt;w:execute&gt;</code> directive some number of times.
+      Take a look at the script <code>scripts/duplicate.pl</code> to see how it
+      works.
+    </p>
+    <p>
+      <em>
+        <w:execute command="../scripts/duplicate.pl" times="3">
+          I don't mean to be redundant, but sometimes I can't help myself.
+        </w:execute>
+      </em>
+    </p>
+    <p>
+      Or, I could do something equally trivial using another program, like display
+      all the files in the examples directory:
+    </p>
+    <p>
+      <pre><w:execute command="/bin/ls" arg="-l" arg="." /></pre>
+    </p>
+    <p>
+      See the Web Assembler manpage for details on environment variables available
+      to scripts executed by <code>&lt;w:execute&gt;</code>.
+    </p>
+    
+    <h2>Formatting Text with Markdown</h2>
+    <p>
+      HTML is a good format for computers to interpret formatted text,
+      but it's a cumbersome format for people to write text.  Web Assembler
+      comes bundled with <a href="http://daringfireball.net/">John Gruber's</a>
+      <a href="http://daringfireball.net/projects/markdown/">Markdown</a>
+      text formatter so you can work with your content in a more manageable
+      format, then convert it automatically to HTML.
+    </p>
+    <p>
+      The <code>&lt;w:markdown&gt;</code> tag, like the <code>&lt;w:highlight&gt;</code>
+      tag, uses the same <code>&lt;w:execute&gt;</code> tag approach as above (with a custom tag
+      name configured in the default Web Assembler configuration file).  You can do the same
+      thing with your own commonly-used scripts.
+    </p>
+    <p>
+      Here's some Markdown:
+    </p>
+    <w:markdown>
+This is a Markdown Header
+-------------------------
+
+* These are Markdown bullet points.
+* We'll make a few just to illustrate the idea.
+* Alright, duly illustrated.
+    </w:markdown>
+    
+    <h2>Using JavaScript</h2>
+    <p>
+      Web Assembler supports embedding scripting with JavaScript.  You
+      can use JS expressions to create conditional output or display the
+      result of expressions with <code>&lt;w:print&gt;</code>.  Like properties,
+      JavaScript state is inherited by inserted files.
+    </p>
+    <p>
+      Here's some examples:
+    </p>
+    <p>
+      Here's the output of our <code>getTheDate()</code> JS function which
+      is defined at the top of the file: <w:print value="getTheDate()" />
+    </p>
+    <p>
+      What file are we in? <w:print value="document.getSourcePath()" />
+    </p>
+    <p>
+      What file will the output be in? <w:print value="document.getDestinationPath()" />
+    </p>
+    <p>
+      What was that <em>greeting</em> property again? "<w:print value="directive.getProperty('greeting')" />"
+    </p>
+    <p>
+      Are we in a file that ends in ".html"?
+      <w:if test="document.getSourcePath().lastIndexOf('.html') == document.getSourcePath().length - 5">
+        Yes, we are.
+      </w:if>
+      <w:else>
+        No, we're not.
+      </w:else>
+    </p>
+    
+  </body>
+</html>

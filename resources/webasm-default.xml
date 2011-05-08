@@ -1,0 +1,9 @@
+<assembler>
+  
+	<custom-tags>
+		<tag name="markdown" builtin="true">tags/markdown.pl</tag>
+		<tag name="lipsum" builtin="true">tags/lipsum.pl</tag>
+		<tag name="highlight" builtin="true">tags/pygments/webasm-driver.sh</tag>
+	</custom-tags>
+	
+</assembler>

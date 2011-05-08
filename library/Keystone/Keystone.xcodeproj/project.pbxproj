@@ -1,0 +1,698 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 44;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		8D07F2BE0486CC7A007CD1D0 /* Keystone_Prefix.pch in Headers */ = {isa = PBXBuildFile; fileRef = 32BAE0B70371A74B00C91783 /* Keystone_Prefix.pch */; };
+		8D07F2C00486CC7A007CD1D0 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 089C1666FE841158C02AAC07 /* InfoPlist.strings */; };
+		D31E01BD0DBD7F940071C7DB /* KSObject.cc in Sources */ = {isa = PBXBuildFile; fileRef = D31E01BB0DBD7F940071C7DB /* KSObject.cc */; };
+		D31E01BE0DBD7F940071C7DB /* KSObject.hh in Headers */ = {isa = PBXBuildFile; fileRef = D31E01BC0DBD7F940071C7DB /* KSObject.hh */; settings = {ATTRIBUTES = (Public, ); }; };
+		D33B27900EDBC77B00464DA4 /* KSFileInputStream.cc in Sources */ = {isa = PBXBuildFile; fileRef = D33B278C0EDBC77B00464DA4 /* KSFileInputStream.cc */; };
+		D33B27910EDBC77B00464DA4 /* KSFileInputStream.hh in Headers */ = {isa = PBXBuildFile; fileRef = D33B278D0EDBC77B00464DA4 /* KSFileInputStream.hh */; settings = {ATTRIBUTES = (Public, ); }; };
+		D33B27920EDBC77B00464DA4 /* KSFileOutputStream.cc in Sources */ = {isa = PBXBuildFile; fileRef = D33B278E0EDBC77B00464DA4 /* KSFileOutputStream.cc */; };
+		D33B27930EDBC77B00464DA4 /* KSFileOutputStream.hh in Headers */ = {isa = PBXBuildFile; fileRef = D33B278F0EDBC77B00464DA4 /* KSFileOutputStream.hh */; settings = {ATTRIBUTES = (Public, ); }; };
+		D33B29360EDD1FF800464DA4 /* KSUtility.cc in Sources */ = {isa = PBXBuildFile; fileRef = D33B29340EDD1FF800464DA4 /* KSUtility.cc */; };
+		D33B29370EDD1FF800464DA4 /* KSUtility.hh in Headers */ = {isa = PBXBuildFile; fileRef = D33B29350EDD1FF800464DA4 /* KSUtility.hh */; settings = {ATTRIBUTES = (Public, ); }; };
+		D33B29600EDD3AA600464DA4 /* KSPointer.cc in Sources */ = {isa = PBXBuildFile; fileRef = D33B295E0EDD3AA600464DA4 /* KSPointer.cc */; };
+		D33B29610EDD3AA600464DA4 /* KSPointer.hh in Headers */ = {isa = PBXBuildFile; fileRef = D33B295F0EDD3AA600464DA4 /* KSPointer.hh */; settings = {ATTRIBUTES = (Public, ); }; };
+		D33B29630EDD3DFC00464DA4 /* KSFileFilter.hh in Headers */ = {isa = PBXBuildFile; fileRef = D33B29620EDD3DFC00464DA4 /* KSFileFilter.hh */; settings = {ATTRIBUTES = (Public, ); }; };
+		D33B29660EDD3F9500464DA4 /* KSExcludeHiddenFileFilter.cc in Sources */ = {isa = PBXBuildFile; fileRef = D33B29640EDD3F9500464DA4 /* KSExcludeHiddenFileFilter.cc */; };
+		D33B29670EDD3F9500464DA4 /* KSExcludeHiddenFileFilter.hh in Headers */ = {isa = PBXBuildFile; fileRef = D33B29650EDD3F9500464DA4 /* KSExcludeHiddenFileFilter.hh */; settings = {ATTRIBUTES = (Public, ); }; };
+		D33B29BF0EDD7D5600464DA4 /* KSPathIterator.hh in Headers */ = {isa = PBXBuildFile; fileRef = D33B29BC0EDD7D5600464DA4 /* KSPathIterator.hh */; settings = {ATTRIBUTES = (Public, ); }; };
+		D33B29C00EDD7D5600464DA4 /* KSDirectoryPathIterator.cc in Sources */ = {isa = PBXBuildFile; fileRef = D33B29BD0EDD7D5600464DA4 /* KSDirectoryPathIterator.cc */; };
+		D33B29C10EDD7D5600464DA4 /* KSDirectoryPathIterator.hh in Headers */ = {isa = PBXBuildFile; fileRef = D33B29BE0EDD7D5600464DA4 /* KSDirectoryPathIterator.hh */; settings = {ATTRIBUTES = (Public, ); }; };
+		D33B2A540EDE4BF800464DA4 /* KSRuntime.cc in Sources */ = {isa = PBXBuildFile; fileRef = D33B2A520EDE4BF800464DA4 /* KSRuntime.cc */; };
+		D33B2A550EDE4BF800464DA4 /* KSRuntime.hh in Headers */ = {isa = PBXBuildFile; fileRef = D33B2A530EDE4BF800464DA4 /* KSRuntime.hh */; settings = {ATTRIBUTES = (Public, ); }; };
+		D33B2A950EDE523500464DA4 /* KSRuntimePrivate.hh in Headers */ = {isa = PBXBuildFile; fileRef = D33B2A940EDE523500464DA4 /* KSRuntimePrivate.hh */; };
+		D33B2ACC0EDE57FB00464DA4 /* KSRuntimeType.cc in Sources */ = {isa = PBXBuildFile; fileRef = D33B2ACA0EDE57FB00464DA4 /* KSRuntimeType.cc */; };
+		D33B2ACD0EDE57FB00464DA4 /* KSRuntimeType.hh in Headers */ = {isa = PBXBuildFile; fileRef = D33B2ACB0EDE57FB00464DA4 /* KSRuntimeType.hh */; settings = {ATTRIBUTES = (Public, ); }; };
+		D33CB22D1101A07C00DC3592 /* KSAddress.cc in Sources */ = {isa = PBXBuildFile; fileRef = D33CB22B1101A07C00DC3592 /* KSAddress.cc */; };
+		D33CB22E1101A07C00DC3592 /* KSAddress.hh in Headers */ = {isa = PBXBuildFile; fileRef = D33CB22C1101A07C00DC3592 /* KSAddress.hh */; settings = {ATTRIBUTES = (Public, ); }; };
+		D33CB3491103D50300DC3592 /* KSDataBufferInputStream.cc in Sources */ = {isa = PBXBuildFile; fileRef = D33CB3451103D50300DC3592 /* KSDataBufferInputStream.cc */; };
+		D33CB34A1103D50300DC3592 /* KSDataBufferInputStream.hh in Headers */ = {isa = PBXBuildFile; fileRef = D33CB3461103D50300DC3592 /* KSDataBufferInputStream.hh */; settings = {ATTRIBUTES = (Public, ); }; };
+		D33CB34B1103D50300DC3592 /* KSDataBufferOutputStream.cc in Sources */ = {isa = PBXBuildFile; fileRef = D33CB3471103D50300DC3592 /* KSDataBufferOutputStream.cc */; };
+		D33CB34C1103D50300DC3592 /* KSDataBufferOutputStream.hh in Headers */ = {isa = PBXBuildFile; fileRef = D33CB3481103D50300DC3592 /* KSDataBufferOutputStream.hh */; settings = {ATTRIBUTES = (Public, ); }; };
+		D33CB3611103DF0300DC3592 /* KSCharacterInputStream.cc in Sources */ = {isa = PBXBuildFile; fileRef = D33CB35F1103DF0300DC3592 /* KSCharacterInputStream.cc */; };
+		D33CB3621103DF0300DC3592 /* KSCharacterInputStream.hh in Headers */ = {isa = PBXBuildFile; fileRef = D33CB3601103DF0300DC3592 /* KSCharacterInputStream.hh */; settings = {ATTRIBUTES = (Public, ); }; };
+		D33CBA961106629800DC3592 /* Security.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D33CBA951106629800DC3592 /* Security.framework */; };
+		D33CBAB1110662BC00DC3592 /* KSKeychainManager.cc in Sources */ = {isa = PBXBuildFile; fileRef = D33CBAAF110662BC00DC3592 /* KSKeychainManager.cc */; };
+		D33CBAB2110662BC00DC3592 /* KSKeychainManager.hh in Headers */ = {isa = PBXBuildFile; fileRef = D33CBAB0110662BC00DC3592 /* KSKeychainManager.hh */; settings = {ATTRIBUTES = (Public, ); }; };
+		D33CBC8E11075A5500DC3592 /* KSSocket.cc in Sources */ = {isa = PBXBuildFile; fileRef = D33CBC8C11075A5500DC3592 /* KSSocket.cc */; };
+		D33CBC8F11075A5500DC3592 /* KSSocket.hh in Headers */ = {isa = PBXBuildFile; fileRef = D33CBC8D11075A5500DC3592 /* KSSocket.hh */; settings = {ATTRIBUTES = (Public, ); }; };
+		D33CBC951107836C00DC3592 /* KSSecureSocket.cc in Sources */ = {isa = PBXBuildFile; fileRef = D33CBC931107836C00DC3592 /* KSSecureSocket.cc */; };
+		D33CBC961107836C00DC3592 /* KSSecureSocket.hh in Headers */ = {isa = PBXBuildFile; fileRef = D33CBC941107836C00DC3592 /* KSSecureSocket.hh */; settings = {ATTRIBUTES = (Public, ); }; };
+		D33CBCEE1107C2DA00DC3592 /* KSSocketInputStream.cc in Sources */ = {isa = PBXBuildFile; fileRef = D33CBCEA1107C2DA00DC3592 /* KSSocketInputStream.cc */; };
+		D33CBCEF1107C2DA00DC3592 /* KSSocketInputStream.hh in Headers */ = {isa = PBXBuildFile; fileRef = D33CBCEB1107C2DA00DC3592 /* KSSocketInputStream.hh */; settings = {ATTRIBUTES = (Public, ); }; };
+		D33CBCF01107C2DA00DC3592 /* KSSocketOutputStream.cc in Sources */ = {isa = PBXBuildFile; fileRef = D33CBCEC1107C2DA00DC3592 /* KSSocketOutputStream.cc */; };
+		D33CBCF11107C2DA00DC3592 /* KSSocketOutputStream.hh in Headers */ = {isa = PBXBuildFile; fileRef = D33CBCED1107C2DA00DC3592 /* KSSocketOutputStream.hh */; settings = {ATTRIBUTES = (Public, ); }; };
+		D3832AF10EEC9ACD00764262 /* CFNumberAdditions.cc in Sources */ = {isa = PBXBuildFile; fileRef = D3832AEF0EEC9ACD00764262 /* CFNumberAdditions.cc */; };
+		D3832AF20EEC9ACD00764262 /* CFNumberAdditions.hh in Headers */ = {isa = PBXBuildFile; fileRef = D3832AF00EEC9ACD00764262 /* CFNumberAdditions.hh */; settings = {ATTRIBUTES = (Public, ); }; };
+		D392F5280EF4E553008C9817 /* KSObjectTypes.hh in Headers */ = {isa = PBXBuildFile; fileRef = D392F5250EF4E553008C9817 /* KSObjectTypes.hh */; settings = {ATTRIBUTES = (Public, ); }; };
+		D392F5290EF4E553008C9817 /* KSString.cc in Sources */ = {isa = PBXBuildFile; fileRef = D392F5260EF4E553008C9817 /* KSString.cc */; };
+		D392F52A0EF4E553008C9817 /* KSString.hh in Headers */ = {isa = PBXBuildFile; fileRef = D392F5270EF4E553008C9817 /* KSString.hh */; settings = {ATTRIBUTES = (Public, ); }; };
+		D392F5360EF4E694008C9817 /* KSCoreFoundationWrapper.hh in Headers */ = {isa = PBXBuildFile; fileRef = D392F5330EF4E694008C9817 /* KSCoreFoundationWrapper.hh */; settings = {ATTRIBUTES = (Public, ); }; };
+		D392F5370EF4E694008C9817 /* KSNumber.cc in Sources */ = {isa = PBXBuildFile; fileRef = D392F5340EF4E694008C9817 /* KSNumber.cc */; };
+		D392F5380EF4E694008C9817 /* KSNumber.hh in Headers */ = {isa = PBXBuildFile; fileRef = D392F5350EF4E694008C9817 /* KSNumber.hh */; settings = {ATTRIBUTES = (Public, ); }; };
+		D392F5680EF5BA3C008C9817 /* KSBoolean.cc in Sources */ = {isa = PBXBuildFile; fileRef = D392F5660EF5BA3C008C9817 /* KSBoolean.cc */; };
+		D392F5690EF5BA3C008C9817 /* KSBoolean.hh in Headers */ = {isa = PBXBuildFile; fileRef = D392F5670EF5BA3C008C9817 /* KSBoolean.hh */; settings = {ATTRIBUTES = (Public, ); }; };
+		D392F5830EF5BF6B008C9817 /* KSNull.cc in Sources */ = {isa = PBXBuildFile; fileRef = D392F5810EF5BF6B008C9817 /* KSNull.cc */; };
+		D392F5840EF5BF6B008C9817 /* KSNull.hh in Headers */ = {isa = PBXBuildFile; fileRef = D392F5820EF5BF6B008C9817 /* KSNull.hh */; settings = {ATTRIBUTES = (Public, ); }; };
+		D392F5870EF5C1FE008C9817 /* KSCharacter.cc in Sources */ = {isa = PBXBuildFile; fileRef = D392F5850EF5C1FE008C9817 /* KSCharacter.cc */; };
+		D392F5880EF5C1FE008C9817 /* KSCharacter.hh in Headers */ = {isa = PBXBuildFile; fileRef = D392F5860EF5C1FE008C9817 /* KSCharacter.hh */; settings = {ATTRIBUTES = (Public, ); }; };
+		D392F58B0EF5C502008C9817 /* KSArray.cc in Sources */ = {isa = PBXBuildFile; fileRef = D392F5890EF5C502008C9817 /* KSArray.cc */; };
+		D392F58C0EF5C502008C9817 /* KSArray.hh in Headers */ = {isa = PBXBuildFile; fileRef = D392F58A0EF5C502008C9817 /* KSArray.hh */; settings = {ATTRIBUTES = (Public, ); }; };
+		D392F58F0EF5C69F008C9817 /* KSMutableArray.cc in Sources */ = {isa = PBXBuildFile; fileRef = D392F58D0EF5C69F008C9817 /* KSMutableArray.cc */; };
+		D392F5900EF5C69F008C9817 /* KSMutableArray.hh in Headers */ = {isa = PBXBuildFile; fileRef = D392F58E0EF5C69F008C9817 /* KSMutableArray.hh */; settings = {ATTRIBUTES = (Public, ); }; };
+		D39428E61117ABD500B25851 /* DiskArbitration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D39428E51117ABD500B25851 /* DiskArbitration.framework */; };
+		D3CE4C0D110F15FE004F974A /* KSOptionParser.cc in Sources */ = {isa = PBXBuildFile; fileRef = D3CE4C0B110F15FE004F974A /* KSOptionParser.cc */; };
+		D3CE4C0E110F15FE004F974A /* KSOptionParser.hh in Headers */ = {isa = PBXBuildFile; fileRef = D3CE4C0C110F15FE004F974A /* KSOptionParser.hh */; settings = {ATTRIBUTES = (Public, ); }; };
+		D3FEC0540ED7EF5500CFD448 /* CFStringAdditions.cc in Sources */ = {isa = PBXBuildFile; fileRef = D3FEC0520ED7EF5500CFD448 /* CFStringAdditions.cc */; };
+		D3FEC0550ED7EF5500CFD448 /* CFStringAdditions.hh in Headers */ = {isa = PBXBuildFile; fileRef = D3FEC0530ED7EF5500CFD448 /* CFStringAdditions.hh */; settings = {ATTRIBUTES = (Public, ); }; };
+		D3FEC0580ED7EF6100CFD448 /* KSLog.cc in Sources */ = {isa = PBXBuildFile; fileRef = D3FEC0560ED7EF6100CFD448 /* KSLog.cc */; };
+		D3FEC0590ED7EF6100CFD448 /* KSLog.hh in Headers */ = {isa = PBXBuildFile; fileRef = D3FEC0570ED7EF6100CFD448 /* KSLog.hh */; settings = {ATTRIBUTES = (Public, ); }; };
+		D3FEC0840ED7F13500CFD448 /* Keystone.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = 8D07F2C80486CC7A007CD1D0 /* Keystone.framework */; };
+		D3FEC12B0EDA6E6800CFD448 /* KSFile.cc in Sources */ = {isa = PBXBuildFile; fileRef = D3FEC1290EDA6E6800CFD448 /* KSFile.cc */; };
+		D3FEC12C0EDA6E6800CFD448 /* KSFile.hh in Headers */ = {isa = PBXBuildFile; fileRef = D3FEC12A0EDA6E6800CFD448 /* KSFile.hh */; settings = {ATTRIBUTES = (Public, ); }; };
+		D3FEC12E0EDA6F0D00CFD448 /* KSStatus.hh in Headers */ = {isa = PBXBuildFile; fileRef = D3FEC12D0EDA6F0D00CFD448 /* KSStatus.hh */; settings = {ATTRIBUTES = (Public, ); }; };
+		D3FEC1400EDA71A900CFD448 /* KSTypes.hh in Headers */ = {isa = PBXBuildFile; fileRef = D3FEC13F0EDA71A900CFD448 /* KSTypes.hh */; settings = {ATTRIBUTES = (Public, ); }; };
+		D3FEC16E0EDA8A6C00CFD448 /* KSInputStream.cc in Sources */ = {isa = PBXBuildFile; fileRef = D3FEC16A0EDA8A6C00CFD448 /* KSInputStream.cc */; };
+		D3FEC16F0EDA8A6C00CFD448 /* KSInputStream.hh in Headers */ = {isa = PBXBuildFile; fileRef = D3FEC16B0EDA8A6C00CFD448 /* KSInputStream.hh */; settings = {ATTRIBUTES = (Public, ); }; };
+		D3FEC1700EDA8A6C00CFD448 /* KSOutputStream.cc in Sources */ = {isa = PBXBuildFile; fileRef = D3FEC16C0EDA8A6C00CFD448 /* KSOutputStream.cc */; };
+		D3FEC1710EDA8A6C00CFD448 /* KSOutputStream.hh in Headers */ = {isa = PBXBuildFile; fileRef = D3FEC16D0EDA8A6C00CFD448 /* KSOutputStream.hh */; settings = {ATTRIBUTES = (Public, ); }; };
+		D3FEC1970EDA91AD00CFD448 /* KSStatus.cc in Sources */ = {isa = PBXBuildFile; fileRef = D3FEC1950EDA91AD00CFD448 /* KSStatus.cc */; };
+		D3FEC1980EDA91AD00CFD448 /* KSStatusPrivate.hh in Headers */ = {isa = PBXBuildFile; fileRef = D3FEC1960EDA91AD00CFD448 /* KSStatusPrivate.hh */; };
+		D3FEC1C40EDA939400CFD448 /* KSStatusPopulate.cc in Sources */ = {isa = PBXBuildFile; fileRef = D3FEC1C30EDA939400CFD448 /* KSStatusPopulate.cc */; };
+		D3FEC29E0EDB0D6D00CFD448 /* CoreFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D3FEC29D0EDB0D6D00CFD448 /* CoreFoundation.framework */; };
+		D3FF30470EFF546000E2EE66 /* KSError.cc in Sources */ = {isa = PBXBuildFile; fileRef = D3FF30450EFF546000E2EE66 /* KSError.cc */; };
+		D3FF30480EFF546000E2EE66 /* KSError.hh in Headers */ = {isa = PBXBuildFile; fileRef = D3FF30460EFF546000E2EE66 /* KSError.hh */; settings = {ATTRIBUTES = (Public, ); }; };
+		D3FF30520EFF550400E2EE66 /* Keystone.hh in Headers */ = {isa = PBXBuildFile; fileRef = D3FF30510EFF550400E2EE66 /* Keystone.hh */; settings = {ATTRIBUTES = (Public, ); }; };
+/* End PBXBuildFile section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		D3FEC08A0ED7F13A00CFD448 /* CopyFiles */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = /Library/Frameworks;
+			dstSubfolderSpec = 0;
+			files = (
+				D3FEC0840ED7F13500CFD448 /* Keystone.framework in CopyFiles */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
+/* Begin PBXFileReference section */
+		089C1667FE841158C02AAC07 /* English */ = {isa = PBXFileReference; fileEncoding = 10; lastKnownFileType = text.plist.strings; name = English; path = English.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		32BAE0B70371A74B00C91783 /* Keystone_Prefix.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Keystone_Prefix.pch; sourceTree = "<group>"; };
+		8D07F2C70486CC7A007CD1D0 /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
+		8D07F2C80486CC7A007CD1D0 /* Keystone.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Keystone.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		D31E01BB0DBD7F940071C7DB /* KSObject.cc */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = KSObject.cc; sourceTree = "<group>"; };
+		D31E01BC0DBD7F940071C7DB /* KSObject.hh */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = KSObject.hh; sourceTree = "<group>"; };
+		D33B278C0EDBC77B00464DA4 /* KSFileInputStream.cc */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = KSFileInputStream.cc; sourceTree = "<group>"; };
+		D33B278D0EDBC77B00464DA4 /* KSFileInputStream.hh */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = KSFileInputStream.hh; sourceTree = "<group>"; };
+		D33B278E0EDBC77B00464DA4 /* KSFileOutputStream.cc */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = KSFileOutputStream.cc; sourceTree = "<group>"; };
+		D33B278F0EDBC77B00464DA4 /* KSFileOutputStream.hh */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = KSFileOutputStream.hh; sourceTree = "<group>"; };
+		D33B29340EDD1FF800464DA4 /* KSUtility.cc */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = KSUtility.cc; sourceTree = "<group>"; };
+		D33B29350EDD1FF800464DA4 /* KSUtility.hh */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = KSUtility.hh; sourceTree = "<group>"; };
+		D33B295E0EDD3AA600464DA4 /* KSPointer.cc */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = KSPointer.cc; sourceTree = "<group>"; };
+		D33B295F0EDD3AA600464DA4 /* KSPointer.hh */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = KSPointer.hh; sourceTree = "<group>"; };
+		D33B29620EDD3DFC00464DA4 /* KSFileFilter.hh */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = KSFileFilter.hh; sourceTree = "<group>"; };
+		D33B29640EDD3F9500464DA4 /* KSExcludeHiddenFileFilter.cc */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = KSExcludeHiddenFileFilter.cc; sourceTree = "<group>"; };
+		D33B29650EDD3F9500464DA4 /* KSExcludeHiddenFileFilter.hh */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = KSExcludeHiddenFileFilter.hh; sourceTree = "<group>"; };
+		D33B29BC0EDD7D5600464DA4 /* KSPathIterator.hh */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = KSPathIterator.hh; sourceTree = "<group>"; };
+		D33B29BD0EDD7D5600464DA4 /* KSDirectoryPathIterator.cc */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = KSDirectoryPathIterator.cc; sourceTree = "<group>"; };
+		D33B29BE0EDD7D5600464DA4 /* KSDirectoryPathIterator.hh */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = KSDirectoryPathIterator.hh; sourceTree = "<group>"; };
+		D33B2A520EDE4BF800464DA4 /* KSRuntime.cc */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = KSRuntime.cc; sourceTree = "<group>"; };
+		D33B2A530EDE4BF800464DA4 /* KSRuntime.hh */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = KSRuntime.hh; sourceTree = "<group>"; };
+		D33B2A940EDE523500464DA4 /* KSRuntimePrivate.hh */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = KSRuntimePrivate.hh; sourceTree = "<group>"; };
+		D33B2ACA0EDE57FB00464DA4 /* KSRuntimeType.cc */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = KSRuntimeType.cc; sourceTree = "<group>"; };
+		D33B2ACB0EDE57FB00464DA4 /* KSRuntimeType.hh */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = KSRuntimeType.hh; sourceTree = "<group>"; };
+		D33CB22B1101A07C00DC3592 /* KSAddress.cc */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = KSAddress.cc; sourceTree = "<group>"; };
+		D33CB22C1101A07C00DC3592 /* KSAddress.hh */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = KSAddress.hh; sourceTree = "<group>"; };
+		D33CB3451103D50300DC3592 /* KSDataBufferInputStream.cc */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = KSDataBufferInputStream.cc; sourceTree = "<group>"; };
+		D33CB3461103D50300DC3592 /* KSDataBufferInputStream.hh */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = KSDataBufferInputStream.hh; sourceTree = "<group>"; };
+		D33CB3471103D50300DC3592 /* KSDataBufferOutputStream.cc */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = KSDataBufferOutputStream.cc; sourceTree = "<group>"; };
+		D33CB3481103D50300DC3592 /* KSDataBufferOutputStream.hh */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = KSDataBufferOutputStream.hh; sourceTree = "<group>"; };
+		D33CB35F1103DF0300DC3592 /* KSCharacterInputStream.cc */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = KSCharacterInputStream.cc; sourceTree = "<group>"; };
+		D33CB3601103DF0300DC3592 /* KSCharacterInputStream.hh */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = KSCharacterInputStream.hh; sourceTree = "<group>"; };
+		D33CBA951106629800DC3592 /* Security.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Security.framework; path = System/Library/Frameworks/Security.framework; sourceTree = SDKROOT; };
+		D33CBAAF110662BC00DC3592 /* KSKeychainManager.cc */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = KSKeychainManager.cc; sourceTree = "<group>"; };
+		D33CBAB0110662BC00DC3592 /* KSKeychainManager.hh */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = KSKeychainManager.hh; sourceTree = "<group>"; };
+		D33CBC8C11075A5500DC3592 /* KSSocket.cc */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = KSSocket.cc; sourceTree = "<group>"; };
+		D33CBC8D11075A5500DC3592 /* KSSocket.hh */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = KSSocket.hh; sourceTree = "<group>"; };
+		D33CBC931107836C00DC3592 /* KSSecureSocket.cc */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = KSSecureSocket.cc; sourceTree = "<group>"; };
+		D33CBC941107836C00DC3592 /* KSSecureSocket.hh */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = KSSecureSocket.hh; sourceTree = "<group>"; };
+		D33CBCEA1107C2DA00DC3592 /* KSSocketInputStream.cc */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = KSSocketInputStream.cc; sourceTree = "<group>"; };
+		D33CBCEB1107C2DA00DC3592 /* KSSocketInputStream.hh */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = KSSocketInputStream.hh; sourceTree = "<group>"; };
+		D33CBCEC1107C2DA00DC3592 /* KSSocketOutputStream.cc */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = KSSocketOutputStream.cc; sourceTree = "<group>"; };
+		D33CBCED1107C2DA00DC3592 /* KSSocketOutputStream.hh */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = KSSocketOutputStream.hh; sourceTree = "<group>"; };
+		D3832AEF0EEC9ACD00764262 /* CFNumberAdditions.cc */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = CFNumberAdditions.cc; sourceTree = "<group>"; };
+		D3832AF00EEC9ACD00764262 /* CFNumberAdditions.hh */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = CFNumberAdditions.hh; sourceTree = "<group>"; };
+		D392F5250EF4E553008C9817 /* KSObjectTypes.hh */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = KSObjectTypes.hh; sourceTree = "<group>"; };
+		D392F5260EF4E553008C9817 /* KSString.cc */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = KSString.cc; sourceTree = "<group>"; };
+		D392F5270EF4E553008C9817 /* KSString.hh */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = KSString.hh; sourceTree = "<group>"; };
+		D392F5330EF4E694008C9817 /* KSCoreFoundationWrapper.hh */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = KSCoreFoundationWrapper.hh; sourceTree = "<group>"; };
+		D392F5340EF4E694008C9817 /* KSNumber.cc */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = KSNumber.cc; sourceTree = "<group>"; };
+		D392F5350EF4E694008C9817 /* KSNumber.hh */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = KSNumber.hh; sourceTree = "<group>"; };
+		D392F5660EF5BA3C008C9817 /* KSBoolean.cc */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = KSBoolean.cc; sourceTree = "<group>"; };
+		D392F5670EF5BA3C008C9817 /* KSBoolean.hh */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = KSBoolean.hh; sourceTree = "<group>"; };
+		D392F5810EF5BF6B008C9817 /* KSNull.cc */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = KSNull.cc; sourceTree = "<group>"; };
+		D392F5820EF5BF6B008C9817 /* KSNull.hh */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = KSNull.hh; sourceTree = "<group>"; };
+		D392F5850EF5C1FE008C9817 /* KSCharacter.cc */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = KSCharacter.cc; sourceTree = "<group>"; };
+		D392F5860EF5C1FE008C9817 /* KSCharacter.hh */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = KSCharacter.hh; sourceTree = "<group>"; };
+		D392F5890EF5C502008C9817 /* KSArray.cc */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = KSArray.cc; sourceTree = "<group>"; };
+		D392F58A0EF5C502008C9817 /* KSArray.hh */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = KSArray.hh; sourceTree = "<group>"; };
+		D392F58D0EF5C69F008C9817 /* KSMutableArray.cc */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = KSMutableArray.cc; sourceTree = "<group>"; };
+		D392F58E0EF5C69F008C9817 /* KSMutableArray.hh */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = KSMutableArray.hh; sourceTree = "<group>"; };
+		D39428E51117ABD500B25851 /* DiskArbitration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = DiskArbitration.framework; path = System/Library/Frameworks/DiskArbitration.framework; sourceTree = SDKROOT; };
+		D3CE4C0B110F15FE004F974A /* KSOptionParser.cc */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = KSOptionParser.cc; sourceTree = "<group>"; };
+		D3CE4C0C110F15FE004F974A /* KSOptionParser.hh */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = KSOptionParser.hh; sourceTree = "<group>"; };
+		D3FEC0520ED7EF5500CFD448 /* CFStringAdditions.cc */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = CFStringAdditions.cc; sourceTree = "<group>"; };
+		D3FEC0530ED7EF5500CFD448 /* CFStringAdditions.hh */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = CFStringAdditions.hh; sourceTree = "<group>"; };
+		D3FEC0560ED7EF6100CFD448 /* KSLog.cc */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = KSLog.cc; sourceTree = "<group>"; };
+		D3FEC0570ED7EF6100CFD448 /* KSLog.hh */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = KSLog.hh; sourceTree = "<group>"; };
+		D3FEC1290EDA6E6800CFD448 /* KSFile.cc */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = KSFile.cc; sourceTree = "<group>"; };
+		D3FEC12A0EDA6E6800CFD448 /* KSFile.hh */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = KSFile.hh; sourceTree = "<group>"; };
+		D3FEC12D0EDA6F0D00CFD448 /* KSStatus.hh */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = KSStatus.hh; sourceTree = "<group>"; };
+		D3FEC13F0EDA71A900CFD448 /* KSTypes.hh */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = KSTypes.hh; sourceTree = "<group>"; };
+		D3FEC16A0EDA8A6C00CFD448 /* KSInputStream.cc */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = KSInputStream.cc; sourceTree = "<group>"; };
+		D3FEC16B0EDA8A6C00CFD448 /* KSInputStream.hh */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = KSInputStream.hh; sourceTree = "<group>"; };
+		D3FEC16C0EDA8A6C00CFD448 /* KSOutputStream.cc */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = KSOutputStream.cc; sourceTree = "<group>"; };
+		D3FEC16D0EDA8A6C00CFD448 /* KSOutputStream.hh */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = KSOutputStream.hh; sourceTree = "<group>"; };
+		D3FEC1950EDA91AD00CFD448 /* KSStatus.cc */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = KSStatus.cc; sourceTree = "<group>"; };
+		D3FEC1960EDA91AD00CFD448 /* KSStatusPrivate.hh */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = KSStatusPrivate.hh; sourceTree = "<group>"; };
+		D3FEC1C30EDA939400CFD448 /* KSStatusPopulate.cc */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = KSStatusPopulate.cc; sourceTree = "<group>"; };
+		D3FEC29D0EDB0D6D00CFD448 /* CoreFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreFoundation.framework; path = System/Library/Frameworks/CoreFoundation.framework; sourceTree = SDKROOT; };
+		D3FF30450EFF546000E2EE66 /* KSError.cc */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = KSError.cc; sourceTree = "<group>"; };
+		D3FF30460EFF546000E2EE66 /* KSError.hh */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = KSError.hh; sourceTree = "<group>"; };
+		D3FF30510EFF550400E2EE66 /* Keystone.hh */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; name = Keystone.hh; path = source/keystone/Keystone.hh; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		8D07F2C30486CC7A007CD1D0 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				D3FEC29E0EDB0D6D00CFD448 /* CoreFoundation.framework in Frameworks */,
+				D33CBA961106629800DC3592 /* Security.framework in Frameworks */,
+				D39428E61117ABD500B25851 /* DiskArbitration.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		034768DDFF38A45A11DB9C8B /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				8D07F2C80486CC7A007CD1D0 /* Keystone.framework */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		0867D691FE84028FC02AAC07 /* Keystone */ = {
+			isa = PBXGroup;
+			children = (
+				D31E01B30DBD7D900071C7DB /* Classes */,
+				08FB77ACFE841707C02AAC07 /* Source */,
+				089C1665FE841158C02AAC07 /* Resources */,
+				0867D69AFE84028FC02AAC07 /* External Frameworks and Libraries */,
+				034768DDFF38A45A11DB9C8B /* Products */,
+			);
+			name = Keystone;
+			sourceTree = "<group>";
+		};
+		0867D69AFE84028FC02AAC07 /* External Frameworks and Libraries */ = {
+			isa = PBXGroup;
+			children = (
+				D3FEC29D0EDB0D6D00CFD448 /* CoreFoundation.framework */,
+				D33CBA951106629800DC3592 /* Security.framework */,
+				D39428E51117ABD500B25851 /* DiskArbitration.framework */,
+			);
+			name = "External Frameworks and Libraries";
+			sourceTree = "<group>";
+		};
+		089C1665FE841158C02AAC07 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				8D07F2C70486CC7A007CD1D0 /* Info.plist */,
+				089C1666FE841158C02AAC07 /* InfoPlist.strings */,
+			);
+			name = Resources;
+			sourceTree = "<group>";
+		};
+		08FB77ACFE841707C02AAC07 /* Source */ = {
+			isa = PBXGroup;
+			children = (
+				32BAE0B70371A74B00C91783 /* Keystone_Prefix.pch */,
+			);
+			name = Source;
+			sourceTree = "<group>";
+		};
+		D31E01B30DBD7D900071C7DB /* Classes */ = {
+			isa = PBXGroup;
+			children = (
+				D3FF30510EFF550400E2EE66 /* Keystone.hh */,
+				D3CE4C0A110F15FE004F974A /* cli */,
+				D33CBAAE110662BC00DC3592 /* security */,
+				D33CB22A1101A07C00DC3592 /* net */,
+				D3FEC1280EDA6E6800CFD448 /* io */,
+				D3FEC0510ED7EF5500CFD448 /* additions */,
+				D31E01BA0DBD7F940071C7DB /* core */,
+			);
+			name = Classes;
+			sourceTree = "<group>";
+		};
+		D31E01BA0DBD7F940071C7DB /* core */ = {
+			isa = PBXGroup;
+			children = (
+				D3FF30450EFF546000E2EE66 /* KSError.cc */,
+				D3FF30460EFF546000E2EE66 /* KSError.hh */,
+				D392F58D0EF5C69F008C9817 /* KSMutableArray.cc */,
+				D392F58E0EF5C69F008C9817 /* KSMutableArray.hh */,
+				D392F5890EF5C502008C9817 /* KSArray.cc */,
+				D392F58A0EF5C502008C9817 /* KSArray.hh */,
+				D392F5850EF5C1FE008C9817 /* KSCharacter.cc */,
+				D392F5860EF5C1FE008C9817 /* KSCharacter.hh */,
+				D392F5810EF5BF6B008C9817 /* KSNull.cc */,
+				D392F5820EF5BF6B008C9817 /* KSNull.hh */,
+				D392F5660EF5BA3C008C9817 /* KSBoolean.cc */,
+				D392F5670EF5BA3C008C9817 /* KSBoolean.hh */,
+				D392F5330EF4E694008C9817 /* KSCoreFoundationWrapper.hh */,
+				D392F5340EF4E694008C9817 /* KSNumber.cc */,
+				D392F5350EF4E694008C9817 /* KSNumber.hh */,
+				D392F5250EF4E553008C9817 /* KSObjectTypes.hh */,
+				D392F5260EF4E553008C9817 /* KSString.cc */,
+				D392F5270EF4E553008C9817 /* KSString.hh */,
+				D33B2ACA0EDE57FB00464DA4 /* KSRuntimeType.cc */,
+				D33B2ACB0EDE57FB00464DA4 /* KSRuntimeType.hh */,
+				D33B2A940EDE523500464DA4 /* KSRuntimePrivate.hh */,
+				D33B2A520EDE4BF800464DA4 /* KSRuntime.cc */,
+				D33B2A530EDE4BF800464DA4 /* KSRuntime.hh */,
+				D33B295E0EDD3AA600464DA4 /* KSPointer.cc */,
+				D33B295F0EDD3AA600464DA4 /* KSPointer.hh */,
+				D33B29340EDD1FF800464DA4 /* KSUtility.cc */,
+				D33B29350EDD1FF800464DA4 /* KSUtility.hh */,
+				D3FEC13F0EDA71A900CFD448 /* KSTypes.hh */,
+				D3FEC12D0EDA6F0D00CFD448 /* KSStatus.hh */,
+				D3FEC1950EDA91AD00CFD448 /* KSStatus.cc */,
+				D3FEC1960EDA91AD00CFD448 /* KSStatusPrivate.hh */,
+				D3FEC1C30EDA939400CFD448 /* KSStatusPopulate.cc */,
+				D3FEC0560ED7EF6100CFD448 /* KSLog.cc */,
+				D3FEC0570ED7EF6100CFD448 /* KSLog.hh */,
+				D31E01BB0DBD7F940071C7DB /* KSObject.cc */,
+				D31E01BC0DBD7F940071C7DB /* KSObject.hh */,
+			);
+			name = core;
+			path = source/keystone/core;
+			sourceTree = "<group>";
+		};
+		D33CB22A1101A07C00DC3592 /* net */ = {
+			isa = PBXGroup;
+			children = (
+				D33CBC931107836C00DC3592 /* KSSecureSocket.cc */,
+				D33CBC941107836C00DC3592 /* KSSecureSocket.hh */,
+				D33CBC8C11075A5500DC3592 /* KSSocket.cc */,
+				D33CBC8D11075A5500DC3592 /* KSSocket.hh */,
+				D33CB22B1101A07C00DC3592 /* KSAddress.cc */,
+				D33CB22C1101A07C00DC3592 /* KSAddress.hh */,
+			);
+			name = net;
+			path = source/keystone/net;
+			sourceTree = "<group>";
+		};
+		D33CBAAE110662BC00DC3592 /* security */ = {
+			isa = PBXGroup;
+			children = (
+				D33CBAAF110662BC00DC3592 /* KSKeychainManager.cc */,
+				D33CBAB0110662BC00DC3592 /* KSKeychainManager.hh */,
+			);
+			name = security;
+			path = source/keystone/security;
+			sourceTree = "<group>";
+		};
+		D3CE4C0A110F15FE004F974A /* cli */ = {
+			isa = PBXGroup;
+			children = (
+				D3CE4C0B110F15FE004F974A /* KSOptionParser.cc */,
+				D3CE4C0C110F15FE004F974A /* KSOptionParser.hh */,
+			);
+			name = cli;
+			path = source/keystone/cli;
+			sourceTree = "<group>";
+		};
+		D3FEC0510ED7EF5500CFD448 /* additions */ = {
+			isa = PBXGroup;
+			children = (
+				D3832AEF0EEC9ACD00764262 /* CFNumberAdditions.cc */,
+				D3832AF00EEC9ACD00764262 /* CFNumberAdditions.hh */,
+				D3FEC0520ED7EF5500CFD448 /* CFStringAdditions.cc */,
+				D3FEC0530ED7EF5500CFD448 /* CFStringAdditions.hh */,
+			);
+			name = additions;
+			path = source/keystone/additions;
+			sourceTree = "<group>";
+		};
+		D3FEC1280EDA6E6800CFD448 /* io */ = {
+			isa = PBXGroup;
+			children = (
+				D33B29BC0EDD7D5600464DA4 /* KSPathIterator.hh */,
+				D33B29BD0EDD7D5600464DA4 /* KSDirectoryPathIterator.cc */,
+				D33B29BE0EDD7D5600464DA4 /* KSDirectoryPathIterator.hh */,
+				D33B29640EDD3F9500464DA4 /* KSExcludeHiddenFileFilter.cc */,
+				D33B29650EDD3F9500464DA4 /* KSExcludeHiddenFileFilter.hh */,
+				D33B29620EDD3DFC00464DA4 /* KSFileFilter.hh */,
+				D33CB35F1103DF0300DC3592 /* KSCharacterInputStream.cc */,
+				D33CB3601103DF0300DC3592 /* KSCharacterInputStream.hh */,
+				D33CB3451103D50300DC3592 /* KSDataBufferInputStream.cc */,
+				D33CB3461103D50300DC3592 /* KSDataBufferInputStream.hh */,
+				D33CB3471103D50300DC3592 /* KSDataBufferOutputStream.cc */,
+				D33CB3481103D50300DC3592 /* KSDataBufferOutputStream.hh */,
+				D33CBCEA1107C2DA00DC3592 /* KSSocketInputStream.cc */,
+				D33CBCEB1107C2DA00DC3592 /* KSSocketInputStream.hh */,
+				D33CBCEC1107C2DA00DC3592 /* KSSocketOutputStream.cc */,
+				D33CBCED1107C2DA00DC3592 /* KSSocketOutputStream.hh */,
+				D33B278C0EDBC77B00464DA4 /* KSFileInputStream.cc */,
+				D33B278D0EDBC77B00464DA4 /* KSFileInputStream.hh */,
+				D33B278E0EDBC77B00464DA4 /* KSFileOutputStream.cc */,
+				D33B278F0EDBC77B00464DA4 /* KSFileOutputStream.hh */,
+				D3FEC16A0EDA8A6C00CFD448 /* KSInputStream.cc */,
+				D3FEC16B0EDA8A6C00CFD448 /* KSInputStream.hh */,
+				D3FEC16C0EDA8A6C00CFD448 /* KSOutputStream.cc */,
+				D3FEC16D0EDA8A6C00CFD448 /* KSOutputStream.hh */,
+				D3FEC1290EDA6E6800CFD448 /* KSFile.cc */,
+				D3FEC12A0EDA6E6800CFD448 /* KSFile.hh */,
+			);
+			name = io;
+			path = source/keystone/io;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXHeadersBuildPhase section */
+		8D07F2BD0486CC7A007CD1D0 /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				8D07F2BE0486CC7A007CD1D0 /* Keystone_Prefix.pch in Headers */,
+				D31E01BE0DBD7F940071C7DB /* KSObject.hh in Headers */,
+				D3FEC0550ED7EF5500CFD448 /* CFStringAdditions.hh in Headers */,
+				D3FEC0590ED7EF6100CFD448 /* KSLog.hh in Headers */,
+				D3FEC12C0EDA6E6800CFD448 /* KSFile.hh in Headers */,
+				D3FEC12E0EDA6F0D00CFD448 /* KSStatus.hh in Headers */,
+				D3FEC1400EDA71A900CFD448 /* KSTypes.hh in Headers */,
+				D3FEC16F0EDA8A6C00CFD448 /* KSInputStream.hh in Headers */,
+				D3FEC1710EDA8A6C00CFD448 /* KSOutputStream.hh in Headers */,
+				D3FEC1980EDA91AD00CFD448 /* KSStatusPrivate.hh in Headers */,
+				D33B27910EDBC77B00464DA4 /* KSFileInputStream.hh in Headers */,
+				D33B27930EDBC77B00464DA4 /* KSFileOutputStream.hh in Headers */,
+				D33B29370EDD1FF800464DA4 /* KSUtility.hh in Headers */,
+				D33B29610EDD3AA600464DA4 /* KSPointer.hh in Headers */,
+				D33B29630EDD3DFC00464DA4 /* KSFileFilter.hh in Headers */,
+				D33B29670EDD3F9500464DA4 /* KSExcludeHiddenFileFilter.hh in Headers */,
+				D33B29BF0EDD7D5600464DA4 /* KSPathIterator.hh in Headers */,
+				D33B29C10EDD7D5600464DA4 /* KSDirectoryPathIterator.hh in Headers */,
+				D33B2A550EDE4BF800464DA4 /* KSRuntime.hh in Headers */,
+				D33B2A950EDE523500464DA4 /* KSRuntimePrivate.hh in Headers */,
+				D33B2ACD0EDE57FB00464DA4 /* KSRuntimeType.hh in Headers */,
+				D3832AF20EEC9ACD00764262 /* CFNumberAdditions.hh in Headers */,
+				D392F5280EF4E553008C9817 /* KSObjectTypes.hh in Headers */,
+				D392F52A0EF4E553008C9817 /* KSString.hh in Headers */,
+				D392F5360EF4E694008C9817 /* KSCoreFoundationWrapper.hh in Headers */,
+				D392F5380EF4E694008C9817 /* KSNumber.hh in Headers */,
+				D392F5690EF5BA3C008C9817 /* KSBoolean.hh in Headers */,
+				D392F5840EF5BF6B008C9817 /* KSNull.hh in Headers */,
+				D392F5880EF5C1FE008C9817 /* KSCharacter.hh in Headers */,
+				D392F58C0EF5C502008C9817 /* KSArray.hh in Headers */,
+				D392F5900EF5C69F008C9817 /* KSMutableArray.hh in Headers */,
+				D3FF30480EFF546000E2EE66 /* KSError.hh in Headers */,
+				D3FF30520EFF550400E2EE66 /* Keystone.hh in Headers */,
+				D33CB22E1101A07C00DC3592 /* KSAddress.hh in Headers */,
+				D33CB34A1103D50300DC3592 /* KSDataBufferInputStream.hh in Headers */,
+				D33CB34C1103D50300DC3592 /* KSDataBufferOutputStream.hh in Headers */,
+				D33CB3621103DF0300DC3592 /* KSCharacterInputStream.hh in Headers */,
+				D33CBAB2110662BC00DC3592 /* KSKeychainManager.hh in Headers */,
+				D33CBC8F11075A5500DC3592 /* KSSocket.hh in Headers */,
+				D33CBC961107836C00DC3592 /* KSSecureSocket.hh in Headers */,
+				D33CBCEF1107C2DA00DC3592 /* KSSocketInputStream.hh in Headers */,
+				D33CBCF11107C2DA00DC3592 /* KSSocketOutputStream.hh in Headers */,
+				D3CE4C0E110F15FE004F974A /* KSOptionParser.hh in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXHeadersBuildPhase section */
+
+/* Begin PBXNativeTarget section */
+		8D07F2BC0486CC7A007CD1D0 /* Keystone */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 4FADC24208B4156D00ABE55E /* Build configuration list for PBXNativeTarget "Keystone" */;
+			buildPhases = (
+				D3FEC1AA0EDA927400CFD448 /* ShellScript */,
+				D392F50E0EF4DD70008C9817 /* ShellScript */,
+				8D07F2BD0486CC7A007CD1D0 /* Headers */,
+				8D07F2BF0486CC7A007CD1D0 /* Resources */,
+				8D07F2C10486CC7A007CD1D0 /* Sources */,
+				8D07F2C30486CC7A007CD1D0 /* Frameworks */,
+				8D07F2C50486CC7A007CD1D0 /* Rez */,
+				D3FEC08A0ED7F13A00CFD448 /* CopyFiles */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = Keystone;
+			productInstallPath = "$(HOME)/Library/Frameworks";
+			productName = Keystone;
+			productReference = 8D07F2C80486CC7A007CD1D0 /* Keystone.framework */;
+			productType = "com.apple.product-type.framework";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		0867D690FE84028FC02AAC07 /* Project object */ = {
+			isa = PBXProject;
+			buildConfigurationList = 4FADC24608B4156D00ABE55E /* Build configuration list for PBXProject "Keystone" */;
+			compatibilityVersion = "Xcode 3.0";
+			hasScannedForEncodings = 1;
+			mainGroup = 0867D691FE84028FC02AAC07 /* Keystone */;
+			productRefGroup = 034768DDFF38A45A11DB9C8B /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				8D07F2BC0486CC7A007CD1D0 /* Keystone */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		8D07F2BF0486CC7A007CD1D0 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				8D07F2C00486CC7A007CD1D0 /* InfoPlist.strings in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXRezBuildPhase section */
+		8D07F2C50486CC7A007CD1D0 /* Rez */ = {
+			isa = PBXRezBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXRezBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		D392F50E0EF4DD70008C9817 /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "perl $PROJECT_DIR/scripts/GenerateKSObjectTypes.pl \\\n\t$PROJECT_DIR/source \\\n\t$PROJECT_DIR/source/keystone/core/KSObjectTypes.hh \\\n\t$PROJECT_DIR/.ksobjecttypes-changes\n";
+		};
+		D3FEC1AA0EDA927400CFD448 /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "perl $PROJECT_DIR/scripts/GenerateKSStatusMap.pl \\\n\t$PROJECT_DIR/source/keystone/core/KSStatus.hh \\\n\t$PROJECT_DIR/source/keystone/core/KSStatusPopulate.cc \\\n\t__KSStatusPopulateMessageMap";
+		};
+/* End PBXShellScriptBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		8D07F2C10486CC7A007CD1D0 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				D31E01BD0DBD7F940071C7DB /* KSObject.cc in Sources */,
+				D3FEC0540ED7EF5500CFD448 /* CFStringAdditions.cc in Sources */,
+				D3FEC0580ED7EF6100CFD448 /* KSLog.cc in Sources */,
+				D3FEC12B0EDA6E6800CFD448 /* KSFile.cc in Sources */,
+				D3FEC16E0EDA8A6C00CFD448 /* KSInputStream.cc in Sources */,
+				D3FEC1700EDA8A6C00CFD448 /* KSOutputStream.cc in Sources */,
+				D3FEC1970EDA91AD00CFD448 /* KSStatus.cc in Sources */,
+				D3FEC1C40EDA939400CFD448 /* KSStatusPopulate.cc in Sources */,
+				D33B27900EDBC77B00464DA4 /* KSFileInputStream.cc in Sources */,
+				D33B27920EDBC77B00464DA4 /* KSFileOutputStream.cc in Sources */,
+				D33B29360EDD1FF800464DA4 /* KSUtility.cc in Sources */,
+				D33B29600EDD3AA600464DA4 /* KSPointer.cc in Sources */,
+				D33B29660EDD3F9500464DA4 /* KSExcludeHiddenFileFilter.cc in Sources */,
+				D33B29C00EDD7D5600464DA4 /* KSDirectoryPathIterator.cc in Sources */,
+				D33B2A540EDE4BF800464DA4 /* KSRuntime.cc in Sources */,
+				D33B2ACC0EDE57FB00464DA4 /* KSRuntimeType.cc in Sources */,
+				D3832AF10EEC9ACD00764262 /* CFNumberAdditions.cc in Sources */,
+				D392F5290EF4E553008C9817 /* KSString.cc in Sources */,
+				D392F5370EF4E694008C9817 /* KSNumber.cc in Sources */,
+				D392F5680EF5BA3C008C9817 /* KSBoolean.cc in Sources */,
+				D392F5830EF5BF6B008C9817 /* KSNull.cc in Sources */,
+				D392F5870EF5C1FE008C9817 /* KSCharacter.cc in Sources */,
+				D392F58B0EF5C502008C9817 /* KSArray.cc in Sources */,
+				D392F58F0EF5C69F008C9817 /* KSMutableArray.cc in Sources */,
+				D3FF30470EFF546000E2EE66 /* KSError.cc in Sources */,
+				D33CB22D1101A07C00DC3592 /* KSAddress.cc in Sources */,
+				D33CB3491103D50300DC3592 /* KSDataBufferInputStream.cc in Sources */,
+				D33CB34B1103D50300DC3592 /* KSDataBufferOutputStream.cc in Sources */,
+				D33CB3611103DF0300DC3592 /* KSCharacterInputStream.cc in Sources */,
+				D33CBAB1110662BC00DC3592 /* KSKeychainManager.cc in Sources */,
+				D33CBC8E11075A5500DC3592 /* KSSocket.cc in Sources */,
+				D33CBC951107836C00DC3592 /* KSSecureSocket.cc in Sources */,
+				D33CBCEE1107C2DA00DC3592 /* KSSocketInputStream.cc in Sources */,
+				D33CBCF01107C2DA00DC3592 /* KSSocketOutputStream.cc in Sources */,
+				D3CE4C0D110F15FE004F974A /* KSOptionParser.cc in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXVariantGroup section */
+		089C1666FE841158C02AAC07 /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				089C1667FE841158C02AAC07 /* English */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		4FADC24308B4156D00ABE55E /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ARCHS = "$(NATIVE_ARCH_ACTUAL)";
+				COPY_PHASE_STRIP = NO;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				FRAMEWORK_VERSION = A;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_ENABLE_FIX_AND_CONTINUE = YES;
+				GCC_MODEL_TUNING = G5;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = Keystone_Prefix.pch;
+				INFOPLIST_FILE = Info.plist;
+				INSTALL_PATH = /Library/Frameworks;
+				LIBRARY_STYLE = DYNAMIC;
+				MACH_O_TYPE = mh_dylib;
+				ONLY_ACTIVE_ARCH = YES;
+				OTHER_CFLAGS = "";
+				PRODUCT_NAME = Keystone;
+				SYMROOT = ../../build;
+				WRAPPER_EXTENSION = framework;
+				ZERO_LINK = YES;
+			};
+			name = Debug;
+		};
+		4FADC24408B4156D00ABE55E /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ARCHS = "$(ARCHS_STANDARD_32_64_BIT_PRE_XCODE_3_1)";
+				ARCHS_STANDARD_32_64_BIT_PRE_XCODE_3_1 = "x86_64 i386 ppc";
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				FRAMEWORK_VERSION = A;
+				GCC_MODEL_TUNING = G5;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = Keystone_Prefix.pch;
+				INFOPLIST_FILE = Info.plist;
+				INSTALL_PATH = /Library/Frameworks;
+				LIBRARY_STYLE = DYNAMIC;
+				MACH_O_TYPE = mh_dylib;
+				ONLY_ACTIVE_ARCH = NO;
+				OTHER_CFLAGS = "";
+				PRODUCT_NAME = Keystone;
+				SYMROOT = ../../build;
+				WRAPPER_EXTENSION = framework;
+			};
+			name = Release;
+		};
+		4FADC24708B4156D00ABE55E /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ARCHS = "$(NATIVE_ARCH_ACTUAL)";
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				INSTALL_PATH = /Library/Frameworks;
+				PREBINDING = NO;
+				SDKROOT = "$(DEVELOPER_SDK_DIR)/MacOSX10.5.sdk";
+			};
+			name = Debug;
+		};
+		4FADC24808B4156D00ABE55E /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ARCHS = "$(ARCHS_STANDARD_32_64_BIT_PRE_XCODE_3_1)";
+				ARCHS_STANDARD_32_64_BIT_PRE_XCODE_3_1 = "x86_64 i386 ppc";
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				INSTALL_PATH = /Library/Frameworks;
+				PREBINDING = NO;
+				SDKROOT = "$(DEVELOPER_SDK_DIR)/MacOSX10.5.sdk";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		4FADC24208B4156D00ABE55E /* Build configuration list for PBXNativeTarget "Keystone" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				4FADC24308B4156D00ABE55E /* Debug */,
+				4FADC24408B4156D00ABE55E /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		4FADC24608B4156D00ABE55E /* Build configuration list for PBXProject "Keystone" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				4FADC24708B4156D00ABE55E /* Debug */,
+				4FADC24808B4156D00ABE55E /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 0867D690FE84028FC02AAC07 /* Project object */;
+}
