@@ -36,7 +36,7 @@ USING THE ASSEMBLER CORE FRAMEWORK
 
 Most of the work done by Web Assembler is performed by the AssemblerCore
 framework.  If you're so inclined, you can incorporate this framework into
-another project (as we have with the Code plugin).  This is the primary reason
+another project (as we have with the Coda plugin).  This is the primary reason
 AssemblerCore and Keystone are built as separate frameworks instead of being
 linked directly into the command line tool.
 
