@@ -12,7 +12,7 @@ Technically, Web Assembler could be compiled on a variety of platforms, however
 it relies heavily on Apple's CoreFoundation framework for some core functionality
 (strings, arrays, etc.) and while, officially, CoreFoundation is portable, in
 practice this is a pain in the ass.  So, for practical purposes, Web Assembler is
-really only targeted to (and tested on) Mac OS X until someone gets around to
+really only targeted to (and tested on) Mac OS X--until someone gets around to
 making a reasonably good CoreFoundation port for other platforms.
 
 BUILDING THE COMMAND LINE TOOL FROM SOURCE
