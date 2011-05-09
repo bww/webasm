@@ -50,7 +50,6 @@
 #include "ALBuildCommand.hh"
 #include "ALPlanCommand.hh"
 #include "ALParseCommand.hh"
-#include "ALPushCommand.hh"
 
 int ALLoadOptions(ALOptionsModel *options, int argc, char * const argv[]);
 void ALDisplayUsage(FILE *stream);
@@ -85,8 +84,6 @@ int main(int argc, char * const argv[]) {
     instance = new ALPlanCommand();
   }else if(strcasecmp(command, "parse") == 0 || strcasecmp(command, "wa") == 0){
     instance = new ALParseCommand();
-  }else if(strcasecmp(command, "push") == 0 || strcasecmp(command, "pu") == 0){
-    instance = new ALPushCommand();
   }else{
     ALDisplayUsage(stdout);
     return -1;

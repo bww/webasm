@@ -82,10 +82,6 @@
 		D3A4298212AC0C96006DC332 /* ALServer.hh in Headers */ = {isa = PBXBuildFile; fileRef = D3A4298012AC0C96006DC332 /* ALServer.hh */; };
 		D3A4298312AC0C96006DC332 /* ALServer.cc in Sources */ = {isa = PBXBuildFile; fileRef = D3A4297F12AC0C96006DC332 /* ALServer.cc */; };
 		D3A4298412AC0C96006DC332 /* ALServer.cc in Sources */ = {isa = PBXBuildFile; fileRef = D3A4297F12AC0C96006DC332 /* ALServer.cc */; };
-		D3A429A812AC11AB006DC332 /* ALPushCommand.cc in Sources */ = {isa = PBXBuildFile; fileRef = D3A429A612AC11AB006DC332 /* ALPushCommand.cc */; };
-		D3A429A912AC11AB006DC332 /* ALPushCommand.hh in Headers */ = {isa = PBXBuildFile; fileRef = D3A429A712AC11AB006DC332 /* ALPushCommand.hh */; };
-		D3A429AA12AC11AB006DC332 /* ALPushCommand.cc in Sources */ = {isa = PBXBuildFile; fileRef = D3A429A612AC11AB006DC332 /* ALPushCommand.cc */; };
-		D3A429AB12AC11AB006DC332 /* ALPushCommand.cc in Sources */ = {isa = PBXBuildFile; fileRef = D3A429A612AC11AB006DC332 /* ALPushCommand.cc */; };
 		D3A429E712AC3CE2006DC332 /* ALDependencyGraph.cc in Sources */ = {isa = PBXBuildFile; fileRef = D3A429E512AC3CE2006DC332 /* ALDependencyGraph.cc */; };
 		D3A429E812AC3CE2006DC332 /* ALDependencyGraph.hh in Headers */ = {isa = PBXBuildFile; fileRef = D3A429E612AC3CE2006DC332 /* ALDependencyGraph.hh */; };
 		D3A429E912AC3CE2006DC332 /* ALDependencyGraph.cc in Sources */ = {isa = PBXBuildFile; fileRef = D3A429E512AC3CE2006DC332 /* ALDependencyGraph.cc */; };
@@ -273,8 +269,6 @@
 		D3A2F2B6109CDD6D002A1620 /* ALExecuteDirective.hh */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = ALExecuteDirective.hh; sourceTree = "<group>"; };
 		D3A4297F12AC0C96006DC332 /* ALServer.cc */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = ALServer.cc; sourceTree = "<group>"; };
 		D3A4298012AC0C96006DC332 /* ALServer.hh */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = ALServer.hh; sourceTree = "<group>"; };
-		D3A429A612AC11AB006DC332 /* ALPushCommand.cc */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = ALPushCommand.cc; sourceTree = "<group>"; };
-		D3A429A712AC11AB006DC332 /* ALPushCommand.hh */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = ALPushCommand.hh; sourceTree = "<group>"; };
 		D3A429E512AC3CE2006DC332 /* ALDependencyGraph.cc */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = ALDependencyGraph.cc; sourceTree = "<group>"; };
 		D3A429E612AC3CE2006DC332 /* ALDependencyGraph.hh */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = ALDependencyGraph.hh; sourceTree = "<group>"; };
 		D3A42A0912AD2AF2006DC332 /* ALSourceFilterContext.cc */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = ALSourceFilterContext.cc; sourceTree = "<group>"; };
@@ -570,8 +564,6 @@
 		D3FEC0D70ED8146A00CFD448 /* command */ = {
 			isa = PBXGroup;
 			children = (
-				D3A429A612AC11AB006DC332 /* ALPushCommand.cc */,
-				D3A429A712AC11AB006DC332 /* ALPushCommand.hh */,
 				D3A2F29610995697002A1620 /* ALHelpCommand.cc */,
 				D3A2F29710995697002A1620 /* ALHelpCommand.hh */,
 				D3A2F04F1097C3D5002A1620 /* ALParseCommand.cc */,
@@ -653,7 +645,6 @@
 				D394284A1117612600B25851 /* ALUtility.hh in Headers */,
 				D39429391117CA3100B25851 /* ALJSDirective.hh in Headers */,
 				D3A4298212AC0C96006DC332 /* ALServer.hh in Headers */,
-				D3A429A912AC11AB006DC332 /* ALPushCommand.hh in Headers */,
 				D3A429E812AC3CE2006DC332 /* ALDependencyGraph.hh in Headers */,
 				D3A42A0C12AD2AF2006DC332 /* ALSourceFilterContext.hh in Headers */,
 			);
@@ -816,7 +807,6 @@
 				D3A2F0511097C3D5002A1620 /* ALParseCommand.cc in Sources */,
 				D3A2F29810995697002A1620 /* ALHelpCommand.cc in Sources */,
 				D3A4298312AC0C96006DC332 /* ALServer.cc in Sources */,
-				D3A429AA12AC11AB006DC332 /* ALPushCommand.cc in Sources */,
 				D3A429E912AC3CE2006DC332 /* ALDependencyGraph.cc in Sources */,
 				D3A42A0D12AD2AF2006DC332 /* ALSourceFilterContext.cc in Sources */,
 			);
@@ -828,7 +818,6 @@
 			files = (
 				D33B27E80EDCBA6100464DA4 /* ALAssemblerCodaPlugin.mm in Sources */,
 				D3A4298412AC0C96006DC332 /* ALServer.cc in Sources */,
-				D3A429AB12AC11AB006DC332 /* ALPushCommand.cc in Sources */,
 				D3A429EA12AC3CE2006DC332 /* ALDependencyGraph.cc in Sources */,
 				D3A42A0E12AD2AF2006DC332 /* ALSourceFilterContext.cc in Sources */,
 			);
@@ -866,7 +855,6 @@
 				D39428491117612600B25851 /* ALUtility.cc in Sources */,
 				D39429381117CA3100B25851 /* ALJSDirective.cc in Sources */,
 				D3A4298112AC0C96006DC332 /* ALServer.cc in Sources */,
-				D3A429A812AC11AB006DC332 /* ALPushCommand.cc in Sources */,
 				D3A429E712AC3CE2006DC332 /* ALDependencyGraph.cc in Sources */,
 				D3A42A0B12AD2AF2006DC332 /* ALSourceFilterContext.cc in Sources */,
 			);
@@ -921,10 +909,7 @@
 				GCC_PREPROCESSOR_DEFINITIONS = "";
 				HEADER_SEARCH_PATHS = /Developer/SDKs/MacOSX10.5.sdk/usr/include/libxml2/;
 				INSTALL_PATH = /usr/local/bin;
-				LIBRARY_SEARCH_PATHS = (
-					"$(inherited)",
-					"\"$(SRCROOT)/library/Frameworks/pcre-8.01\"",
-				);
+				LIBRARY_SEARCH_PATHS = "$(inherited)";
 				ONLY_ACTIVE_ARCH = YES;
 				OTHER_CFLAGS = (
 					"-DWEB_ASSEMBLER_REVISION=\"\\\"r.135\\\"\"",
@@ -949,10 +934,7 @@
 				GCC_MODEL_TUNING = "";
 				HEADER_SEARCH_PATHS = /Developer/SDKs/MacOSX10.5.sdk/usr/include/libxml2/;
 				INSTALL_PATH = /usr/local/bin;
-				LIBRARY_SEARCH_PATHS = (
-					"$(inherited)",
-					"\"$(SRCROOT)/library/Frameworks/pcre-8.01\"",
-				);
+				LIBRARY_SEARCH_PATHS = "$(inherited)";
 				ONLY_ACTIVE_ARCH = NO;
 				OTHER_CFLAGS = (
 					"-DWEB_ASSEMBLER_REVISION=\"\\\"r.135\\\"\"",
@@ -1066,10 +1048,7 @@
 				HEADER_SEARCH_PATHS = /Developer/SDKs/MacOSX10.5.sdk/usr/include/libxml2/;
 				INFOPLIST_FILE = "AssemblerCore-Info.plist";
 				INSTALL_PATH = /Library/Frameworks;
-				LIBRARY_SEARCH_PATHS = (
-					"$(inherited)",
-					"\"$(SRCROOT)/library/Frameworks/pcre-8.01\"",
-				);
+				LIBRARY_SEARCH_PATHS = "$(inherited)";
 				ONLY_ACTIVE_ARCH = YES;
 				OTHER_CFLAGS = "";
 				OTHER_LDFLAGS = "";
@@ -1099,10 +1078,7 @@
 				HEADER_SEARCH_PATHS = /Developer/SDKs/MacOSX10.5.sdk/usr/include/libxml2/;
 				INFOPLIST_FILE = "AssemblerCore-Info.plist";
 				INSTALL_PATH = /Library/Frameworks;
-				LIBRARY_SEARCH_PATHS = (
-					"$(inherited)",
-					"\"$(SRCROOT)/library/Frameworks/pcre-8.01\"",
-				);
+				LIBRARY_SEARCH_PATHS = "$(inherited)";
 				ONLY_ACTIVE_ARCH = NO;
 				OTHER_CFLAGS = "";
 				OTHER_LDFLAGS = (
