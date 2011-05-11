@@ -45,8 +45,9 @@
 
 class ALHTMLSourceFilter : public ALSourceFilter {
 private:
-  JSContextRef  _jsContext;
-  JSObjectRef   _jsPeer;
+  JSContextRef              _jsContext;
+  JSObjectRef               _jsPeer;
+  mutable KSOutputStream  * _currentOutputStream;
   
 protected:
   KSStatus initJSContext(JSContextRef jsContext);
@@ -61,6 +62,8 @@ public:
   CFStringRef getFilterDestinationPath(void) const;
   CFStringRef getFilterSourceBasePath(void) const;
   JSObjectRef getJavaScriptPeer(void) const;
+  
+  virtual KSOutputStream * getCurrentOutputStream(void) const;
   
   virtual KSStatus filter(KSInputStream *ins, KSOutputStream *outs) const;
   virtual KSStatus filter(CFStringRef fulltext, KSOutputStream *outs) const;

@@ -33,6 +33,7 @@
 
 #include <Keystone/KSLog.hh>
 #include <Keystone/KSUtility.hh>
+#include <Keystone/KSOutputStream.hh>
 #include <Keystone/CFStringAdditions.hh>
 
 static void ALJSDocument_init(JSContextRef jsContext, JSObjectRef object) {
@@ -200,9 +201,9 @@ error:
   return result;
 }
 
-/*
 static JSValueRef ALJSDocument_print(JSContextRef jsContext, JSObjectRef function, JSObjectRef object, size_t argc, const JSValueRef argv[], JSValueRef* exception) {
-  //ALHTMLSourceFilter *filter = (ALHTMLSourceFilter *)JSObjectGetPrivate(object);
+  ALHTMLSourceFilter *filter = (ALHTMLSourceFilter *)JSObjectGetPrivate(object);
+  KSOutputStream *ostream = NULL;
   JSStringRef content = NULL;
   CFStringRef vcontent = NULL;
   
@@ -212,12 +213,20 @@ static JSValueRef ALJSDocument_print(JSContextRef jsContext, JSObjectRef functio
     }
   }
   
+  if((ostream = filter->getCurrentOutputStream()) == NULL){
+    if(exception != NULL){
+      ALJSMakeException(jsContext, *exception, CFSTR("Peer object has no current output stream"), error);
+    }
+  }
+  
   if((content = JSValueToStringCopy(jsContext, argv[0], exception)) == NULL){
     KSLogError("Unable to copy argument content");
     goto error;
   }
   
-  vcontent = JSStringCopyCFString(NULL, content);
+  if((vcontent = JSStringCopyCFString(NULL, content)) != NULL){
+    ostream->writeCFString(vcontent, CFRangeMake(0, CFStringGetLength(vcontent)), NULL);
+  }
   
 error:
   if(vcontent)    CFRelease(vcontent);
@@ -228,6 +237,8 @@ error:
 
 static JSValueRef ALJSDocument_println(JSContextRef jsContext, JSObjectRef function, JSObjectRef object, size_t argc, const JSValueRef argv[], JSValueRef* exception) {
   ALHTMLSourceFilter *filter = (ALHTMLSourceFilter *)JSObjectGetPrivate(object);
+  CFStringRef newline = CFSTR("\n");
+  KSOutputStream *ostream = NULL;
   JSStringRef content = NULL;
   CFStringRef vcontent = NULL;
   
@@ -237,12 +248,21 @@ static JSValueRef ALJSDocument_println(JSContextRef jsContext, JSObjectRef funct
     }
   }
   
+  if((ostream = filter->getCurrentOutputStream()) == NULL){
+    if(exception != NULL){
+      ALJSMakeException(jsContext, *exception, CFSTR("Peer object has no current output stream"), error);
+    }
+  }
+  
   if((content = JSValueToStringCopy(jsContext, argv[0], exception)) == NULL){
     KSLogError("Unable to copy argument content");
     goto error;
   }
   
-  vcontent = JSStringCopyCFString(NULL, content);
+  if((vcontent = JSStringCopyCFString(NULL, content)) != NULL){
+    ostream->writeCFString(vcontent, CFRangeMake(0, CFStringGetLength(vcontent)), NULL);
+    ostream->writeCFString(newline, CFRangeMake(0, CFStringGetLength(newline)), NULL);
+  }
   
 error:
   if(vcontent)    CFRelease(vcontent);
@@ -250,7 +270,7 @@ error:
   
   return JSValueMakeUndefined(jsContext);
 }
-*/
+
 
 static JSValueRef ALJSDocument_log(JSContextRef jsContext, JSObjectRef function, JSObjectRef object, size_t argc, const JSValueRef argv[], JSValueRef* exception) {
   JSStringRef content = NULL;
@@ -267,9 +287,9 @@ static JSValueRef ALJSDocument_log(JSContextRef jsContext, JSObjectRef function,
     goto error;
   }
   
-  vcontent = JSStringCopyCFString(NULL, content);
-  
-  KSLog("[JS]: %@", vcontent);
+  if((vcontent = JSStringCopyCFString(NULL, content)) != NULL){
+    KSLog("[JS]: %@", vcontent);
+  }
   
 error:
   if(vcontent)    CFRelease(vcontent);
@@ -317,8 +337,8 @@ static JSStaticFunction ALJSDocument_functions[] = {
   { "getTransposedPath",  ALJSDocument_getTransposedPath,   kJSPropertyAttributeDontDelete | kJSPropertyAttributeReadOnly },
   { "getSourcePath",      ALJSDocument_getSourcePath,       kJSPropertyAttributeDontDelete | kJSPropertyAttributeReadOnly },
   { "getDestinationPath", ALJSDocument_getDestinationPath,  kJSPropertyAttributeDontDelete | kJSPropertyAttributeReadOnly },
-  //{ "print",              ALJSDocument_print,               kJSPropertyAttributeDontDelete | kJSPropertyAttributeReadOnly },
-  //{ "println",            ALJSDocument_println,             kJSPropertyAttributeDontDelete | kJSPropertyAttributeReadOnly },
+  { "print",              ALJSDocument_print,               kJSPropertyAttributeDontDelete | kJSPropertyAttributeReadOnly },
+  { "println",            ALJSDocument_println,             kJSPropertyAttributeDontDelete | kJSPropertyAttributeReadOnly },
   { "log",                ALJSDocument_log,                 kJSPropertyAttributeDontDelete | kJSPropertyAttributeReadOnly },
   { "toString",           ALJSDocument_toString,            kJSPropertyAttributeDontDelete | kJSPropertyAttributeReadOnly },
   { 0, 0, 0 }

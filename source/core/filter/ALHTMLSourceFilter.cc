@@ -58,7 +58,8 @@ ALHTMLSourceFilter::ALHTMLSourceFilter(const ALOptionsModel *model, const ALSour
  * Clean up
  */
 ALHTMLSourceFilter::~ALHTMLSourceFilter() {
-  if(_jsContext)  JSGlobalContextRelease((JSGlobalContextRef)_jsContext);
+  if(_jsContext)            JSGlobalContextRelease((JSGlobalContextRef)_jsContext);
+  if(_currentOutputStream)  KSRelease(_currentOutputStream);
 }
 
 /**
@@ -176,6 +177,15 @@ JSObjectRef ALHTMLSourceFilter::getJavaScriptPeer(void) const {
 }
 
 /**
+ * Obtain the current output stream for this filter.
+ * 
+ * @return output stream
+ */
+KSOutputStream * ALHTMLSourceFilter::getCurrentOutputStream(void) const {
+  return _currentOutputStream;
+}
+
+/**
  * Filter
  * 
  * @param ins input stream
@@ -194,6 +204,10 @@ KSStatus ALHTMLSourceFilter::filter(KSInputStream *ins, KSOutputStream *outs) co
   
   JSObjectRef parentPeer = NULL;
   
+  // setup the current output stream
+  _currentOutputStream = KSRetain(outs);
+  
+  // check parameters
   if(ins == NULL || outs == NULL){
     KSLogError("Input or output stream is null; cannot filter text");
     status = KSStatusError;
@@ -275,6 +289,9 @@ error:
   if(tree)    KSRelease(tree);
   if(root)    KSRelease(root);
   if(error)   KSRelease(error);
+  
+  // tear down the current output stream
+  KSRelease(_currentOutputStream);
   
   return status;
 }

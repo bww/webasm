@@ -60,6 +60,8 @@ public:
   const ALDirective * getParentDirective(void) const;
   const ALSourceFilterContext * getContextInfo(void) const;
   
+  virtual KSOutputStream * getCurrentOutputStream(void) const = 0;
+  
   virtual KSStatus filter(KSInputStream *ins, KSOutputStream *outs) const = 0;
   virtual KSStatus filter(CFStringRef fulltext, KSOutputStream *outs) const = 0;
   
