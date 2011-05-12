@@ -175,7 +175,7 @@ KSStatus ALInsertDirective::emit(const ALSourceFilter *filter, KSOutputStream *o
     KSLog("Emitting directive: insert (%@)", getResourcePath());
   }
   
-  if((status = pushJSContext(jsContext, &peer)) != KSStatusOk){
+  if((status = pushJSContext(jsContext, &peer, filter, outs, context)) != KSStatusOk){
     goto error;
   }
   

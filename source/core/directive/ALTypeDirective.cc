@@ -463,7 +463,7 @@ KSStatus ALTypeDirective::emit(const ALSourceFilter *filter, KSOutputStream *out
     goto error;
   }
   
-  if((status = pushJSContext(jsContext, &peer)) != KSStatusOk){
+  if((status = pushJSContext(jsContext, &peer, filter, outs, context)) != KSStatusOk){
     goto error;
   }
   

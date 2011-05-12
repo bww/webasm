@@ -45,15 +45,22 @@
 
 class ALSourceFilter;
 
+typedef enum ALDirectiveEmitOptionsMask_ {
+  kALDirectiveEmitOptionNone        = 0,
+  kALDirectiveEmitOptionNoRecursion = 1 << 0
+} ALDirectiveEmitOptionsMask;
+
+typedef CFIndex ALDirectiveEmitOptions;
+
 class ALDirective : public KSObject {
 private:
-  const ALDirective       *_parent;
-  CFMutableDictionaryRef  _properties;
+  const ALDirective       * _parent;
+  CFMutableDictionaryRef    _properties;
   
 protected:
   ALDirective(const ALDirective *parent = NULL, CFDictionaryRef properties = NULL);
   
-  KSStatus pushJSContext(JSContextRef jsContext, JSObjectRef *peer) const;
+  KSStatus pushJSContext(JSContextRef jsContext, JSObjectRef *peer, const ALSourceFilter *filter = NULL, KSOutputStream *outs = NULL, const ALSourceFilterContext *context = NULL) const;
   KSStatus restoreJSContext(JSContextRef jsContext, JSObjectRef peer) const;
   
   void setProperties(CFDictionaryRef properties);

@@ -1,8 +1,8 @@
 // 
-// $Id: ALEscapeDirective.hh 160 2010-12-06 22:07:33Z brian $
+// $Id: ALJSDirective.hh 123 2010-02-02 03:34:34Z brian $
 // Web Assembler
 // 
-// Copyright (c) 2009 Wolter Group New York, Inc., All rights reserved.
+// Copyright (c) 2010 Wolter Group New York, Inc., All rights reserved.
 // 
 // This software ("WGNY Software") is supplied to you by Wolter Group New York
 // ("WGNY") in consideration of your acceptance of the terms of the Agreement
@@ -27,37 +27,40 @@
 // Designed and Engineered by Wolter Group in New York City
 // 
 
-#if !defined(__ALESCAPEDIRECTIVE__)
-#define __ALESCAPEDIRECTIVE__ 1
+#if !defined(__ALJSCONTEXT__)
+#define __ALJSCONTEXT__ 1
 
 #include <CoreFoundation/CoreFoundation.h>
-#include <JavaScriptCore/JavaScriptCore.h>
 
 #include <Keystone/KSObject.hh>
 #include <Keystone/KSOutputStream.hh>
+#include <Keystone/KSInputStream.hh>
 #include <Keystone/KSStatus.hh>
 
-#include <libxml/tree.h>
-
 #include "ALOptionsModel.hh"
-#include "ALDirectiveList.hh"
+#include "ALSourceFilter.hh"
+#include "ALSourceFilterContext.hh"
+#include "ALDirective.hh"
 
-#define kALEscapeDirectivePermittedCharacters CFSTR("abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789 \t\v\n\r")
-
-class ALEscapeDirective : public ALDirectiveList {
+class ALJSContext : public KSObject {
 private:
+  const KSObject              * _peer;
+  const ALSourceFilter        * _filter;
+  const ALSourceFilterContext * _context;
+  KSOutputStream              * _ostream;
   
 public:
-  ALEscapeDirective(const ALDirective *parent, CFDictionaryRef properties);
-  virtual ~ALEscapeDirective();
+  ALJSContext(const KSObject *peer, const ALSourceFilter *filter, KSOutputStream *ostream, const ALSourceFilterContext *context);
+  virtual ~ALJSContext();
   
-  static ALEscapeDirective * createFromWAML(const ALOptionsModel *options, const ALDirective *parent, CFDictionaryRef properties, ALElement *el, KSStatus *status = NULL);
+  const KSObject * getPeer(void) const;
+  const ALSourceFilter * getSourceFilter(void) const;
+  const ALSourceFilterContext * getSourceFilterContext(void) const;
+  KSOutputStream * getOutputStream(void) const;
   
-  virtual CFStringRef getName(void) const;
-  
-  virtual KSStatus emit(const ALSourceFilter *filter, KSOutputStream *outs, JSContextRef jsContext, const ALSourceFilterContext *context) const;
   
 };
 
-#endif __ALESCAPEDIRECTIVE__
+
+#endif //__ALJSCONTEXT__
 

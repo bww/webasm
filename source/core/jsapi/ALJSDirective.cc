@@ -29,7 +29,10 @@
 
 #include "ALJSDirective.hh"
 #include "ALDirective.hh"
+#include "ALInsertDirective.hh"
+#include "ALHTMLSourceFilter.hh"
 #include "ALJSUtility.hh"
+#include "ALJSContext.hh"
 
 #include <Keystone/KSLog.hh>
 #include <Keystone/KSUtility.hh>
@@ -42,7 +45,8 @@ static void ALJSDirective_finalize(JSObjectRef object) {
 }
 
 static JSValueRef ALJSDirective_getProperty(JSContextRef jsContext, JSObjectRef function, JSObjectRef object, size_t argc, const JSValueRef argv[], JSValueRef* exception) {
-  ALDirective *directive = (ALDirective *)JSObjectGetPrivate(object);
+  ALJSContext *context = (ALJSContext *)JSObjectGetPrivate(object);
+  ALDirective *directive = (ALDirective *)context->getPeer();
   CFStringRef name      = NULL;
   CFStringRef value     = NULL;
   JSStringRef jsname    = NULL;
@@ -78,7 +82,8 @@ error:
 }
 
 static JSValueRef ALJSDirective_toString(JSContextRef jsContext, JSObjectRef function, JSObjectRef object, size_t argc, const JSValueRef argv[], JSValueRef* exception) {
-  ALDirective *directive = (ALDirective *)JSObjectGetPrivate(object);
+  ALJSContext *context = (ALJSContext *)JSObjectGetPrivate(object);
+  ALDirective *directive = (ALDirective *)context->getPeer();
   JSValueRef result = NULL;
   JSStringRef string = NULL;
   CFStringRef descr = NULL;
@@ -94,6 +99,78 @@ error:
   return result;
 }
 
+/**
+ * Insert a resource into the document as if an insert directive were nested in the caller
+ * element.
+ */
+static JSValueRef ALJSDirective_insert(JSContextRef jsContext, JSObjectRef function, JSObjectRef object, size_t argc, const JSValueRef argv[], JSValueRef* exception) {
+  ALJSContext *context = (ALJSContext *)JSObjectGetPrivate(object);
+  ALDirective *directive = (ALDirective *)context->getPeer();
+  ALHTMLSourceFilter *filter = NULL;
+  ALInsertDirective *insert = NULL;
+  KSOutputStream *ostream = NULL;
+  JSStringRef jresource = NULL;
+  CFStringRef resource = NULL;
+  KSStatus status = KSStatusOk;
+  
+  if(argc < 1){
+    if(exception != NULL){
+      ALJSMakeException(jsContext, *exception, CFSTR("insert() requires 1 argument (the path to a resource to insert)"), error);
+    }else{
+      goto error;
+    }
+  }
+  
+  if((filter = (ALHTMLSourceFilter *)context->getSourceFilter()) == NULL){
+    if(exception != NULL){
+      ALJSMakeException(jsContext, *exception, CFSTR("No filter"), error);
+    }else{
+      goto error;
+    }
+  }
+  
+  if((ostream = context->getOutputStream()) == NULL){
+    if(exception != NULL){
+      ALJSMakeException(jsContext, *exception, CFSTR("No current output stream"), error);
+    }else{
+      goto error;
+    }
+  }
+  
+  if((jresource = JSValueToStringCopy(jsContext, argv[0], exception)) == NULL){
+    if(exception != NULL){
+      ALJSMakeException(jsContext, *exception, CFSTR("Unable to copy argument content"), error);
+    }else{
+      goto error;
+    }
+  }
+  
+  if((resource = JSStringCopyCFString(NULL, jresource)) == NULL){
+    if(exception != NULL){
+      ALJSMakeException(jsContext, *exception, CFSTR("Unable to convert argument content"), error);
+    }else{
+      goto error;
+    }
+  }
+  
+  insert = new ALInsertDirective(directive, NULL, resource);
+  
+  if((status = insert->emit(filter, ostream, jsContext, context->getSourceFilterContext())) != KSStatusOk){
+    if(exception != NULL){
+      ALJSMakeException(jsContext, *exception, CFSTR("Unable to insert"), error);
+    }else{
+      goto error;
+    }
+  }
+  
+error:
+  if(insert)    KSRelease(insert);
+  if(jresource) JSStringRelease(jresource);
+  if(resource)  CFRelease(resource);
+  
+  return JSValueMakeUndefined(jsContext);
+}
+
 static JSStaticValue ALJSDirective_values[] = {
   { 0, 0, 0, 0 }
 };
@@ -101,6 +178,7 @@ static JSStaticValue ALJSDirective_values[] = {
 static JSStaticFunction ALJSDirective_functions[] = {
   { "getProperty",        ALJSDirective_getProperty,        kJSPropertyAttributeDontDelete | kJSPropertyAttributeReadOnly },
   { "toString",           ALJSDirective_toString,           kJSPropertyAttributeDontDelete | kJSPropertyAttributeReadOnly },
+  { "insert",             ALJSDirective_insert,             kJSPropertyAttributeDontDelete | kJSPropertyAttributeReadOnly },
   { 0, 0, 0 }
 };
 

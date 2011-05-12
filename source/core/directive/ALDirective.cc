@@ -44,6 +44,7 @@
 #include "ALVerbatimDirective.hh"
 
 #include "ALJSDirective.hh"
+#include "ALJSContext.hh"
 
 #include <Keystone/KSLog.hh>
 #include <Keystone/CFStringAdditions.hh>
@@ -190,7 +191,7 @@ KSStatus ALDirective::processWAMLChildren(const ALOptionsModel *options, ALEleme
  * 
  * @param peer on output: the current peer, if any
  */
-KSStatus ALDirective::pushJSContext(JSContextRef jsContext, JSObjectRef *peer) const {
+KSStatus ALDirective::pushJSContext(JSContextRef jsContext, JSObjectRef *peer, const ALSourceFilter *filter, KSOutputStream *outs, const ALSourceFilterContext *context) const {
   KSStatus status = KSStatusOk;
   JSStringRef jsthis = JSStringCreateWithCFString(CFSTR("directive"));
   JSObjectRef global;
@@ -204,9 +205,9 @@ KSStatus ALDirective::pushJSContext(JSContextRef jsContext, JSObjectRef *peer) c
   }
   
   if((clazz = ALJSDirectiveGetClass(jsContext)) != NULL){
-    newpeer = JSObjectMake(jsContext, clazz, (void *)this);
+    newpeer = JSObjectMake(jsContext, clazz, (void *)new ALJSContext(this, filter, outs, context));
   }else{
-    KSLogError("Unable to create JavaScript peer class");
+    KSLogError("Unable to create JavaScript peer context");
   }
   
   // note the current peer
@@ -228,6 +229,8 @@ error:
 KSStatus ALDirective::restoreJSContext(JSContextRef jsContext, JSObjectRef peer) const {
   KSStatus status = KSStatusOk;
   JSStringRef jsthis = JSStringCreateWithCFString(CFSTR("directive"));
+  ALJSContext *peerContext = NULL;
+  JSObjectRef currentPeer = NULL;
   JSObjectRef global;
   
   if((global = JSContextGetGlobalObject(jsContext)) == NULL){
@@ -236,9 +239,14 @@ KSStatus ALDirective::restoreJSContext(JSContextRef jsContext, JSObjectRef peer)
     goto error;
   }
   
+  if((currentPeer = (JSObjectRef)JSObjectGetProperty(jsContext, global, jsthis, NULL)) != NULL){
+    peerContext = (ALJSContext *)JSObjectGetPrivate(currentPeer);
+  }
+  
   JSObjectSetProperty(jsContext, global, jsthis, (peer != NULL) ? peer : (JSObjectRef)JSValueMakeUndefined(jsContext), kJSPropertyAttributeDontDelete | kJSPropertyAttributeReadOnly, NULL);
   
 error:
+  KSRelease(peerContext);
   JSStringRelease(jsthis);
   
   return status;
@@ -377,53 +385,8 @@ void ALDirective::setProperty(CFStringRef name, CFTypeRef value) {
  * @return status
  */
 KSStatus ALDirective::declareScriptProperties(JSContextRef jsContext) const {
-  KSStatus status = KSStatusOk;
-  /*
-  JSObjectRef object;
-  if((object = JSContextGetGlobalObject(jsContext)) == NULL){
-    KSLogError("No global object is present in the script context; cannot declare properties");
-    status = KSStatusError;
-    goto error;
-  }
-  
-  CFArrayRef keys;
-  if((keys = copyAllPropertyNames()) != NULL){
-    
-    register int i;
-    for(i = 0; i < CFArrayGetCount(keys); i++){
-      CFStringRef name = (CFStringRef)CFArrayGetValueAtIndex(keys, i);
-      CFTypeRef value = getProperty(name);
-      
-      if(gSharedOptions->isDebugging()){
-        KSLog("+ Property: \"%@\" = \"%@\"", name, value);
-      }
-      
-      JSStringRef jsname = JSStringCreateWithCFString(name);
-      JSValueRef jsprop = NULL;
-      
-      if(CFGetTypeID(value) == CFStringGetTypeID()){
-        JSStringRef jsvalue = JSStringCreateWithCFString((CFStringRef)value);
-        jsprop = JSValueMakeString(jsContext, jsvalue);
-        if(jsvalue) JSStringRelease(jsvalue);
-      }else{
-        CFStringRef description = CFCopyDescription(value);
-        JSStringRef jsvalue = JSStringCreateWithCFString(description);
-        jsprop = JSValueMakeString(jsContext, jsvalue);
-        if(jsvalue) JSStringRelease(jsvalue);
-        if(description) CFRelease(description);
-      }
-      
-      JSObjectSetProperty(jsContext, object, jsname, jsprop, 0, NULL);
-      
-      if(jsname)  JSStringRelease(jsname);
-    }
-    
-    CFRelease(keys);
-  }
-  
-error:
-  */
-  return status;
+  // this method is no longer used
+  return KSStatusOk;
 }
 
 /**

@@ -143,7 +143,7 @@ KSStatus ALPrintDirective::emit(const ALSourceFilter *filter, KSOutputStream *ou
     options = gSharedOptions;
   }
   
-  if((status = pushJSContext(jsContext, &peer)) != KSStatusOk){
+  if((status = pushJSContext(jsContext, &peer, filter, outs, context)) != KSStatusOk){
     goto error;
   }
   

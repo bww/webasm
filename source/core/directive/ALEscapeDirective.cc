@@ -40,8 +40,6 @@
 
 #define super ALDirectiveList
 
-#define kALEscapeDirectivePermittedCharacters CFSTR("abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789 \t\v\n\r")
-
 /**
  * Constructor
  * 
@@ -129,7 +127,7 @@ KSStatus ALEscapeDirective::emit(const ALSourceFilter *filter, KSOutputStream *o
     KSLog("Emitting directive: escape");
   }
   
-  if((status = pushJSContext(jsContext, &peer)) != KSStatusOk){
+  if((status = pushJSContext(jsContext, &peer, filter, outs, context)) != KSStatusOk){
     goto error;
   }
   

@@ -31,6 +31,8 @@
 #include "ALHTMLSourceFilter.hh"
 #include "ALJSUtility.hh"
 
+#include "ALEscapeDirective.hh"
+
 #include <Keystone/KSLog.hh>
 #include <Keystone/KSUtility.hh>
 #include <Keystone/KSOutputStream.hh>
@@ -86,6 +88,8 @@ static JSValueRef ALJSDocument_getTransposedPath(JSContextRef jsContext, JSObjec
   if(argc < 1){
     if(exception != NULL){
       ALJSMakeException(jsContext, *exception, CFSTR("getTransposedPath() requires 1 argument (a path)"), error);
+    }else{
+      goto error;
     }
   }
   
@@ -201,6 +205,60 @@ error:
   return result;
 }
 
+static JSValueRef ALJSDocument_escape(JSContextRef jsContext, JSObjectRef function, JSObjectRef object, size_t argc, const JSValueRef argv[], JSValueRef* exception) {
+  CFCharacterSetRef permitted = NULL;
+  CFMutableStringRef buffer = NULL;
+  JSStringRef jcontent = NULL;
+  CFStringRef content = NULL;
+  JSValueRef result = NULL;
+  JSStringRef string = NULL;
+  
+  if(argc < 1){
+    if(exception != NULL){
+      ALJSMakeException(jsContext, *exception, CFSTR("escape() requires 1 argument (a string to escape)"), error);
+    }else{
+      goto error;
+    }
+  }
+  
+  if((jcontent = JSValueToStringCopy(jsContext, argv[0], exception)) == NULL){
+    KSLogError("Unable to copy argument content");
+    goto error;
+  }
+  
+  if((content = JSStringCopyCFString(NULL, jcontent)) == NULL){
+    KSLogError("Unable to convert argument content");
+    goto error;
+  }
+  
+  permitted = CFCharacterSetCreateWithCharactersInString(NULL, kALEscapeDirectivePermittedCharacters);
+  buffer = CFStringCreateMutable(NULL, 0);
+  
+  register int i;
+  for(i = 0; i < CFStringGetLength(content); i++){
+    UniChar c = CFStringGetCharacterAtIndex(content, i);
+    if(CFCharacterSetIsCharacterMember(permitted, c)){
+      CFStringAppendCharacters(buffer, &c, 1);
+    }else{
+      CFStringRef format = CFStringCreateWithFormat(NULL, 0, CFSTR("&#%d;"), (int)c);
+      CFStringAppend(buffer, format);
+      if(format) CFRelease(format);
+    }
+  }
+  
+  string = JSStringCreateWithCFString(buffer);
+  result = JSValueMakeString(jsContext, string);
+  
+error:
+  if(permitted) CFRelease(permitted);
+  if(buffer)    CFRelease(buffer);
+  if(jcontent)  JSStringRelease(jcontent);
+  if(content)   CFRelease(content);
+  if(string)    JSStringRelease(string);
+  
+  return result;
+}
+
 static JSValueRef ALJSDocument_print(JSContextRef jsContext, JSObjectRef function, JSObjectRef object, size_t argc, const JSValueRef argv[], JSValueRef* exception) {
   ALHTMLSourceFilter *filter = (ALHTMLSourceFilter *)JSObjectGetPrivate(object);
   KSOutputStream *ostream = NULL;
@@ -210,12 +268,16 @@ static JSValueRef ALJSDocument_print(JSContextRef jsContext, JSObjectRef functio
   if(argc < 1){
     if(exception != NULL){
       ALJSMakeException(jsContext, *exception, CFSTR("print() requires 1 argument (an object to print)"), error);
+    }else{
+      goto error;
     }
   }
   
   if((ostream = filter->getCurrentOutputStream()) == NULL){
     if(exception != NULL){
       ALJSMakeException(jsContext, *exception, CFSTR("Peer object has no current output stream"), error);
+    }else{
+      goto error;
     }
   }
   
@@ -245,12 +307,16 @@ static JSValueRef ALJSDocument_println(JSContextRef jsContext, JSObjectRef funct
   if(argc < 1){
     if(exception != NULL){
       ALJSMakeException(jsContext, *exception, CFSTR("print() requires 1 argument (an object to print)"), error);
+    }else{
+      goto error;
     }
   }
   
   if((ostream = filter->getCurrentOutputStream()) == NULL){
     if(exception != NULL){
       ALJSMakeException(jsContext, *exception, CFSTR("Peer object has no current output stream"), error);
+    }else{
+      goto error;
     }
   }
   
@@ -279,6 +345,8 @@ static JSValueRef ALJSDocument_log(JSContextRef jsContext, JSObjectRef function,
   if(argc < 1){
     if(exception != NULL){
       ALJSMakeException(jsContext, *exception, CFSTR("print() requires 1 argument (an object to print)"), error);
+    }else{
+      goto error;
     }
   }
   
@@ -337,6 +405,7 @@ static JSStaticFunction ALJSDocument_functions[] = {
   { "getTransposedPath",  ALJSDocument_getTransposedPath,   kJSPropertyAttributeDontDelete | kJSPropertyAttributeReadOnly },
   { "getSourcePath",      ALJSDocument_getSourcePath,       kJSPropertyAttributeDontDelete | kJSPropertyAttributeReadOnly },
   { "getDestinationPath", ALJSDocument_getDestinationPath,  kJSPropertyAttributeDontDelete | kJSPropertyAttributeReadOnly },
+  { "escape",             ALJSDocument_escape,              kJSPropertyAttributeDontDelete | kJSPropertyAttributeReadOnly },
   { "print",              ALJSDocument_print,               kJSPropertyAttributeDontDelete | kJSPropertyAttributeReadOnly },
   { "println",            ALJSDocument_println,             kJSPropertyAttributeDontDelete | kJSPropertyAttributeReadOnly },
   { "log",                ALJSDocument_log,                 kJSPropertyAttributeDontDelete | kJSPropertyAttributeReadOnly },

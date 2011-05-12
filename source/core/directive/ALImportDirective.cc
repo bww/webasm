@@ -137,7 +137,7 @@ KSStatus ALImportDirective::emit(const ALSourceFilter *filter, KSOutputStream *o
     options = gSharedOptions;
   }
   
-  if((status = pushJSContext(jsContext, &peer)) != KSStatusOk){
+  if((status = pushJSContext(jsContext, &peer, filter, outs, context)) != KSStatusOk){
     goto error;
   }
   

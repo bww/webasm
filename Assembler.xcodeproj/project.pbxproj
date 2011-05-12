@@ -96,6 +96,8 @@
 		D3ADEB8111162DF20026E7E2 /* ALExpressionFileFilter.cc in Sources */ = {isa = PBXBuildFile; fileRef = D3ADEB7F11162DF20026E7E2 /* ALExpressionFileFilter.cc */; };
 		D3ADEB8211162DF20026E7E2 /* ALExpressionFileFilter.hh in Headers */ = {isa = PBXBuildFile; fileRef = D3ADEB8011162DF20026E7E2 /* ALExpressionFileFilter.hh */; settings = {ATTRIBUTES = (Public, ); }; };
 		D3CF7E7011FBAAFE00CA2236 /* PCRE.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = D3AA87C511F9563100279EBE /* PCRE.framework */; };
+		D3DEACBB137C6CC8009C4C93 /* ALJSContext.cc in Sources */ = {isa = PBXBuildFile; fileRef = D3DEACB9137C6CC8009C4C93 /* ALJSContext.cc */; };
+		D3DEACBC137C6CC8009C4C93 /* ALJSContext.hh in Headers */ = {isa = PBXBuildFile; fileRef = D3DEACBA137C6CC8009C4C93 /* ALJSContext.hh */; };
 		D3F288E110BA2EDF00652E8A /* ALEscapeDirective.cc in Sources */ = {isa = PBXBuildFile; fileRef = D3F288DF10BA2EDF00652E8A /* ALEscapeDirective.cc */; };
 		D3F288E210BA2EDF00652E8A /* ALEscapeDirective.hh in Headers */ = {isa = PBXBuildFile; fileRef = D3F288E010BA2EDF00652E8A /* ALEscapeDirective.hh */; settings = {ATTRIBUTES = (Public, ); }; };
 		D3F28AEE10BA35DB00652E8A /* libxml2.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = D3F28AED10BA35DB00652E8A /* libxml2.dylib */; };
@@ -276,6 +278,8 @@
 		D3AA87BC11F9563100279EBE /* PCRE.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = PCRE.xcodeproj; path = library/PCRE/PCRE.xcodeproj; sourceTree = "<group>"; };
 		D3ADEB7F11162DF20026E7E2 /* ALExpressionFileFilter.cc */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = ALExpressionFileFilter.cc; sourceTree = "<group>"; };
 		D3ADEB8011162DF20026E7E2 /* ALExpressionFileFilter.hh */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = ALExpressionFileFilter.hh; sourceTree = "<group>"; };
+		D3DEACB9137C6CC8009C4C93 /* ALJSContext.cc */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = ALJSContext.cc; sourceTree = "<group>"; };
+		D3DEACBA137C6CC8009C4C93 /* ALJSContext.hh */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = ALJSContext.hh; sourceTree = "<group>"; };
 		D3F288DF10BA2EDF00652E8A /* ALEscapeDirective.cc */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = ALEscapeDirective.cc; sourceTree = "<group>"; };
 		D3F288E010BA2EDF00652E8A /* ALEscapeDirective.hh */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = ALEscapeDirective.hh; sourceTree = "<group>"; };
 		D3F28AED10BA35DB00652E8A /* libxml2.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libxml2.dylib; path = /usr/lib/libxml2.dylib; sourceTree = "<absolute>"; };
@@ -387,6 +391,8 @@
 		D308DA7011130BAC00AB0C0E /* jsapi */ = {
 			isa = PBXGroup;
 			children = (
+				D3DEACB9137C6CC8009C4C93 /* ALJSContext.cc */,
+				D3DEACBA137C6CC8009C4C93 /* ALJSContext.hh */,
 				D39429361117CA3100B25851 /* ALJSDirective.cc */,
 				D39429371117CA3100B25851 /* ALJSDirective.hh */,
 				D308DA7111130BAC00AB0C0E /* ALJSDocument.cc */,
@@ -647,6 +653,7 @@
 				D3A4298212AC0C96006DC332 /* ALServer.hh in Headers */,
 				D3A429E812AC3CE2006DC332 /* ALDependencyGraph.hh in Headers */,
 				D3A42A0C12AD2AF2006DC332 /* ALSourceFilterContext.hh in Headers */,
+				D3DEACBC137C6CC8009C4C93 /* ALJSContext.hh in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -857,6 +864,7 @@
 				D3A4298112AC0C96006DC332 /* ALServer.cc in Sources */,
 				D3A429E712AC3CE2006DC332 /* ALDependencyGraph.cc in Sources */,
 				D3A42A0B12AD2AF2006DC332 /* ALSourceFilterContext.cc in Sources */,
+				D3DEACBB137C6CC8009C4C93 /* ALJSContext.cc in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
