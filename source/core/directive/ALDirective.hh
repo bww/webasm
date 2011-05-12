@@ -64,7 +64,6 @@ protected:
   KSStatus restoreJSContext(JSContextRef jsContext, JSObjectRef peer) const;
   
   void setProperties(CFDictionaryRef properties);
-  void setProperty(CFStringRef name, CFTypeRef value);
   void appendAllPropertyNames(CFMutableArrayRef names) const;
   
   virtual KSStatus processWAMLChildren(const ALOptionsModel *options, ALElement *el);
@@ -77,9 +76,11 @@ public:
   
   virtual CFStringRef getName(void) const;
   const ALDirective * getParent(void) const;
+  
   CFDictionaryRef getProperties(void) const;
   CFArrayRef copyAllPropertyNames(void) const;
   CFTypeRef getProperty(CFStringRef name) const;
+  void setProperty(CFStringRef name, CFTypeRef value);
   
   virtual inline bool isVerbatim(void) const { return false; }
   

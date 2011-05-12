@@ -55,7 +55,7 @@ static JSValueRef ALJSDirective_getProperty(JSContextRef jsContext, JSObjectRef 
   
   if(argc < 1){
     if(exception != NULL){
-      ALJSMakeException(jsContext, *exception, CFSTR("getProperty() requires 1 argument (property name)"), error);
+      ALJSMakeException(jsContext, *exception, CFSTR("getProperty(name) requires 1 argument: the name of the property to obtain"), error);
     }
   }
   
@@ -81,6 +81,69 @@ error:
   return result;
 }
 
+/**
+ * Set a property at the level of the caller directive.
+ */
+static JSValueRef ALJSDirective_setProperty(JSContextRef jsContext, JSObjectRef function, JSObjectRef object, size_t argc, const JSValueRef argv[], JSValueRef* exception) {
+  ALJSContext *context = (ALJSContext *)JSObjectGetPrivate(object);
+  ALDirective *directive = (ALDirective *)context->getPeer();
+  JSStringRef jstring = NULL;
+  CFStringRef key = NULL;
+  CFStringRef value = NULL;
+  
+  if(argc < 2){
+    if(exception != NULL){
+      ALJSMakeException(jsContext, *exception, CFSTR("setProperty(name, value) requires 2 arguments: 1) the name of the property to set, 2) the value to set"), error);
+    }else{
+      goto error;
+    }
+  }
+  
+  if((jstring = JSValueToStringCopy(jsContext, argv[0], exception)) == NULL){
+    if(exception != NULL){
+      ALJSMakeException(jsContext, *exception, CFSTR("Unable to copy argument"), error);
+    }else{
+      goto error;
+    }
+  }
+  
+  if((key = JSStringCopyCFString(NULL, jstring)) == NULL){
+    if(exception != NULL){
+      ALJSMakeException(jsContext, *exception, CFSTR("Unable to convert argument"), error);
+    }else{
+      goto error;
+    }
+  }
+  
+  JSStringRelease(jstring); // immediately assigned again below
+  
+  if((jstring = JSValueToStringCopy(jsContext, argv[1], exception)) == NULL){
+    if(exception != NULL){
+      ALJSMakeException(jsContext, *exception, CFSTR("Unable to copy argument"), error);
+    }else{
+      goto error;
+    }
+  }
+  
+  if((value = JSStringCopyCFString(NULL, jstring)) == NULL){
+    if(exception != NULL){
+      ALJSMakeException(jsContext, *exception, CFSTR("Unable to convert argument"), error);
+    }else{
+      goto error;
+    }
+  }
+  
+  // set the property value
+  directive->setProperty(key, value);
+  
+error:
+  if(jstring)   JSStringRelease(jstring);
+  if(key)       CFRelease(key);
+  if(value)     CFRelease(value);
+  
+  return JSValueMakeUndefined(jsContext);
+}
+
 static JSValueRef ALJSDirective_toString(JSContextRef jsContext, JSObjectRef function, JSObjectRef object, size_t argc, const JSValueRef argv[], JSValueRef* exception) {
   ALJSContext *context = (ALJSContext *)JSObjectGetPrivate(object);
   ALDirective *directive = (ALDirective *)context->getPeer();
@@ -100,8 +163,7 @@ error:
 }
 
 /**
- * Insert a resource into the document as if an insert directive were nested in the caller
- * element.
+ * Insert a resource into the document as if an insert directive were nested in the caller directive.
  */
 static JSValueRef ALJSDirective_insert(JSContextRef jsContext, JSObjectRef function, JSObjectRef object, size_t argc, const JSValueRef argv[], JSValueRef* exception) {
   ALJSContext *context = (ALJSContext *)JSObjectGetPrivate(object);
@@ -177,6 +239,7 @@ static JSStaticValue ALJSDirective_values[] = {
 
 static JSStaticFunction ALJSDirective_functions[] = {
   { "getProperty",        ALJSDirective_getProperty,        kJSPropertyAttributeDontDelete | kJSPropertyAttributeReadOnly },
+  { "setProperty",        ALJSDirective_setProperty,        kJSPropertyAttributeDontDelete | kJSPropertyAttributeReadOnly },
   { "toString",           ALJSDirective_toString,           kJSPropertyAttributeDontDelete | kJSPropertyAttributeReadOnly },
   { "insert",             ALJSDirective_insert,             kJSPropertyAttributeDontDelete | kJSPropertyAttributeReadOnly },
   { 0, 0, 0 }
