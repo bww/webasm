@@ -286,8 +286,8 @@ KSStatus ALAssemblerIsFileOutOfDate(const ALOptionsModel *options, CFStringRef s
     // if the stat error indicates the output file does not exist, this is interpreted
     // as the output file being out of date; otherwise a "real" error is produced
     if(errno == ENOENT){
-      if(outOfDate) *outOfDate = true;
-      goto error;
+      oodate = true;
+      goto done;
     }else{
       status = KSStatusInvalidParameter;
       if(error) *error = new KSError(KSStatusInvalidParameter, "Unable to stat file: %@", opath);

@@ -1,4 +1,5 @@
 WEB ASSEMBLER
+=============
 
 Web Assembler creates complete HTML documents from reusable document fragments,
 the output of scripts, evaluated JavaScript, rendered text, and other information.
@@ -7,6 +8,7 @@ formats.  It has been mainly used by Wolter Group for assembling documents from
 template components.
 
 SUPPORTED PLATFORMS
+-------------------
 
 Technically, Web Assembler could be compiled on a variety of platforms, however
 it relies heavily on Apple's CoreFoundation framework for some core functionality
@@ -16,6 +18,7 @@ really only targeted to (and tested on) Mac OS X--until someone gets around to
 making a reasonably good CoreFoundation port for other platforms.
 
 BUILDING THE COMMAND LINE TOOL FROM SOURCE
+------------------------------------------
 
 You can build Web Assembler from source using the included Xcode project. The
 "Assembler" target will build and install dependency frameworks and build and
@@ -33,6 +36,7 @@ frameworks may cause linkage problems if you don't make corresponding changes
 to the target build configurations.
 
 USING THE ASSEMBLER CORE FRAMEWORK
+----------------------------------
 
 Most of the work done by Web Assembler is performed by the AssemblerCore
 framework.  If you're so inclined, you can incorporate this framework into
@@ -41,6 +45,7 @@ AssemblerCore and Keystone are built as separate frameworks instead of being
 linked directly into the command line tool.
 
 MORE INFO ABOUT WEB ASSEMBLER
+-----------------------------
 
 Read more about the Web Assembler homepage at:
   http://woltergroup.net/webasm/
