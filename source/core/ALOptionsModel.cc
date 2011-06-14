@@ -700,7 +700,7 @@ CFArrayRef ALOptionsModel::getExcludedFilePrefixes(void) const {
   static CFArrayRef __shared = NULL;
   if(__shared == NULL) {
     const void *values[] = {
-      CFSTR(kALDependencyGraphCachePrefix)
+      CFSTR(kALDependencyGraphCacheDirectory)
     };
     __shared = CFArrayCreate(NULL, values, 1, &kCFTypeArrayCallBacks);
   }

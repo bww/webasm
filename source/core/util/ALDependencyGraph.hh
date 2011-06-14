@@ -38,7 +38,8 @@
 #include <Keystone/KSInputStream.hh>
 #include <Keystone/KSOutputStream.hh>
 
-#define kALDependencyGraphCachePrefix   ".webasm_depend_"
+#define kALDependencyGraphCacheDirectory  ".webasm/depend"
+#define kALDependencyGraphCacheSuffix     ".dgraph"
 
 class ALDependencyGraph : public KSObject {
 private:

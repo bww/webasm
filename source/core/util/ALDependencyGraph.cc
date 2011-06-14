@@ -59,7 +59,7 @@ ALDependencyGraph::~ALDependencyGraph() {
 CFStringRef ALDependencyGraph::copyStandardDependencyCachePath(CFStringRef path) {
   CFStringRef name = CFStringCopyLastPathComponent(path);
   CFStringRef base = CFStringCopyPathDirectory(path);
-  CFStringRef depend = CFStringCreateWithFormat(NULL, 0, CFSTR("%@/" kALDependencyGraphCachePrefix "%@"), base, name);
+  CFStringRef depend = CFStringCreateWithFormat(NULL, 0, CFSTR("%@/" kALDependencyGraphCacheDirectory "/%@" kALDependencyGraphCacheSuffix), base, name);
   CFRelease(name);
   CFRelease(base);
   return depend;
@@ -146,15 +146,25 @@ error:
 
 KSStatus ALDependencyGraph::write(KSError **error) const {
   CFStringRef path = NULL;
+  KSFile *file = NULL;
   KSStatus status = KSStatusOk;
   
   if(_resource != NULL && (path = copyStandardDependencyCachePath(_resource)) != NULL){
+    
+    file = new KSFile(path);
+    if((status = file->makeDirectories()) != KSStatusOk){
+      if(error) *error = new KSError(status, "Unable to create path to: %@: %@", path, KSStatusGetMessage(status));
+      goto error;
+    }
+    
     status = writeToFile(path, error);
   }else{
     status = KSStatusError;
     if(error) *error = new KSError(status, "No resource defined");
   }
   
+error:
+  KSRelease(file);
   CFReleaseSafe(path);
   return status;
 }
